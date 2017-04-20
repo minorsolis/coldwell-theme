@@ -64,7 +64,20 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     padding-top: 35px;	font-family: 'Lato-Semibold';
     margin-bottom: 35px; color:#253956; font-size:16px;
   }
-.row.office h3{font-family: "Lato Black"; font-size:16px;}   
+.row.office h3{    font-family: "Lato Black";
+    font-size: 17px;
+    /* font-weight: 700; */
+    margin-bottom: 7px;
+    line-height: 24px;}
+	
+.row.office a.link{    color: #2d507c;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 8px;
+    display: inline-block;}	
+.row.office a.link:hover{    color: #000;}	
+	
+	   
   
  .row.office .col-sm-5{padding:0;} 
 
