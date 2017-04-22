@@ -58,6 +58,32 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 	margin: 0 10px;
 }
 
+.listing.uilibray{    margin-top: 82px;}
+.listing.uilibray .libary .tab-content{    margin-top: 60px;
+    float: left;
+    width: 100%;}
+.listing.uilibray .col-sm-4.listingdiv, .listing.uilibray .listingdiv.agent{width:100%; margin-bottom:70px;}	
+.listing.uilibray .rightside .listingdiv{margin-bottom:200px;}
+.listing.uilibray .rightside{padding-top:100px;}
+
+	
+
+
+.account.printed{    margin-top: 82px; background:#fff;}
+.print h2.prict{    border-bottom: #dbdbdb solid 4px;
+    padding-bottom: 16px;font-family: "Lato Black";
+    margin-bottom: 20px;
+       font-size: 31px;
+    color: #122d56;}
+.print h2.prict img{margin-right:30px;}	
+.print .row.topborder{border:0;  padding:0;}	
+	
+.print .row{margin:0; }	
+
+.row.bottigm{margin:40px 0;}
+
+
+
 
 .listing.office .imgidv{text-align:center;}
 .row.office{    border-top: #dbdbdb solid 4px;
@@ -566,14 +592,45 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 .row.botbra .col-sm-9{padding:0;}
 .row.botbra span i{color: #b3b3b3;
     margin-right: 5px;
-    font-size: 19px;}	
+    font-size: 19px;}
 	
+.listing.uilibray h3.tielci{       font-size: 26px;
+    color: #333;
+    border-bottom: #dbdbdb solid 1px;
+    /* padding-bottom: 31px; */
+    margin-bottom: 43px;
+    font-weight: normal;
+    display: inline-block;
+    width: 100%;
+    padding: 27px 15px 23px 15px;}
+.listing.uilibray h3.tielci sub{font-size:15px; color:#ccc; }
+.col-md-4.clebood{margin-bottom:60px;}
 
+.uilibray .col-sm-6.rightdiv h2{font-family: 'Lato-Heavy'; font-size:22px;}
+.col-sm-6.leffont h2, .col-sm-6.leffont h3, .col-sm-6.leffont h4, .col-sm-6.leffont h5, .col-sm-6.leffont h6{margin-bottom:10px;}
+
+
+
+
+.col-md-4.clebood .col-md-6{padding:0;}
+
+
+
+	
+		
+	
+.listing.uilibray .toptile{
+    font-size: 56px;
+    background: #fff;
+    padding: 11px 22px;
+    font-weight: normal;
+    color: #777;
+    margin: -49px -30px 34px -27px;}
 
 .about.listing .container-fluid {
 	padding: 50px 70px;
 }
-.about.listing h2, .account .container-fluid .col-sm-8 .paddingnot .col-sm-10 h2, .rightside h2, .agentb h2, .row.topborder, .listbuyimg .col-sm-8 h2 {
+.about.listing h2, .account .container-fluid .col-sm-8 .paddingnot .col-sm-10 h2, .rightside h2, .agentb h2, .row.topborder, .listbuyimg .col-sm-8 h2, .col-sm-8.libary h2 {
 	border-bottom: #dbdbdb solid 4px;
 	padding-bottom: 16px;
 	margin-bottom: 20px;
@@ -653,7 +710,11 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 	border: #dedede solid 1px;
 	border-radius: 3px;
 }
-.join .col-md-12 #captcontainer .col-md-6 input {
+
+
+
+
+.join .col-md-12 #captcontainer .col-md-6 input, .col-md-4.clebood .col-md-6 input {
 	width: 100%;
 	border-radius: 0;
 	border: #bbbbbb solid 1px;
@@ -682,7 +743,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 	text-align: center;
 	margin-top: -26px;
 }
-.join #captcontainer .col-md-4 .btn-send {
+.join #captcontainer .col-md-4 .btn-send, .col-md-4.clebood .col-md-4 input.btn-send {
 	idth: 100%;
 	background: #ffd31d;
 	border: 0;
@@ -697,11 +758,14 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 	padding-left: 47px;
 	width: 100%;
 }
-.join #captcontainer .col-md-4 .btn-send:hover {
+.join #captcontainer .col-md-4 .btn-send:hover, .col-md-4.clebood .col-md-4 input.btn-send:hover {
 	opacity: 1;
 	color: #fff;
 }
-.join #captcontainer .col-md-4 i.fa-paper-plane {
+.col-md-4.clebood .col-md-4{margin-top:28px;}
+
+
+.join #captcontainer .col-md-4 i.fa-paper-plane, .col-md-4.clebood .col-md-4 i {
 	position: absolute;
 	left: 23px;
 	top: 13px;
@@ -1775,8 +1839,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17396c', end
 	animation-name: fadeInUpNew;
 }
  @media (max-width:767px) {
-	 .helpfularticel{padding-right:15px;} 
+	 .helpfularticel{padding-right:15px;}
+	 .col-sm-8.libary  .col-sm-3{padding:0;}
+	 .listing.uilibray .libary .tab-content{margin:20px 0 0 0;}
 	 
+	 .listing.uilibray .toptile{font-size: 32px;
+    background: #fff;
+    padding: 11px 22px;
+    font-weight: normal;
+    color: #777;
+    margin: 0;
+    text-align: center;
+    line-height: normal;}
+	.uilibray .col-sm-6.rightdiv, .col-sm-6.leffont, .col-md-4.clebood, .col-md-4.clebood .col-md-4, .col-sm-8.libary{padding:0;}
+	.col-md-4.clebood .col-md-4 .btn-send{text-align:center !important; padding:0 !important;}
+	.col-md-4.clebood .col-md-4 i{    left: 35%;}
+	 
+	 .detaleft.print{padding:0;}
+	 .row.bottigm .col-sm-4{padding:0; margin-bottom:10px; }
+	  .row.bottigm{margin:10px 0 0 0;}
+	  
+	  
 .slider.buylist a.arrowdown{    bottom: -24px;     left: 43%;}	
 .listbuyimg .container-fluid{    padding: 20px 0;}
 
@@ -2165,6 +2248,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17396c', end
 }
 }
  @media (min-width: 768px) and (max-width: 1199px) {
+	 .uilibray .listingdiv .col-sm-8{width:100%;}
+	 .col-sm-8.libary .col-sm-3{    width: 46%;}
+	 .print h2.prict{    text-align: left;    font-size: 27px;}
+	 
+	 .listing.uilibray .toptile{    margin: 0;}
+	 .listing.uilibray h3.tielci{text-align:left;}
+	 .col-md-4.clebood .col-md-4{       width: 149px;
+    float: left;}
+	 .col-md-4.clebood .col-md-6, .col-sm-8.libary h2{text-align:left;}
+	 .col-md-4.clebood .col-md-6{    float: left;}
+	 .col-md-4.clebood{    float: left;
+    width: 100%;}
+	 
+	 
+	 
 	 .slider.buylist{    padding: 201px;}
 	 .slider.buylist .listbuy{    width: 46% !important;}
 	 .listbuyimg .container-fluid {
@@ -2538,6 +2636,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17396c', end
  @media (min-width: 481px) and (max-width: 767px) {
 	 .listbuyimg .nav-tabs li{    margin: 0 !important;}
 	  .listbuyimg .nav-tabs li a{      padding: 20px 8px !important;  font-size: 15px !important;}
+	  
+	  .print h2.prict img {
+    margin-right: 0;
+}
+.print h2.prict{    font-size: 21px; text-align:left;}
 	 
 	 
 	 .row.botbra .col-sm-9 {
@@ -2707,7 +2810,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17396c', end
 	 
 	 .slide.butlist{    padding: 0;}
 	 .slide.butlist .carousel-control{color:#fff; opacity:0.8;}
-	
+	.print h2.prict img{width:100%; margin-bottom:12px; height:auto !important; margin-right:0;}
 	 
 	 .container-fluid .col-sm-8 ul.nav-tabs li{    margin: 0;
     border: 0;
