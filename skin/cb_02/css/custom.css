@@ -41,6 +41,29 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 	margin-bottom: 10px;
 	text-transform: uppercase;
 }
+
+.search.home ul{    text-align: center;
+    border: 0;}
+.search.home ul li{display:inline-block; float:none;}
+.search.home ul li.active a{    background: #7da6de !important;}	
+.search.home ul li.active a:after{    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #7da6de;
+    content: "";
+    position: absolute;
+    bottom: -9px;
+    left: 39px;}
+	
+	.search.home .tab-content{    margin-bottom: 12px;
+    float: left; text-align:center;
+    width: 100%;}
+	.search.home .tab-content .form-group{float:none; display:inline-block; vertical-align:top;}
+	
+	
+
+
 .bs-docs-footer .col-sm-3 ul li a {
 	color: #7ba6e0;
 	font-weight: 700;
@@ -1427,7 +1450,7 @@ header.bs-docs-nav {
 	font-weight: 700;
 }
 .slider .col-sm-12.up .slideanim .col-sm-3 {
-	width: 22%;
+	width: 21%;
 }
 .slider .col-sm-12.up .col-sm-2 select, .slider .col-sm-12.up .col-sm-1 select, .slider .col-sm-12.up .col-sm-3 input, .slider .col-sm-12.up .col-sm-2 input {     /* width: 100%; */
 	border-radius: 0;
