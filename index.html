@@ -148,17 +148,19 @@
     <div class="col-sm-12 up">
       <div class="container">
         <div class="row">
-          <div class="search">
+          <div class="search home">
             <h2 class="text-center">Find a Home in Costa Rica</h2>
             <div class="col-sm-12 text-center">
-              <ul>
-                <li><a href="#">FOR SALE</a></li>
-                <li><a href="#">FOR RENT</a></li>
-                <li><a href="#">Province</a></li>
-                <li><a href="#">Office</a></li>
+              <ul class="nav nav-tabs ">
+                <li class="active"><a data-toggle="tab" href="#tab_default_1">FOR SALE</a></li>
+                <li class=""><a data-toggle="tab" href="#tab_default_2">FOR RENT</a></li>
+                <li class=""><a data-toggle="tab" href="#tab_default_3">Province</a></li>
+                <li class=""><a data-toggle="tab" href="#tab_default_4">Office</a></li>
               </ul>
             </div>
-            <div class="col-sm-12 slideanim">
+            <div class="tab-content">
+            
+            <div class="col-sm-12 slideanim tab-pane active" id="tab_default_1">
               <div class="col-sm-2 form-group">
                 <select class="form-control" id="sel1">
                   <option>All Provinces</option>
@@ -180,6 +182,69 @@
                 <button class="btn btn-default pull-right" type="submit"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
               </div>
             </div>
+         <div class="col-sm-12 slideanim tab-pane" id="tab_default_2">
+              
+              <div class="col-sm-3 form-group">
+                <input class="form-control" id="Keyword" name="Keyword" placeholder="Keyword i.e. “Pool”" type="text" required>
+              </div>
+              <div class="col-sm-3 form-group">
+                <input class="form-control" id="Min. Price" name="Min. Price" placeholder="Min. Price “50,000”" type="text" required>
+              </div>
+              <div class="col-sm-3 form-group">
+                <input class="form-control" id="Max Price" name="Max Price" placeholder="Max Price “500,000”" type="text" required>
+              </div>
+              <div class="col-sm-2 form-group">
+                <button class="btn btn-default pull-right" type="submit"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
+              </div>
+            </div>
+            
+            
+                        
+                         <div class="col-sm-12 slideanim tab-pane" id="tab_default_3">
+              <div class="col-sm-2 form-group">
+                <select class="form-control" id="sel1">
+                  <option>All Provinces</option>
+                  <option>All Provinces</option>
+                  <option>All Provinces</option>
+                  <option>All Provinces</option>
+                </select>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
+              <div class="col-sm-3 form-group">
+                <input class="form-control" id="Keyword" name="Keyword" placeholder="Keyword i.e. “Pool”" type="text" required>
+              </div>
+             
+              <div class="col-sm-2 form-group">
+                <button class="btn btn-default pull-right" type="submit"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
+              </div>
+            </div>
+            <div class="col-sm-12 slideanim tab-pane" id="tab_default_4">
+              <div class="col-sm-2 form-group">
+                <select class="form-control" id="sel1">
+                  <option>Office</option>
+                  <option>Office</option>
+                  <option>Office</option>
+                  <option>Office</option>
+                </select>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
+              <div class="col-sm-3 form-group">
+                <input class="form-control" id="Keyword" name="Keyword" placeholder="Keyword i.e. “Pool”" type="text" required>
+              </div>
+             
+              <div class="col-sm-2 form-group">
+                <button class="btn btn-default pull-right" type="submit"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
+              </div>
+            </div>
+            
+            
+            </div>
+            
+            
+            
+            
+            
+            </div>
+            
+            
             <span class="col-sm-12 text-center"><a href="#">ADVANCED SEARCH <i class="fa fa-chevron-right" aria-hidden="true"></i></a></span>
             <div class="col-sm-12 bottotext text-center">
               <h3>Costa Rica Luxury Estate Casa Big Sur</h3>
