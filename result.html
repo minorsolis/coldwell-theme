@@ -12,15 +12,21 @@
 <link rel="stylesheet" href="skin/cb_02/css/custom.css">
 <link rel="stylesheet" href="skin/cb_02/css/bootstrap-theme.css">
 <link rel="stylesheet" href="skin/cb_02/css/animate.css">
-
-
+<link rel="stylesheet" href="skin/cb_02/css/jquery-ui.css">
 </head>
 <body id="myPage">
 
+
+
+
 <nav class="navbar navbar-material-blue navbar-fixed-top" role="navigation">
         <div class="container-fluid">
+
+
+ <!--  Filter by price interval: <b>€ 10</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/> <b>€ 1000</b> -->
+
           <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
+          <div class="navbar-header"> 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-animations" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
@@ -105,22 +111,17 @@
       </nav>
 
 
+<section class="abouttitle resultpage">
 
 
+<div class="container">
+  
+
+<ul class="nav navbar-nav">
+                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">All Provinces <b class="caret"></b></a>
 
 
-
-
-<section class="slider resultpage">
-
-    <div class="col-sm-12 up">
-      <div class="container">
-        <div class="row">
-          <div class="search">
-            <h2 class="text-center">Costa Rica Homes For Sale</h2>
-            
-     <div id="demo" class="collapse in">       <div class="col-sm-12 slideanim">
-              <div class="col-sm-2 form-group">
+                           <div class="col-sm-2 form-group dropdown-menu">
              <label> All Provinces</label>
                 <select class="form-control" id="sel1">
                   <option>All Provinces</option>
@@ -129,129 +130,300 @@
                   <option>All Provinces</option>
                 </select>
                 <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
-              <div class="col-sm-2 form-group">
-             <label> Keywords</label>
-                <input class="form-control" id="Keyword" name="Keyword" placeholder="Keyword i.e. “Pool”" type="text" required>
-              </div>
-              <div class="col-sm-2 form-group">
+                            
+                      
+
+
+
+
+                    </li>
+                    <li><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">Type <b class="caret"></b></a>
+
+
+                           <div class="col-sm-2 form-group dropdown-menu">
+             <label> Type</label>
+                <select class="form-control" id="sel1">
+                  <option>Type</option>
+                  <option>Type</option>
+                  <option>Type</option>
+                  <option>Type</option>
+                </select>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
+
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">Price <b class="caret"></b></a>
+                        
+ <div class="col-sm-2 form-group dropdown-menu">
+             
+
+
+             <div class="col-sm-5 form-group">
              <label> Min Price</label>
-                <input class="form-control" id="Min. Price" name="Min. Price" placeholder="i.e. “50,000”" type="text" required>
+              
+                
+                
+                <input type="number" name="Min. Price" id="Min. Price" value="200" min="0" max="1000" class="form-control" required>
+                
               </div>
-              <div class="col-sm-2 form-group">
+              <div class="col-sm-5 form-group">
             <label>  Max Price</label>
-                <input class="form-control" id="Max Price" name="Max Price" placeholder="i.e. “50,000”" type="text" required>
-              </div>
-              
-              
-              <div class="col-sm-1 form-group">
-             <label>Beds</label>
-                <select class="form-control" id="sel1">
-                  <option>Any</option>
-                  <option>Any</option>
-                  <option>Any</option>
-                  <option>Any</option>
-                </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
-                
-                <div class="col-sm-1 form-group">
-             <label> Baths</label>
-                <select class="form-control" id="sel1">
-                  <option>Any</option>
-                  <option>Any</option>
-                  <option>Any</option>
-                  <option>Any</option>
-                </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
-                
-              
-              
-              
-              
-              <div class="col-sm-2 form-group">
-             <label><i class="fa fa-bookmark" aria-hidden="true"></i> <b>Save this Search</b></label>
-                <button class="btn btn-default pull-right" type="submit"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
-              </div>
-            </div>
-            
-            <div class="col-sm-12 slideanim rent">
-              <div class="col-sm-2 form-group">
-             <label>Rent / Sale</label>
-                <select class="form-control" id="sel1">
-                  <option>Any</option>
-                  <option>Any</option>
-                  <option>Any</option>
-                  <option>Any</option>
-                </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
-              
-              <div class="col-sm-2 form-group right">
-             <label>Type</label>
-                <select class="form-control" id="sel1">
-                  <option>Any</option>
-                  <option>Any</option>
-                  <option>Any</option>
-                  <option>Any</option>
-                </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
-              
-              
-              <div class="col-sm-2 form-group">
-             <label> City</label>
-                <input class="form-control" id="i.e. “Tamarindo”" name="i.e. “Tamarindo”" placeholder="i.e. “Tamarindo”" type="text" required>
-              </div>
-              <div class="col-sm-2 form-group">
-             <label>Office</label>
-                <select class="form-control" id="sel1">
-                  <option>Any</option>
-                  <option>Any</option>
-                  <option>Any</option>
-                  <option>Any</option>
-                </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
-              
-              <div class="col-sm-2 form-group">
-            <label> Agent Name</label>
-                <input class="form-control" id="i.e. “Jose Smith”" name="i.e. “Jose Smith”" placeholder="i.e. “Jose Smith”" type="text" required>
-              </div>
-              
-              
-              
-                
-                
-                
-              
-              
-              
-              
-              <div class="col-sm-2 form-group checkbox">
-              
-             <div class="checkbox">
-          <label>
-            <input type="checkbox" value="">
-            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span></label>
-        </div>
-              <i class="fa fa-fire" aria-hidden="true"></i>
-            <strong> Fire
-Sale</strong>
+             <input type="number" name="Max Price"  id="Max Price" value="100" min="0" max="1000" class="form-control" required>
                
               </div>
-            </div>
-            
-            </div>
-            
-            
-            
-            
-            
-            <span class="btn btn-danger col-sm-12 text-center" data-toggle="collapse" data-target="#demo"><a  href="#">LESS OPTIONS&nbsp;<i class="fa fa-chevron-up" aria-hidden="true"></i> <i class="fa fa-chevron-down" aria-hidden="true"></i></a></span>
-            
-          </div>
-        </div>
+               
+
+
+
+
+                </div>
+
+
+
+
+                    </li>
+
+                    <li><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">Keywords <b class="caret"></b></a>
+
+<div class="col-sm-2 form-group dropdown-menu">
+             
+
+
+             
+            <label>  Keywords</label>
+               <input class="form-control" id="Keyword" name="Keyword" placeholder="Keyword i.e. “Pool”" type="text" required>
+             
+               
+
+
+
+
+                </div>
+
+
+
+                    </li>
+                    <li><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">Options <b class="caret"></b></a>
+
+<div class="col-sm-2 form-group dropdown-menu">
+
+
+
+
+<div class="col-md-4">
+
+
+<div class="filters__summary-count ng-binding">1,084</div>
+<div class="h4">Properties Found</div>
+
+
+
+
+
+
+</div>
+<div class="col-md-4">
+
+
+
+<div data-role="main" class="ui-content">
+   
+      <label for="price-min" id="price-min-label">Price:</label>
+     <!--  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;"> -->
+      
+      
+      
+      <div data-role="rangeslider" class="ui-rangeslider">
+        <div id="slider-range"></div>
+      <!-- <input style="padding: 0;" type="number" name="Min. Price" id="Min. Price" value="200" min="0" max="1000" class="form-control" required="">
+      <input style="padding: 0;" type="number" name="Min. Price" id="Min. Price" value="200" min="0" max="1000" class="form-control" required=""> -->
+
+      <input type="text" name="MinPrice" id="MinPrice" class="sliderValue" data-index="0" value="$75" class="form-control" required="" style="padding: 0;" />
+      <input type="text" name="Maxprice" id="Maxprice" class="sliderValue" data-index="1" value="$300" class="form-control" required="" style="padding: 0;" />
+
       </div>
-    </div>
+       
+       
+     
+ 
+  </div>
+
+
+
+
+
+
+
+</div>
+
+<div class="col-md-4">
+
+<label class="filters__title">Type</label>
+<div class="form__group">
+<div class="form-button-group">
+<div class="form__checkbox form-checkbox--alt">
+<input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_condo" type="checkbox" value="condo" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_condo"><span>Condo</span></label>
+</div>
+<div class="form__checkbox form-checkbox--alt">
+<input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_house" type="checkbox" value="house" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_house"><span>House</span></label>
+</div>
+<div class="form__checkbox form-checkbox--alt">
+<input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_land" type="checkbox" value="land" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_land"><span>Land</span></label>
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+<div class="col-md-4">
+<label class="filters__title">Bedrooms</label>
+<div class="form__group">
+<div class="form-button-group bedrooms">
+<span class="list">
+
+<input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_Any" type="checkbox" value="-1" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+
+<label class="form-button-group__label" for="dwelling_types_Any"><strong>Any</strong></label></span>
+<span class="list"><input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_Studio" type="checkbox" value="0" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_Studio"><strong>Studio</strong></label></span>
+<span class="list"><input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_1+" type="checkbox" value="1" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_1+"><strong>1+</strong></label></span>
+<span class="list"><input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_2+" type="checkbox" value="2" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_2+"><strong>2+</strong></label></span>
+<span class="list"><input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_3+" type="checkbox" value="3" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_3+"><strong>3+</strong></label></span>
+<span class="list"><input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_4+" type="checkbox" value="4" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_4+"><strong>4+</strong></label>
+</span><span class="list"><input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_5+" type="checkbox" value="5" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_5+"><strong>5+</strong></label></span>
+</div>
+</div></div>
+
+<div class="col-md-4">
+
+
+
+<div data-role="main" class="ui-content">
+   
+      <label for="price-min" id="price-min-label">Living</label><div data-role="rangeslider" class="ui-rangeslider">
+        
+       
+      <div data-role="" class="ui-rangeslider lidi">
+        
+       <!-- <input style="padding: 0;" type="number" name="Min. Price" id="Min. Price" value="200" min="0" max="1000" class="form-control" required=""> -->
+      <div id="slider-range2"></div>
+      <input type="text" name="LivingPrice" id="LivingPrice" class="sliderValue" value="200+" class="form-control" required="" style="padding: 0;" />
+      </div>
+      </div>
+      
+      <div data-role="rangeslider" class="livig">
+     <div class="col-md-6">  <label for="price-min" id="price-min-label">Acres</label>
+      <div data-role="rangeslider" class="ui-rangeslider">
+        
+        <div data-role="" class="ui-rangeslider lidi">
+           <div id="slider-range3"></div>
+          <input type="text" name="Acres" id="Acres" class="sliderValue" value="200+" class="form-control" required="" style="padding: 0;" />
+        </div>
+      </div></div>
+        <!-- <input class="form-control" ng-change="preSearch()" ng-model-options="{updateOn: 'blur'}" ng-model="filtersForm.priceMin" rn-currency-fraction="0" rn-currency="" placeholder="Acres" type="text"> -->
+     
+       <div class="col-md-6"><label for="price-min" id="price-min-label">Square Meters</label>
+      <div data-role="rangeslider" class="ui-rangeslider">
+         <div data-role="" class="ui-rangeslider lidi">
+            <div id="slider-range4"></div>
+            <input type="text" name="SquareMeters" id="SquareMeters" class="sliderValue" value="200+" class="form-control" required="" style="padding: 0;" />
+        </div>
+      </div></div>
+        <!-- <input class="form-control"  placeholder="Square Meters" ng-change="preSearch()" ng-model-options="{updateOn: 'blur'}" ng-model="filtersForm.priceMax" rn-currency-fraction="0" rn-currency="" type="text"> -->
+      </div>
+      
+      
+       
+       
+     
+       
+       
+       
+   
+  </div>
+
+
+
+
+
+
+
+</div>
+
+
+<div class="col-md-4"><label class="filters__title">Keywords</label>
+<div class="form__group filters__keywords">
+<input id="query" ng-change="preSearch()" ng-model="filtersForm.query" placeholder="Eg. sustainable, pool, etc..." type="text" class="ng-pristine ng-valid ng-empty ng-touched" style="">
+</div></div>
+
+
+
+<div class="filters__unit--full">
+<button class="button button--full filters__submit" ng-click="saveFilters()" type="button">
+Update
+</button>
+<div class="u-centered">
+<button class="filters__reset utility-links utility-links--reset" ng-click="resetFilters()" type="button"><i class="fa fa-repeat" aria-hidden="true"></i>&nbsp;
+Reset Filters
+</button>
+<button class="filters__close utility-links utility-links--close" ng-click="$hide()" type="button"><i class="fa fa-times-circle-o" aria-hidden="true"></i>&nbsp;
+Cancel
+</button>
+</div>
+</div>
+
+<span class="col-sm-12 advanceddiv bottom"><a href="#">ADVANCED SEARCH <i class="fa fa-chevron-right" aria-hidden="true"></i></a></span>
+
+
+
+
+
+
+</div>
+
+
+
+
+                    </li>
+
+
+                </ul>
+
+
+
+
+
+
+
+
+</div>
+  
+
 
 </section>
 
+
+
+
+
+<section style="margin: 0;" class="abouttitle">
+  <div style="padding: 0;" class="container-fluid">
+    <div class="col-sm-12"> <a href="index.html">Home &gt;</a> <a href="result.html">Costa Rica Homes For Sale</a>
+      <h2>Costa Rica Homes For Sale</h2>
+    </div>
+  </div>
+</section>
 
 <section class="resultsearch">
 
@@ -1243,6 +1415,16 @@ Sale</strong>
     </div>
   </div>
 </footer>
+ 
+<script src="skin/cb_02/js/jquery.min.js"></script>
+<script src="skin/cb_02/js/bootstrap.min.js"></script>
+
+<script src="skin/cb_02/js/main.js"></script> 
+<script src="skin/cb_02/js/mask.min.js"></script> 
+<script src="skin/cb_02/js/bootstrap-dropdownhover.min.js"></script>
+
+<!-- <script src="skin/cb_02/js/jquery-1.js"></script> -->
+<script src="skin/cb_02/js/jquery-ui.js"></script>
 <script>
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link
@@ -1279,17 +1461,72 @@ $(document).ready(function(){
   });
 })
 $(document).on('click',function(){
-	$('.collapse').collapse('hide');
+  $('.collapse').collapse('hide');
 })
 
 
 
 
-</script> 
-<script src="skin/cb_02/js/jquery.min.js"></script>
-<script src="skin/cb_02/js/bootstrap.min.js"></script>
-<script src="skin/cb_02/js/main.js"></script> 
-<script src="skin/cb_02/js/mask.min.js"></script> 
-<script src="skin/cb_02/js/bootstrap-dropdownhover.min.js"></script>
+</script>
+
+  <script>
+  $( function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+        for (var i = 0; i < ui.values.length; ++i) {
+                $("input.sliderValue[data-index=" + i + "]").val('$'+ui.values[i]);
+            }
+      }
+    });
+    /*$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );*/
+
+
+      $( "#slider-range2" ).slider({
+      range: "max",
+      min: 0,
+      max: 500,
+      value: 200,
+      slide: function( event, ui ) {
+        $( "#LivingPrice" ).val(ui.value+'+');
+      }
+    });
+
+      $( "#slider-range3" ).slider({
+      range: "max",
+      min: 0,
+      max: 500,
+      value: 200,
+      slide: function( event, ui ) {
+        $( "#Acres" ).val(ui.value+'+');
+      }
+    });
+
+      $( "#slider-range4" ).slider({
+      range: "max",
+      min: 0,
+      max: 500,
+      value: 200,
+      slide: function( event, ui ) {
+        $( "#SquareMeters" ).val(ui.value+'+');
+      }
+    });
+
+      var selector = 'span.list';
+
+      $(selector).on('click', function(){
+          $(selector).removeClass('active');
+          $(this).addClass('active');
+      });
+
+
+  } );
+  </script>
+
 </body>
 </html>
