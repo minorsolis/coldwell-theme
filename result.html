@@ -17,8 +17,6 @@
 <body id="myPage">
 
 
-
-
 <nav class="navbar navbar-material-blue navbar-fixed-top" role="navigation">
         <div class="container-fluid">
 
@@ -122,14 +120,25 @@
 
 
                            <div class="col-sm-2 form-group dropdown-menu">
-             <label> All Provinces</label>
-                <select class="form-control" id="sel1">
-                  <option>All Provinces</option>
-                  <option>All Provinces</option>
-                  <option>All Provinces</option>
-                  <option>All Provinces</option>
+             
+                <select class="form-control" style="height:auto;" size="10" id="sel1">
+                  <option value="0">All Provinces</option>
+                  <option value="1">All Provinces</option>
+                  <option value="2">All Provinces</option>
+                  <option value="3">All Provinces</option>
+				  <option value="3">All Provinces</option>
+				  <option value="3">All Provinces</option>
+				  <option value="3">All Provinces</option>
+				  <option value="3">All Provinces</option>
+				  <option value="3">All Provinces</option>
+				  <option value="3">All Provinces</option>
+				  <option value="3">All Provinces</option>
+				  <option value="3">All Provinces</option>
+				  <option value="3">All Provinces</option>
+				  <option value="3">All Provinces</option>
+				  <option value="3">All Provinces</option>
                 </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
+                
                             
                       
 
@@ -141,14 +150,24 @@
 
 
                            <div class="col-sm-2 form-group dropdown-menu">
-             <label> Type</label>
-                <select class="form-control" id="sel1">
-                  <option>Type</option>
-                  <option>Type</option>
-                  <option>Type</option>
-                  <option>Type</option>
+             
+                <select class="form-control" style="height:auto;" size="10" id="sel1">
+                  <option value="0">Type</option>
+                  <option value="1">Type</option>
+                  <option value="2">Type</option>
+                  <option value="3">Type</option>
+				  <option value="3">Type</option>
+				  <option value="3">Type</option>
+				  <option value="3">Type</option>
+				  <option value="3">Type</option>
+				  <option value="3">Type</option>
+				  <option value="3">Type</option>
+				  <option value="3">Type</option>
+				  <option value="3">Type</option>
+				  <option value="3">Type</option>
+				  <option value="3">Type</option>
                 </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
+                 
 
                     </li>
                     <li class="dropdown">
@@ -156,26 +175,23 @@
                         
  <div class="col-sm-2 form-group dropdown-menu">
              
+ <div data-role="rangeslider" class="ui-rangeslider">
+        <div id="slider-range-inner"></div>
+      <!-- <input style="padding: 0;" type="number" name="Min. Price" id="Min. Price" value="200" min="0" max="1000" class="form-control" required="">
+      <input style="padding: 0;" type="number" name="Min. Price" id="Min. Price" value="200" min="0" max="1000" class="form-control" required=""> -->
+	  <div class="col-sm-5 form-group">
+		<label> Min Price</label>
+      <input type="text" name="MinPrice" id="MinPrice" class="sliderValue" data-index="0" value="$75" class="form-control" required="" style="padding: 0;" />
+	  </div>
+	  <div class="col-sm-5 form-group">
+	  <label>  Max Price</label>
+      <input type="text" name="Maxprice" id="Maxprice" class="sliderValue" data-index="1" value="$300" class="form-control" required="" style="padding: 0;" />
+		</div>
+		
+      </div>
 
-
-             <div class="col-sm-5 form-group">
-             <label> Min Price</label>
               
-                
-                
-                <input type="number" name="Min. Price" id="Min. Price" value="200" min="0" max="1000" class="form-control" required>
-                
-              </div>
-              <div class="col-sm-5 form-group">
-            <label>  Max Price</label>
-             <input type="number" name="Max Price"  id="Max Price" value="100" min="0" max="1000" class="form-control" required>
-               
-              </div>
-               
-
-
-
-
+        
                 </div>
 
 
@@ -183,24 +199,9 @@
 
                     </li>
 
-                    <li><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">Keywords <b class="caret"></b></a>
-
-<div class="col-sm-2 form-group dropdown-menu">
-             
-
-
-             
-            <label>  Keywords</label>
-               <input class="form-control" id="Keyword" name="Keyword" placeholder="Keyword i.e. “Pool”" type="text" required>
-             
-               
-
-
-
-
-                </div>
-
-
+                    <li>
+					
+						<input class="form-control" id="Keyword" name="Keyword" placeholder="Keyword i.e. “Pool”" required="" type="text">
 
                     </li>
                     <li><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">Options <b class="caret"></b></a>
@@ -1483,6 +1484,25 @@ $(document).on('click',function(){
             }
       }
     });
+	
+	
+	
+	
+	$( "#slider-range-inner" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+        for (var i = 0; i < ui.values.length; ++i) {
+            $("input.sliderValue[data-index=" + i + "]").val('$'+ui.values[i]);
+        }
+      }
+    });
+	
+	
+	
     /*$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
       " - $" + $( "#slider-range" ).slider( "values", 1 ) );*/
 
@@ -1516,6 +1536,8 @@ $(document).on('click',function(){
         $( "#SquareMeters" ).val(ui.value+'+');
       }
     });
+	
+
 
       var selector = 'span.list';
 
@@ -1526,6 +1548,37 @@ $(document).on('click',function(){
 
 
   } );
+  
+  $(document).ready(function() {
+    $(".sliderValue").keydown(function (e) {
+	
+		if(this.id=="MinPrice" || this.id=="Maxprice"){
+			var inputval = $(this).val();
+			if (inputval.indexOf('$') > -1)
+			{
+			 
+			}else{
+				$(this).val("$"+$(this).val());
+			}
+		}
+	
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+             // Allow: Ctrl+A, Command+A
+            (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
+             // Allow: home, end, left, right, down, up
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+});
+  
+  
   </script>
 
 </body>
