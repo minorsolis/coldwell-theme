@@ -7,7 +7,7 @@
       
       #map {
         width: 100%;
-        height: 1198px;
+        min-height: 800px;
       }
       #markerlist {
         height: 1133px;
