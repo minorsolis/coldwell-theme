@@ -169,6 +169,7 @@ speedTest.init = function() {
 	'maxZoom':16,
 	'styles': [
     {
+      
       "featureType": "poi",
       "stylers": [
         { "visibility": "off" }
@@ -176,35 +177,13 @@ speedTest.init = function() {
     }
   ],
    mapTypeControlOptions: {
-            mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
-                    'styled_map']
-          }
+        mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain','styled_map']
+    }
 
   };
 
-  
-
-
-
+ 
   speedTest.map = new google.maps.Map($('map'), options);
-
-  /*speedTest.map.poi = function(state){
-
-    var styles = [
-      {
-        "featureType": "poi",
-        "stylers": [
-          { "visibility": "off" }
-        ]
-      }
-    ];
-
-    this.set("styles", (state)? {} : styles );
-
-  }*/
-  
-  /* var opt = { minZoom: 6, maxZoom: 9 };
- 	map.setOptions(opt);*/
   
   speedTest.pics = data.properties;
   
@@ -216,8 +195,8 @@ speedTest.init = function() {
 
   speedTest.infoWindow = new google.maps.InfoWindow();
   speedTest.infoWindow2 = new google.maps.InfoWindow();
- // speedTest.map.mapTypes.set('styled_map', styledMapType);
-//  speedTest.map.setMapTypeId('styled_map');
+	// speedTest.map.mapTypes.set('styled_map', styledMapType);
+	//  speedTest.map.setMapTypeId('styled_map');
   
    var styles = {
         default: null,
@@ -529,14 +508,6 @@ speedTest.init = function() {
 	});
 
   
-  
-  
- 
-
-  
-  
-  
-  
   speedTest.showMarkers();
 };
 
@@ -552,68 +523,103 @@ speedTest.showMarkers = function() {
     speedTest.markerClusterer.clearMarkers();
   }
 
-  var panel = $('markerlist');
-  panel.innerHTML = '';
+  /*var panel = $('markerlist');
+  panel.innerHTML = '';*/
   var numMarkers = $('nummarkers').value;
 
   for (var i = 0; i < numMarkers; i++) {
 	if (typeof speedTest.pics[i] === 'undefined') {
 		break;
 	}
-    var titleText = speedTest.pics[i].acco_name;
+    var titleText = speedTest.pics[i].property_name;
     if (titleText === '') {
       titleText = 'No title';
     }
 
-    var item = document.createElement('DIV');
-	item.id=speedTest.pics[i].accmo_id;
+   /* var item = document.createElement('DIV');
+	item.id=speedTest.pics[i].property_id;
 	item.className="innerMainDv";
 	 
-	var infoHtmlSideBar = '<div onclick="return makeactive('+speedTest.pics[i].accmo_id+')" style="float:left;" ><div class="imageBox" onmouseover="speedTest.markers['+i+'].setIcon(imageUrlHover)"; onmouseout="speedTest.markers['+i+'].setIcon(imageUrl)"><img src="'+speedTest.pics[i].photo_file_url+'" class="info-img"/></div><div class="information"><h3><label>REF </label>'+speedTest.pics[i].referencecode+' <label></h3><div class="priceDv">'+speedTest.pics[i].symbol+' '+speedTest.pics[i].minprice+' TO '+speedTest.pics[i].symbol+' '+speedTest.pics[i].maxprice+'</div><div class="refBed"><label>REF </label>'+speedTest.pics[i].referencecode+', <label>SLEEPS </label>'+speedTest.pics[i].total_people+'</div><div class="sortDesc">'+speedTest.pics[i].short_desc+'</div></div></div>';
+	var infoHtmlSideBar = '<div onclick="return makeactive('+speedTest.pics[i].property_id+')" style="float:left;" ><div class="imageBox" onmouseover="speedTest.markers['+i+'].setIcon(imageUrlHover)"; onmouseout="speedTest.markers['+i+'].setIcon(imageUrl)"><img src="'+speedTest.pics[i].photo_file_url+'" class="info-img"/></div><div class="information"><h3><label>REF </label>'+speedTest.pics[i].built_year+' <label></h3><div class="priceDv">'+speedTest.pics[i].symbol+' '+speedTest.pics[i].minprice+' TO '+speedTest.pics[i].symbol+' '+speedTest.pics[i].total_bath+'</div><div class="refBed"><label>REF </label>'+speedTest.pics[i].built_year+', <label>SLEEPS </label>'+speedTest.pics[i].total_bed+'</div><div class="sortDesc">'+speedTest.pics[i].total_photos+'</div></div></div>';
 	
-	/*var infoHtmlSideBar = '<div class="imageBox" onmouseover="speedTest.markers['+i+'].setIcon(imageUrlHover)"; onmouseout="speedTest.markers['+i+'].setIcon(imageUrl)"><img src="'+speedTest.pics[i].photo_file_url+'" class="info-img"/></div><div class="information"><h3>'+ titleText +'</h3><div class="priceDv">'+speedTest.pics[i].symbol+' '+speedTest.pics[i].minprice+' TO '+speedTest.pics[i].symbol+' '+speedTest.pics[i].maxprice+'</div><div class="refBed"><label>REF </label>'+speedTest.pics[i].referencecode+', <label>SLEEPS </label>'+speedTest.pics[i].total_people+'</div><div class="sortDesc">'+speedTest.pics[i].short_desc+'</div></div>';*/
+	 
 	
 
    // item.appendChild(title);
     panel.appendChild(item);
-	$(speedTest.pics[i].accmo_id).innerHTML = infoHtmlSideBar;
+	$(speedTest.pics[i].property_id).innerHTML = infoHtmlSideBar;*/
 	
-    var latLng = new google.maps.LatLng(speedTest.pics[i].latitude,
-        speedTest.pics[i].longitude);
+    var latLng = new google.maps.LatLng(speedTest.pics[i].latitude,speedTest.pics[i].longitude);
 
    // var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=' +'FFFFFF,008CFF,000000&ext=.png';
 	var imageUrl = liveUrl+'images/markerOrange.png';
 	var imageUrlHover = liveUrl+'images/markerBlack.png';
     var markerImage = new google.maps.MarkerImage(imageUrl,new google.maps.Size(24, 32));
-	var sort_des_b_s = speedTest.pics[i].short_desc;
-    var marker = new google.maps.Marker({
-      'position': latLng,
-      'icon': markerImage,
-	  'acco' : speedTest.pics[i].accmo_id,
-	  'img_src' : speedTest.pics[i].photo_file_url,
-	  'labelContentName': speedTest.pics[i].acco_name,
-      'link': decodeURIComponent(speedTest.pics[i].owner_url),
-	  'acco_min_price': speedTest.pics[i].minprice,
-	  'acco_max_price': speedTest.pics[i].maxprice,
-	  'symbol': speedTest.pics[i].symbol,
-	  'referencecode': speedTest.pics[i].referencecode,
-	  'total_people': speedTest.pics[i].total_people,
-	  'short_desc': sort_des_b_s.replace(/'/g, "\\'")
-    });
-		
-		
-    var fn = speedTest.markerClickFunction(speedTest.pics[i], latLng, speedTest.pics[i].accmo_id);
+	var total_photos = speedTest.pics[i].total_photos;
+  //   var marker = new google.maps.Marker({
+  //     'position': latLng,
+	
+  //     'icon': markerImage,
+	 //  'property_id' : speedTest.pics[i].property_id,
+	 //  'img_src' : speedTest.pics[i].photo_file_url,
+	 //  'labelContentName': speedTest.pics[i].property_name,
+  //     'link': decodeURIComponent(speedTest.pics[i].owner_url),
+	 //  'acco_min_price': speedTest.pics[i].minprice,
+	 //  'total_bath': speedTest.pics[i].total_bath,
+	 //  'property_location' : speedTest.pics[i].property_location,
+	 //  'property_type' : speedTest.pics[i].property_type,
+	 //  'symbol': speedTest.pics[i].symbol,
+	 //  'built_year': speedTest.pics[i].built_year,
+	 //  'total_bed': speedTest.pics[i].total_bed,
+	 //  //'label': speedTest.pics[i].minprice,
+	 //  'label': {
+		// text: speedTest.pics[i].symbol+speedTest.pics[i].minprice,
+		// color: "#eb3a44",
+		// fontSize: "16px",
+		// fontWeight: "bold"
+	 //  },
+	   
+	 //  'total_photos': total_photos
+  //   });
+		//alert('asd');
+    var marker = new RichMarker({
+
+          map: map,
+          shadow: 'none',
+          position:  new google.maps.LatLng(speedTest.pics[i].latitude,speedTest.pics[i].longitude),
+          content: '<div><div class="label_content">'+speedTest.pics[i].symbol+speedTest.pics[i].minprice+'</div></div>' ,
+          'property_id' : speedTest.pics[i].property_id,
+          'img_src' : speedTest.pics[i].photo_file_url,
+          'labelContentName': speedTest.pics[i].property_name,
+            'link': decodeURIComponent(speedTest.pics[i].owner_url),
+          'acco_min_price': speedTest.pics[i].minprice,
+          'total_bath': speedTest.pics[i].total_bath,
+          'property_location' : speedTest.pics[i].property_location,
+          'property_type' : speedTest.pics[i].property_type,
+          'symbol': speedTest.pics[i].symbol,
+          'built_year': speedTest.pics[i].built_year,
+          'total_bed': speedTest.pics[i].total_bed,
+          'label': speedTest.pics[i].minprice,
+          'label': {
+			  text: speedTest.pics[i].symbol+speedTest.pics[i].minprice,
+			  color: "#eb3a44",
+			  fontSize: "16px",
+			  fontWeight: "bold"
+			},
+     
+		   'total_photos': total_photos
+        });
+	 
+    var fn = speedTest.markerClickFunction(speedTest.pics[i], latLng, speedTest.pics[i].property_id);
     google.maps.event.addListener(marker, 'click', fn);
-    google.maps.event.addDomListener(item, 'click', fn);
+   //google.maps.event.addDomListener(item, 'click', fn);
 	
 	google.maps.event.addListener(speedTest.infoWindow,'domready',function(){ 
-	  jQuery('.info-popup')//the root of the content
-	   .closest('.gm-style-iw')
-		.parent().addClass('custom-iw');
+	  jQuery('.info-popup').closest('.gm-style-iw').parent().addClass('custom-iw');
 	});
     speedTest.markers.push(marker);
 	
-	 google.maps.event.addListener(marker, "mouseover", function() {
+	 /*google.maps.event.addListener(marker, "mouseover", function() {
            this.setIcon(imageUrlHover);
 		   
 		    var divs = getElementsByClassName("innerMainDv") ;
@@ -627,8 +633,8 @@ speedTest.showMarkers = function() {
 				if( divs[ij].id==this.acco)
 				 divs3[ij].className='innerMainDv active';
 			}
-      });
-      google.maps.event.addListener(marker, "mouseout", function() {
+      });*/
+      /*google.maps.event.addListener(marker, "mouseout", function() {
            //you have to retreive the original icon cause with the mouse hover you change the marker icon attribute
            this.setIcon(imageUrl);
 		   var divs = getElementsByClassName("innerMainDv") ;
@@ -636,13 +642,14 @@ speedTest.showMarkers = function() {
 				
 				 divs[ik].className='innerMainDv';
 			}	
-      });
+      });*/
 	
 	
 	
 	
 	
   }
+  
   window.setTimeout(speedTest.time, 0);
   //return false;
  			var clusterOptions = { zoomOnClick: false }
@@ -652,40 +659,39 @@ speedTest.showMarkers = function() {
 																				   
                  //Get markers
                  var markers = cluster.getMarkers();
-                 if (markers.length < 10) {
+                 /* if (markers.length < 10) {
                      var content = '';
-                     // Convert lat/long from cluster object to a usable MVCObject
+                      
+					 
                      var info = new google.maps.MVCObject;
                      info.set('position', cluster.center_);
 						
-                     //----
+					
                      var titles = '<div id="infowindowsdiv1" class="infowindowsdiv1"><div class="infowindowsdivtitle">Holiday accommodations:</div><div class="infowindowsdivul"><ul>';
-                     //Get all the titles
-                     for (var i = 0; i < markers.length; i++) {   
-					 //alert(markers[i].acco_max_price);                     
-                         titles += '<li><a class="infowindowsmaplink" href="' + markers[i].link + '" onmouseover="javascript:ShowMiniDetail(' + cluster.center_ + ', &#39;' + markers[i].labelContentName.replace("'", "&apostrofe;") + '&#39; , ' + markers[i].acco + ', &#39;' + markers[i].img_src + '&#39; , &#39;' + markers[i].referencecode + '&#39; , &#39;' + markers[i].acco_min_price + '&#39;, &#39;' + markers[i].acco_max_price + '&#39; , &#39;' + markers[i].link.replace("'", "&apostrofe;") + '&#39; , &#39;' + markers[i].symbol + '&#39;, &#39;' + markers[i].total_people + '&#39;, &#39;' + markers[i].short_desc + '&#39;, 1);">' + markers[i].referencecode + '</a></li>';
+                     for (var i = 0; i < markers.length; i++) {         
+                         titles += '<li><a class="infowindowsmaplink" href="' + markers[i].link + '" onmouseover="javascript:ShowMiniDetail(' + cluster.center_ + ', &#39;' + markers[i].labelContentName.replace("'", "&apostrofe;") + '&#39; , ' + markers[i].property_id + ', &#39;' + markers[i].img_src + '&#39; , &#39;' + markers[i].built_year + '&#39; , &#39;' + markers[i].acco_min_price + '&#39;, &#39;' + markers[i].total_bath + '&#39; , &#39;' + markers[i].link.replace("'", "&apostrofe;") + '&#39; , &#39;' + markers[i].symbol + '&#39;, &#39;' + markers[i].total_bed + '&#39;, &#39;' + markers[i].total_photos + '&#39;, &#39;' + markers[i].property_type + '&#39;, &#39;' + markers[i].property_location + '&#39;, 1);">' + markers[i].property_id + '</a></li>';	 
                      }
                      titles += '</ul></div></div>';
-                     //----
+					 
                      speedTest.infoWindow.close();
                      speedTest.infoWindow2.close();
-                     speedTest.infoWindow.setContent(titles); //set infowindow content to titles
+                     speedTest.infoWindow.setContent(titles); 
                      speedTest.infoWindow.open(speedTest.map, info);
-                     /*google.maps.event.addListener(speedTest.infoWindow, 'domready', function () {
-                         setInfoWindowStyle();
-                     }); */                    
+                                        
                  }
-                 else {
+                 else {*/
+				 
                      speedTest.map.setZoom(speedTest.map.getZoom() + 3);
                      speedTest.map.setCenter(cluster.center_);
-                 }
+					 
+                 /* } */
                  
              });    
 	
   
 };
 
-function ShowMiniDetail(Argcoord,ArgName, ArgId, ArgImageSrc, ArgAccoType, ArgMinPrice,ArgMaxPrice, ArgLink,symbol,total_people,short_desc, ArgIsCluster) {                          
+function ShowMiniDetail(Argcoord,ArgName, ArgId, ArgImageSrc, built_year, ArgMinPrice,Argtotal_bath, ArgLink,symbol,total_bed,total_photos,property_type, property_location , ArgIsCluster) {                          
              var info2 = new google.maps.MVCObject;
              speedTest.infoWindow2.close();
              if (ArgIsCluster == 0) {
@@ -708,8 +714,8 @@ function ShowMiniDetail(Argcoord,ArgName, ArgId, ArgImageSrc, ArgAccoType, ArgMi
              }  
 			 
             /* var titles = "<div id='infowindowsdiv2' class='infowindowsdiv'><a href='" + ArgLink.replace("&apostrofe;","&#39;") + "'><img class='infowindow_detail_img' src='" + ArgImageSrc + "'/></a>";
-             titles += "<div class='infowindow_detail_name'>" + ArgAccoType + " " + ArgName.replace("&apostrofe;", "&#39;") + "</div>";
-             titles += "<div class='infowindow_detail_price'>"+symbol+" "+ArgMinPrice+" TO "+symbol+" "+ArgMaxPrice+"</div>";
+             titles += "<div class='infowindow_detail_name'>" + built_year + " " + ArgName.replace("&apostrofe;", "&#39;") + "</div>";
+             titles += "<div class='infowindow_detail_price'>"+symbol+" "+ArgMinPrice+" TO "+symbol+" "+Argtotal_bath+"</div>";
              titles += "<div class='infowindow_detail_button_container'>";
              titles += "<div class='button_autosize_container'>";
              titles += "<div class='button_autosize'>";
@@ -719,8 +725,12 @@ function ShowMiniDetail(Argcoord,ArgName, ArgId, ArgImageSrc, ArgAccoType, ArgMi
              titles += "</div>";*/
 			 
 			 
-			 var infoHtml = '<div class="info-popup" id="'+ArgId+'_popup"><h3><label>REF </label>'+ArgAccoType+' <label></h3>'+
-	  '<div class="info-body-popup"><a href="'+ArgLink+'" target="_blank"><img src="'+ArgImageSrc+'" class="info-img"/></a></div><div class="priceDv">'+symbol+' '+ArgMinPrice+' TO '+symbol+' '+ArgMaxPrice+'</div><div class="refBedLabel"><label>REF </label>'+ArgAccoType+', <label>SLEEPS </label>'+total_people+'</div><div class="sortDesc">'+short_desc+'</div><span><a href="'+ArgLink+'" target="_blank">More<strong>+</strong></a></span></div>';
+			 /*var infoHtml = '<div class="info-popup" id="'+ArgId+'_popup"><h3><label>REF </label>'+built_year+' <label></h3>'+
+	  '<div class="info-body-popup"><a href="'+ArgLink+'" target="_blank"><img src="'+ArgImageSrc+'" class="info-img"/></a></div><div class="priceDv">'+symbol+' '+ArgMinPrice+' TO '+symbol+' '+Argtotal_bath+'</div><div class="refBedLabel"><label>REF </label>'+built_year+', <label>SLEEPS </label>'+total_bed+'</div><div class="sortDesc">'+total_photos+'</div><span><a href="'+ArgLink+'" target="_blank">More<strong>+</strong></a></span></div>';*/
+			 
+			 
+			 var infoHtml = '<div class="col-sm-2 info-popup listingdiv" style="width: 100%;" id="'+ArgId+'_popup"><div class="imgdiv"><a href="'+ArgLink+'" target="_blank"><img src="'+ArgImageSrc+'" alt="" width="261" height="196"></a><span class="sale">'+property_type+'</span></div><div class="col-sm-12 blue"><div class="col-sm-6 price"> <sup>'+symbol+'</sup>&nbsp;'+ArgMinPrice+'</div><div class="col-sm-6 rightcount"> <span>'+total_bed+' bed</span>   <span>'+Argtotal_bath+' bath</span></div></div><div class="col-sm-12 location"><span><i class="fa fa-map-marker" aria-hidden="true"></i>'+property_location+'</span><span><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Condominium</span></div><div class="col-sm-12 bottom"><div class="col-sm-5">BUILT :<b> '+built_year+'</b></div><div class="col-sm-2"><i class="fa fa-camera" aria-hidden="true"></i><b> 12</b></div><div class="col-sm-5">ID: <b>#'+ArgId+'</b></div></div></div>';
+			 
 			 
              speedTest.infoWindow2.setContent(infoHtml); //set infowindow content to titles
 			 
@@ -729,7 +739,7 @@ function ShowMiniDetail(Argcoord,ArgName, ArgId, ArgImageSrc, ArgAccoType, ArgMi
 	   .closest('.gm-style-iw')
 		.parent().addClass('custom-iw');
 		jQuery('html,body').animate({
-        scrollTop: jQuery("#"+ArgId+'_popup').offset().top-50});
+        scrollTop: jQuery("#"+ArgId+'_popup').offset().top-100});
              //setInfoWindowStyle();
          }
 function setInfoWindowStyle() {
@@ -784,17 +794,23 @@ speedTest.markerClickFunction = function(pic, latlng, clickedId) {
 		 divs3[i].className='innerMainDv active';
 	}
 	
-	
-    var title = pic.acco_name;
+	 
+    var title = pic.property_name;
    // var url = pic.photo_url;
     var url = pic.owner_url
     var fileurl = pic.photo_file_url;
 	var ownerurl = pic.owner_url;
-	var ownername = pic.acco_name;
+	var ownername = pic.property_name;
 
-    var infoHtml = '<div class="info-popup" id="'+clickedId+'_popup"><h3><label>REF </label>'+pic.referencecode+' <label></h3>'+
-	  '<div class="info-body-popup"><a href="'+url+'" target="_blank"><img src="'+fileurl+'" class="info-img"/></a></div><div class="priceDv">'+pic.symbol+' '+pic.minprice+' TO '+pic.symbol+' '+pic.maxprice+'</div><div class="refBedLabel"><label>REF </label>'+pic.referencecode+', <label>SLEEPS </label>'+pic.total_people+'</div><div class="sortDesc">'+pic.short_desc+'</div><span><a href="'+url+'" target="_blank">More<strong>+</strong></a></span></div>';
-	 
+    /*var infoHtml = '<div class="info-popup" id="'+clickedId+'_popup"><h3><label>REF </label>'+pic.built_year+' <label></h3>'+
+	  '<div class="info-body-popup"><a href="'+url+'" target="_blank"><img src="'+fileurl+'" class="info-img"/></a></div><div class="priceDv">'+pic.symbol+' '+pic.minprice+' TO '+pic.symbol+' '+pic.total_bath+'</div><div class="refBedLabel"><label>REF </label>'+pic.built_year+', <label>SLEEPS </label>'+pic.total_bed+'</div><div class="sortDesc">'+pic.total_photos+'</div><span><a href="'+url+'" target="_blank">More<strong>+</strong></a></span></div>';*/
+	
+	var infoHtml = '<div class="col-sm-2 info-popup listingdiv" style="width: 100%;" id="'+pic.property_id+'_popup"><div class="imgdiv"><a href="'+url+'" target="_blank"><img src="'+fileurl+'" alt="" width="261" height="196"></a><span class="sale">'+pic.property_type+'</span></div><div class="col-sm-12 blue"><div class="col-sm-6 price"> <sup>'+pic.symbol+'</sup>&nbsp;'+pic.minprice+'</div><div class="col-sm-6 rightcount"> <span>'+pic.total_bed+' bed</span>   <span>'+pic.total_bath+' bath</span></div></div><div class="col-sm-12 location"><span><i class="fa fa-map-marker" aria-hidden="true"></i>'+pic.property_location+'</span><span><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Condominium</span></div><div class="col-sm-12 bottom"><div class="col-sm-5">BUILT :<b> '+pic.built_year+'</b></div><div class="col-sm-2"><i class="fa fa-camera" aria-hidden="true"></i><b> 12</b></div><div class="col-sm-5">ID: <b>#'+pic.property_id+'</b></div></div></div>';
+	
+	
+	/*var infoHtml = '<div class="col-sm-2 listingdiv" style="width: 100%;"><div class="imgdiv"><img src="skin/cb_02/images/listingimg.jpg" alt="" width="261" height="196"><span class="sale">Sale</span></div><div class="col-sm-12 blue"><div class="col-sm-6 price"> <sup>$</sup>&nbsp;1,095,000</div><div class="col-sm-6 rightcount"> <span>5 bed</span>   <span> 3 bath</span></div></div><div class="col-sm-12 location"><span><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Guanacaste / Playa Flamingo</span><span><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Condominium</span></div><div class="col-sm-12 bottom"><div class="col-sm-5">BUILT :<b> 2013</b></div><div class="col-sm-2"><i class="fa fa-camera" aria-hidden="true"></i><b> 12</b></div><div class="col-sm-5">ID: <b>#105823</b></div></div></div>';*/
+	
+	
     speedTest.infoWindow.setContent(infoHtml);
     speedTest.infoWindow.setPosition(latlng);
     speedTest.infoWindow.open(speedTest.map);
@@ -810,7 +826,7 @@ speedTest.markerClickFunction = function(pic, latlng, clickedId) {
 	 
 	
 	jQuery('html,body').animate({
-        scrollTop: jQuery("#"+clickedId+'_popup').offset().top-50});
+        scrollTop: jQuery("#"+pic.property_id+'_popup').offset().top-100});
 	
   };
 };
