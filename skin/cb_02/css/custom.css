@@ -41,6 +41,27 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 	margin-bottom: 10px;
 	text-transform: uppercase;
 }
+
+.gm-style-iw .listingdiv{margin:0 !important;}
+/*.gm-style-iw .listingdiv .bottom{    padding: 10px 0 0 0;}*/
+
+.gm-style-iw .location{padding:0;}
+
+.custom-iw>div:first-child>div:last-child {
+    width: 275px !important;
+}
+.gm-style-iw .listingdiv .bottom{padding-bottom:0;}
+
+#map-container .gm-style .gm-style-iw {
+    top:0 !important;
+    left: 0 !important;
+    border-radius: 2px;
+}
+
+
+
+
+
 .abouttitle.resultpage ul li .dropdown-menu .ui-rangeslider .col-sm-5.form-group input{    width: 100%;
     text-align: center;}
 .abouttitle.resultpage ul li .dropdown-menu .ui-rangeslider .col-sm-5.form-group{margin-top:12px;}
