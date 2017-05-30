@@ -48,9 +48,9 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     font-weight: 800;
     background: #fff;
    }
-	
-	.named_prices.newclassprice li span.el-sp-price{ padding: 5px 9px;   display: block; }
-	
+	.abouttitle.resultpage ul li .dropdown-menu select.form-control{padding:0;}
+	.named_prices.newclassprice li span.el-sp-price{ padding: 5px 9px;     text-align: center;  display: block; }
+	.abouttitle.resultpage ul li .dropdown-menu select option:hover{    background: rgba(221, 221, 221, 0.4); color:#333;}
 
 
 .gm-style-iw .listingdiv{margin:0 !important;}
@@ -348,7 +348,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
     color: #122d56;}
 	
 
-.abouttitle.resultpage ul li .dropdown-menu select option{    padding: 9px 10px;
+.abouttitle.resultpage ul li .dropdown-menu select option{    padding:7px 10px;
     border-bottom: rgba(204, 204, 204, 0.29) solid 1px;}
 
 
