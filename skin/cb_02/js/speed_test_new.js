@@ -681,7 +681,7 @@ speedTest.showMarkers = function() {
                  }
                  else {*/
 				 
-                     speedTest.map.setZoom(speedTest.map.getZoom() + 3);
+                     speedTest.map.setZoom(speedTest.map.getZoom() + 2);
                      speedTest.map.setCenter(cluster.center_);
 					 
                  /* } */
