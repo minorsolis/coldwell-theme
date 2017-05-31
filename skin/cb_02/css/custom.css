@@ -48,7 +48,115 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     font-weight: 800;
     background: #fff;
    }
-	.abouttitle.resultpage ul li .dropdown-menu select.form-control{padding:0;}
+   
+   .rightfeature{    border: 0 !important;
+    padding-right: 0 !important;
+   }
+   
+   .abouttitle.resultpage ul li:last-child .col-md-4.bedrroom .col-md-4{    width: 100% !important;
+    border: 0;
+    margin: 0;    min-height: 0;
+    padding: 10px 0 0 0;}
+	.abouttitle.resultpage ul li:last-child .col-md-4.bedrroom .col-md-4 label.filters__title{margin:0;}
+	
+	
+   
+   
+	
+	.toppart .leftpartdiv{padding:0;}
+	.toppart .leftpartdiv .col-md-4{width:50% !important;}
+	
+	
+	
+
+  .rightfeature .col-md-6 ul{width:100%; float:left;}
+   .rightfeature .col-md-6 ul li{float:left; width:100%;       line-height: 28px;  font-size: 15px;}
+   .rightfeature .col-md-6 ul li .checkbox-circle{       position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0;}
+	
+	.rightfeature .col-md-6 ul li .checkbox-circle input{    -webkit-appearance: checkbox;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+opacity: 0;
+    position: absolute;
+   cursor:pointer;
+    left: 0;
+    width: 100%;
+    top: 0;
+    padding: 0;
+      height: 100%;
+    margin: 0;}
+	 
+	 
+	 
+	 
+    .rightfeature .col-md-6 ul li .checkbox-circle label{       /* display: inline-block; */
+    padding-left: 5px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer; text-transform:capitalize !important;
+    /* min-height: 20px; */
+    width: 100%;}
+	
+	.rightfeature .col-md-6 ul li .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px; border-radius: 50%;
+    height: 17px;
+    left: 0;    top: 5px;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+   
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.rightfeature .col-md-6 ul li .checkbox-info input[type="checkbox"]:checked + label::before {
+      background-color: #7aa1d5;
+    border-color: #7aa1d5;
+}
+
+.rightfeature .col-md-6 ul li .checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 0;
+    margin-left: -20px;
+    padding-left: 3px;
+    padding-top: 1px;
+    font-size: 11px;
+    color: #555555;
+}
+.rightfeature .col-md-6 ul li .checkbox-info input[type="checkbox"]:checked + label::after {
+    color: #fff;
+}
+
+
+.rightfeature .col-md-6 ul li .checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+}
+
+	
+	
+	
+	
+   
+   
+	.form-control.selectdvi{padding:0 !important;}
+	
+	
+	
 	.named_prices.newclassprice li span.el-sp-price{ padding: 5px 9px;     text-align: center;  display: block; }
 	.abouttitle.resultpage ul li .dropdown-menu select option:hover{    background: rgba(221, 221, 221, 0.4); color:#333;}
 
@@ -76,9 +184,12 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 .abouttitle.resultpage ul li .dropdown-menu .ui-rangeslider .col-sm-5.form-group input{    width: 100%;
     text-align: center;}
 .abouttitle.resultpage ul li .dropdown-menu .ui-rangeslider .col-sm-5.form-group{margin-top:12px;}
-.abouttitle.resultpage ul li:last-child .col-md-4:nth-child(1), .abouttitle.resultpage ul li:last-child .col-md-4:nth-child(2), .abouttitle.resultpage ul li:last-child .col-md-4:nth-child(3){         min-height: 100px;
+.abouttitle.resultpage ul li:last-child .col-md-4:nth-child(1), .abouttitle.resultpage ul li:last-child .col-md-4:nth-child(2){         min-height: 100px;
     /* padding: 5px; */
     padding-bottom: 0;}
+	
+	
+	
 
 .commundetails .rightcount{padding:0; float:right;     text-align: right;}
 .sambrasdiv{    background: url(../images/slide02.jpg) 0 0 no-repeat;
@@ -1414,8 +1525,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
     line-height: 37px;}	
 .abouttitle.resultpage .advancedpart .col-md-4.cost .col-md-12 div:last-child{float:right; }
 
-
+.abouttitle.resultpage ul li:last-child .ui-content.divngin .ui-rangeslider{margin:0;}
+.abouttitle.resultpage ul li .leftpartdiv .col-md-4:nth-child(3) label, .abouttitle.resultpage ul li .leftpartdiv .col-md-4:nth-child(4) label{margin:0;}
+.abouttitle.resultpage ul li:last-child .ui-content.divngin{    margin-top: 3px;
+    float: left;
+    width: 100%;}
 	
+	.abouttitle.resultpage ul li .leftpartdiv .col-md-4:last-child{min-height:0;}
+
+	/*.abouttitle.resultpage .advancedpart .col-md-12.imagupload{    padding: 0;
+    min-height: 150px;
+    overflow: auto;
+    max-height: 150px;}*/
 
 
 .abouttitle.resultpage .advancedpart .search.home ul li.active a{color:#fff !important;}
@@ -1758,10 +1879,16 @@ header.bs-docs-nav {
     .abouttitle.resultpage ul li:last-child:before{    left: 48%;}
 .abouttitle.resultpage ul li:last-child .col-md-4{    width: 33.33333333%;
     border-right: rgba(255, 255, 255, 0.38) solid 1px;
-                min-height: 200px;
+                   min-height: 168px;
       padding: 7px 12px;
     padding-bottom: 12px;
     border-bottom: rgba(255, 255, 255, 0.38) solid 1px;}
+	
+	
+	.abouttitle.resultpage .advancedpart .col-md-12.imagupload div{    margin: 0 0 3px 0;}
+	.abouttitle.resultpage .advancedpart .col-md-12.imagupload div.col-sm-3 i.fa-chevron-down{bottom: 10px;     right: 10px;}
+	.abouttitle.resultpage .advancedpart .col-md-12.imagupload div.col-sm-3{    border-right: #ccc solid 1px;}
+	.abouttitle.resultpage .advancedpart .col-md-12.imagupload div.col-sm-8 input{border:0;}
 	
 .abouttitle.resultpage ul li:last-child .col-md-4 .livig .col-md-6{     width: 48%;   padding: 0;}	
 .abouttitle.resultpage ul li:last-child .col-md-4 .livig .col-md-6:last-child{padding:0; float:right;}
@@ -1771,7 +1898,7 @@ header.bs-docs-nav {
 .abouttitle.resultpage ul li:last-child .col-md-4 .livig .col-md-6 .ui-rangeslider .ui-slider{margin-bottom:10px;}
 	
 
-.abouttitle.resultpage ul li:last-child .col-md-4:nth-child(3n+3){border-right:0;}
+
 .abouttitle.resultpage ul li:last-child .col-md-4 .filters__summary-count{    font-size: 70px;
     font-weight: 700;
     line-height: 50px;
