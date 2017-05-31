@@ -76,21 +76,21 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     width: 100%;
     margin: 0;}
 	
-	.rightfeature .col-md-6 ul li .checkbox-circle input{    -webkit-appearance: checkbox;
+	.rightfeature .col-md-6 ul li .checkbox-circle input{     -webkit-appearance: checkbox;
     -moz-appearance: none;
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
-
-opacity: 0;
+    opacity: 0;
     position: absolute;
-   cursor:pointer;
-    left: 0;
+    cursor: pointer;
+    /* left: 0; */
     width: 100%;
-    top: 0;
-    padding: 0;
-      height: 100%;
-    margin: 0;}
+    /* top: 0; */
+    /* padding: 0; */
+    /* height: 100%; */
+    /* margin: 0; */
+    z-index: 999999;}
 	 
 	 
 	 
