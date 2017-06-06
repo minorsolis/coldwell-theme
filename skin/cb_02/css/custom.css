@@ -49,6 +49,11 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     background: #fff;
    }
    
+   .el-disable{display: none;} 
+   
+   
+   
+   
    .rightfeature{    border: 0 !important;
     padding-right: 0 !important;
    }
@@ -1176,8 +1181,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
 
 .resultpage.commresult{background: url(../images/community_results.jpg) center top no-repeat;
     background-size: cover;
-    position: relative;
+    position: relative; margin:0;
     padding: 53px 0 21px 0;}
+	
+	.topdescription{    padding: 29px 2%;
+    float: left;
+    width: 100%;}
+	
+	.topdescription .col-sm-9 h1, .topdescription .col-sm-9 h2{    margin-bottom: 12px;
+    font-size: 25px;
+    color: #2d507c;}
+	.topdescription .col-sm-9{font-size:16px;}
+	
+	.topdescription .col-sm-3{    padding-left: 3%;
+    border-left: #ccc solid 1px;}
+	.topdescription .col-sm-3 h4{    font-size: 19px;
+    font-weight: 700;
+    color: #122e57;
+    margin-bottom: 14px;
+    border-bottom: #ccc solid 1px;
+    padding-bottom: 15px;}
+	.topdescription .col-sm-3 ul{    padding-left: 15px;
+    line-height: 27px;
+    font-size: 16px;}
+	.topdescription .col-sm-3 ul li a{text-decoration:none;}
+	
+	
 
 
 
@@ -1238,7 +1267,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
 	background: url(../images/community_listing.jpg) center top no-repeat;
 	background-size: cover;
 	position: relative;
-	padding: 53px 0 21px 0;
+	padding: 53px 0 21px 0; margin:0;
 }
 
 .listingdiv.agent .blue {
