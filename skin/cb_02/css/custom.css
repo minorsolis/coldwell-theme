@@ -1267,8 +1267,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
 	background: url(../images/community_listing.jpg) center top no-repeat;
 	background-size: cover;
 	position: relative;
-	padding: 53px 0 21px 0; margin:0;
+	padding: 0; margin:0;
 }
+
+
+.resultpage.commnit .col-sm-12.up .search.agentlisting{    padding: 61px 0 !important;}
 
 .listingdiv.agent .blue {
 	font-weight: 700;
