@@ -1269,6 +1269,40 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
 	position: relative;
 	padding: 0; margin:0;
 }
+.listingdiv.commity .blue .rightpart{float:right; transition:all 0.3s ease-out 0s;}
+.listingdiv.commity .blue .rightpart span{      opacity: 0;
+    position: absolute;
+    background: #fff;
+    transition: all 0.3s ease-out 0s;
+    border: #2d507c solid 1px;
+    color: #333;
+    padding: 7px 15px;
+    bottom: -48px;
+    text-transform: capitalize;
+    font-size: 14px;
+    /* letter-spacing: 1px; */
+    right: -35px;
+    border-radius: 35px;
+    z-index: 99999;}
+	
+	.listingdiv.commity .blue .rightpart span:after{     width: 0;
+    height: 0;
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 7px 7px 0 7px;
+    border-color: #fff transparent transparent transparent;
+    /* margin: 0 auto; */
+    bottom: -7px;
+    left: 47%;}
+	
+	
+	
+.listingdiv.commity .blue .rightpart:hover span{    opacity: 1;
+    bottom: 42px;}
+
+
+
 
 
 .resultpage.commnit .col-sm-12.up .search.agentlisting{    padding: 61px 0 !important;}
