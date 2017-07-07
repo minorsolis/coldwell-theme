@@ -2968,6 +2968,7 @@ span.col-sm-12.advanceddiv{    margin-bottom: 0;
 }
 }
  @media (min-width: 768px) and (max-width: 1199px) {
+	
 	 
 	 .pull-right.rightfilter li{padding:0;}
 	 .abouttitle{    padding: 22px 6px;}
@@ -3357,7 +3358,17 @@ span.col-sm-12.advanceddiv{    margin-bottom: 0;
 	line-height: 22px;
 }
 }
+ @media (min-width: 960px) and (max-width: 1300px) {
+	.findcosta .col-md-4 .col-md-12 .col-md-6 + .col-md-6{margin-top: 59px;} 
+	 .findcosta .col-md-4 .col-md-12{ margin-top: 182px;}
+	 
+ }
+
+
+
  @media (min-width: 768px) and (max-width: 959px) {
+	
+	 .findcosta .col-md-4{  background-position: center 89%;}
 	 
 .listing.result .blue{font-size:13px;}
 .listing.result .blue .price{font-size:14px; padding-right:0;}	 
@@ -3398,6 +3409,7 @@ span.col-sm-12.advanceddiv{    margin-bottom: 0;
 }
 }
  @media (min-width: 481px) and (max-width: 767px) {
+	 .findcosta .col-md-4{background-position: center bottom;}
 	 
 	 .abouttitle.resultpage .advancedpart .col-md-4.ketword button.filters__submit{    color: #fff;}
 	 
