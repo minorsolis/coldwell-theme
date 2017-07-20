@@ -42,6 +42,43 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 	text-transform: uppercase;
 }
 
+.testmoniall{background:url(../images/slide03.jpg) center center no-repeat; background-size:cover;    float: left;
+    width: 100%;}
+.testmoniall .col-md-12{    background: rgba(255, 255, 255, 0.8);
+      padding: 80px 60px;}
+	.testmoniall .col-md-12 .carousel.slide{margin:0;}
+.testmoniall .col-md-12 .carousel.slide .col-sm-4{    text-align: left;
+    color: #2d507c;
+    border-bottom: #ffd21d solid 3px;
+    padding-bottom: 10px;
+    font-weight: 900;
+    font-size: 20px;
+    /* display: initial; */
+    letter-spacing: 1px;}
+.testmoniall a.carousel-control{    position: absolute;
+    color: #2d507c !important;
+    right: 0 !important;
+    top: -64px !important;
+    left: auto !important;
+    margin: 0 !important;
+    padding: 0;
+    height: auto;
+    opacity: 1;
+    font-size: 40px !important;
+    bottom: 100%;
+    width: auto;}
+.testmoniall .col-sm-8{text-align:left;}	
+	.testmoniall .col-sm-8 small{    text-align: left;
+    border-bottom: #2d507c solid 1px;
+    float: right;
+    color: #2d507c;
+    padding: 10px 44px;
+    font-weight: 800; }
+	.testmoniall .col-sm-8 p{    padding: 0 8%;}
+	
+.testmoniall a.carousel-control.left{right:40px !important;}	
+	
+	
 .named_prices.newclassprice li span.el-sp-price.is-active, .named_prices.newclassprice li span.el-sp-price:hover{    color: #7da6de;
     cursor: pointer;
   
@@ -153,6 +190,70 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 	
+
+
+
+
+
+
+
+#quote-carousel {
+    padding: 0 10px 30px 10px;
+    margin-top: 60px;
+}
+#quote-carousel .carousel-control {
+    background: none;
+    color: #CACACA;
+    font-size: 2.3em;
+    text-shadow: none;
+    margin-top: 30px;
+}
+#quote-carousel .carousel-indicators {
+    position: relative;
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-top: 20px;
+    margin-right: -19px;
+}
+#quote-carousel .carousel-indicators li {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    opacity: 0.4;
+    overflow: hidden;
+    transition: all .4s ease-in;
+    vertical-align: middle;
+}
+#quote-carousel .carousel-indicators .active {
+    width: 128px;
+    height: 128px;
+    opacity: 1;
+    transition: all .2s;
+}
+.item blockquote {
+    border-left: none;
+    margin: 0;
+}
+.item blockquote p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
 	
 	
 	
