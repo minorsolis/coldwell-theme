@@ -882,10 +882,38 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
     font-size: 16px;}
 
 .agentb {
-	margin: 50px 0 0 0;
+	margin: 50px 0;
 	clear: both; width:100%;
 	display: inline-block;
 }
+
+.listing.account .testmoniall .col-md-12{padding: 25px 29px;}
+.listing.account .testmoniall .row .col-sm-12:first-child{    text-align: left;
+    color: #2d507c;
+    border-bottom: #ffd21d solid 3px;
+    padding-bottom: 10px;
+    font-weight: 900;
+    font-size: 20px;
+    /* display: initial; */
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    width: auto;
+    float: left;}
+	.listing.account .testmoniall  #quote-carousel{padding-bottom:0;}
+	.listing.account .testmoniall .row .col-sm-12 small{    text-align: left;
+    border-bottom: #ffd21d solid 1px;
+    float: right;
+    color: #2d507c; margin-top:40px;
+    padding: 10px 20px;
+    font-weight: 800;}
+	
+	.testmoniall .col-sm-8, .listing.account .testmoniall .row .col-sm-12:last-child{      color: #2d507c;
+    font-style: italic;
+}
+	
+	
+
+
 .officediv iframe {
 	border: #fff solid 2px !important;
 	border-radius: 4px;
@@ -1470,7 +1498,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
 }
 .resultsearch {
 	background: #dddddd;
-	padding: 12px 0;
+	padding: 12px 0;    clear: both;
 }
 .resultsearch .col-sm-2.right select, .account .col-sm-4.right .col-sm-8 select {    /* width: 100%; */
 	border-radius: 0;
