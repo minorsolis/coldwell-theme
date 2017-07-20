@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 .testmoniall{background:url(../images/slide03.jpg) center center no-repeat; background-size:cover;    float: left;
     width: 100%;}
 .testmoniall .col-md-12{    background: rgba(255, 255, 255, 0.8);
-      padding: 80px 60px;}
+      padding: 25px 60px;}
 	.testmoniall .col-md-12 .carousel.slide{margin:0;}
 .testmoniall .col-md-12 .carousel.slide .col-sm-4{    text-align: left;
     color: #2d507c;
