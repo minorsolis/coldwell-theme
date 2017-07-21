@@ -2943,12 +2943,14 @@ span.col-sm-12.advanceddiv{    margin-bottom: 0;
 .slider .col-sm-12.up .search h2{text-align: center;}
 .slider .col-sm-12.up .search .tab-content .col-sm-12.slideanim{    padding: 0;}
 .findcosta .col-md-4 {
-	height: auto;
-	padding: 25px 15px;
+	height: auto;    display: inline-block;
+	padding: 25px 15px;    min-height: 0;
 }
 
 .findcosta .col-md-4 .col-md-12 {
-	margin-top: 52px;
+	    margin-top: 52px;
+    position: relative;
+    bottom: auto;
 }
 .towblog .container-fluid .col-sm-6 .popde {
 	padding: 0 15px;
@@ -3070,7 +3072,7 @@ span.col-sm-12.advanceddiv{    margin-bottom: 0;
 	height: 596px;
 }
 .findcosta .col-md-4 {
-	height: 596px;
+	height: 596px;    min-height: 0;
 	padding: 30px 16px;
 }
 .findcosta .col-md-4 h3 {
@@ -3491,7 +3493,9 @@ span.col-sm-12.advanceddiv{    margin-bottom: 0;
 }
  @media (min-width: 960px) and (max-width: 1300px) {
 	.findcosta .col-md-4 .col-md-12 .col-md-6 + .col-md-6{margin-top: 59px;} 
-	 .findcosta .col-md-4 .col-md-12{ margin-top: 182px;}
+	 .findcosta .col-md-4 .col-md-12{   
+    position: relative;
+    bottom: auto;}
 	 
  }
 
@@ -3522,12 +3526,16 @@ span.col-sm-12.advanceddiv{    margin-bottom: 0;
 	width: 100%;
 }
 .findcosta .col-md-4 {
-	width: 100%;
-	height: auto;
-	padding: 50px;
+	    width: 100%;
+    height: auto;
+    display: inline-block;
+    padding: 50px;
+    min-height: 0;
 }
 .findcosta .col-md-4 .col-md-12 {
-	margin-top: 59px;
+	    margin-top: 59px;
+    position: relative;
+    bottom: auto;
 }
 .findcosta .col-md-4 .col-md-12 .col-md-6 {
 	display: inline-block;
