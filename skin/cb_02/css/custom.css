@@ -1981,7 +1981,7 @@ header.bs-docs-nav {
 	min-height: 0;
 }
 .findcosta .col-md-4 {
-	height: 880px;
+	min-height: 880px;
 	background: url(../images/leftimgmap.jpg) center top no-repeat;
 	background-size: cover;
 	color: #fff;
@@ -1997,8 +1997,10 @@ header.bs-docs-nav {
 	font-size: 18px;
 }
 .findcosta .col-md-4 .col-md-12 {
-	margin-top: 277px;
-	padding: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    bottom: 58px;
 }
 .findcosta .col-md-4 .col-md-12 .col-md-6 {
 	text-align: center;
