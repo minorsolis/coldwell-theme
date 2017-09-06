@@ -87,10 +87,76 @@
       <h2>Joseph Gordanito, REALTOR® </h2>
     </div>
     
-    <div class="col-sm-2 agent"><a href="#"><i class="fa fa-share-square-o" aria-hidden="true"></i></a>
-<a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-<a href="#"><i class="fa fa-print" aria-hidden="true"></i></a>
-<a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+    <div class="col-sm-2 agent"><a data-toggle="modal" data-target="#myModal" href="#"><i class="fa fa-share-square-o" aria-hidden="true"></i>
+   <p>Share</p>
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Share Listing</h4>
+      </div>
+      <div class="modal-body">
+       
+<a class="ions" href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+<a class="ions" href="https://www.instagram.com/accounts/login/"><i class="fa fa-instagram" aria-hidden="true"></i> Share on Instagram</a>
+<a class="ions" href="https://accounts.google.com/"><i class="fa fa-envelope-o" aria-hidden="true"></i> Share on Email</a>
+
+
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+    </a>
+<a href="#" class="" data-toggle="modal" data-target="#myModal1"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+<p>Email</p>
+
+<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Email</h4>
+      </div>
+      <div class="modal-body">
+<ul class="nav nav-list">
+      
+        <li><input class="form-control" value=" name" type="text" name="name"></li>
+        
+        <li><input class="form-control" value=" email" type="text" name="Email"></li>
+       
+       
+        </ul>
+
+
+      </div>
+      <div class="modal-footer">
+           <button class="btn btn-success" id="submit">submit</button>
+         
+      </div>
+      
+    </div>
+    
+
+  </div>
+</div>
+</a>
+<a href="#"><i class="fa fa-print" aria-hidden="true"></i>
+<p>Print</p>
+</a>
+<a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i>
+<p>Heart</p>
+
+</a>
 
 
     </div>
@@ -100,8 +166,8 @@
   <div class="container-fluid">
     <div class="col-sm-8">
       <div class="col-sm-12 paddingnot">
-        <div class="col-sm-2"><img class="img-responsive img-circle img-thumbnail" src="skin/cb_02/images/agentimgnew.jpg" alt=""></div>
-        <div class="col-sm-10">
+        <div class="col-sm-3"><img class="img-responsive img-circle img-thumbnail" src="skin/cb_02/images/agentimgnew.jpg" alt=""></div>
+        <div class="col-sm-9">
           <h2><small>Real Estate Agent</small> <br><strong>Joseph Gordanito, Realtor®</strong> <br>Coldwell Banker Surfing Nosara</h2>
           <div class="row contact">
 <div class="contactInfo">
@@ -449,7 +515,7 @@ Coldwell Banker Costa Rica
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="form_lastname">Phone</label>
-                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="" data-error="Lastname is required.">
+                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required data-error="Lastname is required.">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -460,7 +526,7 @@ Coldwell Banker Costa Rica
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="form_email">Your Email</label>
-                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="" data-error="Valid email is required.">
+                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required data-error="Valid email is required.">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -472,7 +538,7 @@ Coldwell Banker Costa Rica
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="form_message">Message</label>
-                                        <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="" data-error="Please,leave us a message."></textarea>
+                                        <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required data-error="Please,leave us a message."></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -645,7 +711,14 @@ Orotina, Alajuela, Costa Rica</span>
     </div>
   </div>
 </footer>
+<script src="skin/cb_02/js/jquery.min.js"></script>
+<script src="skin/cb_02/js/bootstrap.min.js"></script>
+<script src="skin/cb_02/js/main.js"></script> 
+<script src="skin/cb_02/js/mask.min.js"></script> 
+<script src="skin/cb_02/js/bootstrap-dropdownhover.min.js"></script>
+<script src="skin/cb_02/js/default.js"></script>
 <script>
+
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
@@ -679,20 +752,34 @@ $(document).ready(function(){
         }
     });
   });
-})
-$(document).on('click',function(){
-	$('.collapse').collapse('hide');
-})
 
+  $(document).on('click',function(){
+	   $('.collapse').collapse('hide');
+  });
+  $(document).on('click', '.close', function(event){
+  //$(".close").on("click", function() {
+    
+    $(document)(".modal-backdrop").each(function() {
+      $(this).remove();
+    });
+	   
+  });
 
+	$(".fa-heart-o").on("click", function() {
+      
+      $(this).addClass("active");
+	  alert("Saved to Favorites!");
+  });
 
+});
 
+	
 </script> 
-<script src="skin/cb_02/js/jquery.min.js"></script>
-<script src="skin/cb_02/js/bootstrap.min.js"></script>
-<script src="skin/cb_02/js/main.js"></script> 
-<script src="skin/cb_02/js/mask.min.js"></script> 
-<script src="skin/cb_02/js/bootstrap-dropdownhover.min.js"></script>
-<script src="skin/cb_20/js/default.js"></script>
+
+ 
+
+
+
+
 </body>
 </html>
