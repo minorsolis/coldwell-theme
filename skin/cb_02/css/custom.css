@@ -55,6 +55,15 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     font-size: 20px;
     /* display: initial; */
     letter-spacing: 1px;}
+    .col-sm-2.agent a p{    font-size: 12px;
+    text-transform: capitalize;
+    letter-spacing: 1px;}
+
+.dropdown.account ul.dropdown-menu{min-width: 250px;}
+.dropdown.account ul.dropdown-menu li{margin:0;}
+.dropdown.account ul.dropdown-menu li a{padding: 8px 0; font-size: 15px; transition: all 0.3s ease-out 0s; }
+
+
 .testmoniall a.carousel-control{    position: absolute;
     color: #2d507c !important;
     right: 0 !important;
@@ -390,8 +399,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
     background: rgba(255, 255, 255, 0.22);}
 	.form-button-group.bedrooms span.list strong{    z-index: 99999;
     position: relative;}
-	
-	
+	.col-sm-2.agent .modal-content a{    display: block;
+    color: #2d507c;}
+    .col-sm-2.agent .modal-content a.ions{    padding: 10px 0;
+    text-align: center;
+    color: #777;
+    font-size: 16px;
+    text-transform: c;
+    margin-bottom: 3px;
+    background: rgba(204, 204, 204, 0.22);
+    border-radius: 53px;}
+    .col-sm-2.agent .modal-content a.ions:hover{background: #2d507c; color: #fff;}
+    .col-sm-2.agent .modal-dialog ul li{margin-bottom: 10px;}
+	.col-sm-2.agent .modal-dialog .modal-footer button.btn-success{    background: #2d507c;
+    border: #002a76 solid 1px;
+    text-transform: uppercase;}
+    .col-sm-2.agent .modal-dialog .modal-footer button.btn-success:hover{}
 	
 	
 
@@ -404,13 +427,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
 }
 .col-sm-2.agent {
 	text-align: center;
-	padding-top: 18px;
+	    padding-top: 8px;    padding-right: 0;
+    padding-left: 0;
 }
+.col-sm-2.agent .modal {margin-top: 80px;}
+.account .container-fluid .col-sm-8 .paddingnot .col-sm-3 img.img-responsive{    width: 100%;}
+
+
 .col-sm-2.agent a {
 	color: #fff;
 	font-size: 20px;
 	display: inline-block;
-	margin: 0 10px;
+	    margin: 0 8px;
 }
 
 .listing.uilibray{    margin-top: 82px;}
@@ -425,6 +453,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
     margin-right: 3%;
     position: relative;
     line-height: normal;}
+.navbar-right ul li.account{position: relative;}
+.navbar-nav > li + li.account input[type="file"]{    position: absolute;
+    top: 19px;
+    left: 0;
+    /* height: 100%; */
+    width: 100%;
+    opacity: 0; cursor: pointer;}
 .abouttitle.resultpage ul li:last-child .col-md-4 .form-button-group .form-checkbox--alt input{    opacity: 0;
     position: absolute;
     top: 0;
@@ -989,22 +1024,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
 .abouttitle .logout a:hover {
 	color: #ffd31d;
 }
-.account .container-fluid .col-sm-8 .paddingnot .col-sm-10 h2 strong {
+.col-sm-2.agent a i.active, .col-sm-2.agent ai:focus{    color: #ffd31d;}
+
+.account .container-fluid .col-sm-8 .paddingnot .col-sm-9 h2 strong {
 	font-weight: 900;
 	font-size: 21px;
 }
-.account .container-fluid .col-sm-8 .paddingnot .col-sm-10 h2 {
+.account .container-fluid .col-sm-8 .paddingnot .col-sm-9 h2 {
 	font-weight: 400 !important;
 }
 .account .container-fluid .col-sm-8 .paddingnot .contact {
 	margin: 0;
 }
-.account .container-fluid .col-sm-8 .paddingnot .col-sm-10 h2 small {
+.account .container-fluid .col-sm-8 .paddingnot .col-sm-9 h2 small {
 	text-transform: uppercase;
 	margin-bottom: 7px;
 	display: inline-block;
 }
-.account .container-fluid .col-sm-8 .paddingnot .col-sm-10 h2 strong {
+.account .container-fluid .col-sm-8 .paddingnot .col-sm-9 h2 strong {
 	font-size: 23px;
 }
 
@@ -1082,7 +1119,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
 .about.listing .container-fluid {
 	padding: 50px 70px;
 }
-.about.listing h2, .account .container-fluid .col-sm-8 .paddingnot .col-sm-10 h2, .rightside h2, .agentb h2, .row.topborder, .listbuyimg .col-sm-8 h2, .col-sm-8.libary h2 {
+.about.listing h2, .account .container-fluid .col-sm-8 .paddingnot .col-sm-9 h2, .rightside h2, .agentb h2, .row.topborder, .listbuyimg .col-sm-8 h2, .col-sm-8.libary h2 {
 	border-bottom: #dbdbdb solid 4px;
 	padding-bottom: 16px;
 	margin-bottom: 20px;
@@ -1334,13 +1371,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
     line-height: 27px;
     font-size: 16px;}
 	.topdescription .col-sm-3 ul li a{text-decoration:none;}
-	
+	.abouttitle.contact{margin-top: 0;}
 	
 
 
 
 .resultpage.agentli {
-	background: url(../images/agentlisitng.jpg) center top no-repeat;
+	background: url(../images/Featured_development_header_Image.jpg) center top no-repeat;
 	background-size: cover;
 	position: relative;
 	padding: 53px 0 21px 0;
@@ -3020,6 +3057,12 @@ span.col-sm-12.advanceddiv{    margin-bottom: 0;
 }
 }
  @media (min-width:1200px) and (max-width: 1500px) {
+    .col-sm-2.agent a{    margin: 0 5px;    font-size: 16px;}
+.row.topborder .col-sm-4 .col-sm-8 strong{    font-size: 21px;
+}
+.row.botbra span{  padding-right: 6px;
+    font-size: 16px;    margin-right: 6px; }
+
 .account .listingdiv .blue .col-sm-6.rightcount {
 	padding: 0;
 }
