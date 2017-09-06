@@ -703,6 +703,7 @@ $(document).ready(function(){
     } // End if
   });
   
+  
   $(window).scroll(function() {
     $(".slideanim").each(function(){
       var pos = $(this).offset().top;
@@ -713,6 +714,22 @@ $(document).ready(function(){
         }
     });
   });
+
+   $(document).on('click', '.close', function(event){
+  //$(".close").on("click", function() {
+    
+    $(document)(".modal-backdrop").each(function() {
+      $(this).remove();
+    });
+     
+  });
+
+  $(".fa-heart-o").on("click", function() {
+      
+      $(this).addClass("active");
+    alert("Saved to Favorites!");
+  });
+
 })
 $(document).on('click',function(){
 	$('.collapse').collapse('hide');
