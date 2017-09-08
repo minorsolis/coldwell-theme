@@ -727,6 +727,11 @@ Orotina, Alajuela, Costa Rica</span>
 <script src="skin/cb_02/js/default.js"></script>
 <script>
 
+function getElementsByClassName(className) {
+if (document.getElementsByClassName) { 
+  return document.getElementsByClassName(className); }
+else { return document.querySelectorAll('.' + className); } 
+ }
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {

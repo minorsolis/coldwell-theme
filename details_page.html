@@ -706,6 +706,12 @@ The Garden side unit is listed at $515,000 and the Lake side unit is listed at $
 <script src="skin/cb_02/js/bootstrap-dropdownhover.min.js"></script>
  
 <script>
+
+function getElementsByClassName(className) {
+if (document.getElementsByClassName) { 
+  return document.getElementsByClassName(className); }
+else { return document.querySelectorAll('.' + className); } 
+ }
 jQuery(document).ready(function($){
   $(".fa-heart-o").on("click", function() {
       
