@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     font-size: 20px;
     /* display: initial; */
     letter-spacing: 1px;}
-    .col-sm-2.agent a p{    font-size: 12px;
+    .col-sm-3.agent a p{    font-size: 12px;
     text-transform: capitalize;
     letter-spacing: 1px;}
 
@@ -399,9 +399,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
     background: rgba(255, 255, 255, 0.22);}
 	.form-button-group.bedrooms span.list strong{    z-index: 99999;
     position: relative;}
-	.col-sm-2.agent .modal-content a{    display: block;
+	.col-sm-3.agent .modal-content a{    display: block;
     color: #2d507c;}
-    .col-sm-2.agent .modal-content a.ions{    padding: 10px 0;
+    .col-sm-3.agent .modal-content a.ions{    padding: 10px 0;
     text-align: center;
     color: #777;
     font-size: 16px;
@@ -409,12 +409,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
     margin-bottom: 3px;
     background: rgba(204, 204, 204, 0.22);
     border-radius: 53px;}
-    .col-sm-2.agent .modal-content a.ions:hover{background: #2d507c; color: #fff;}
-    .col-sm-2.agent .modal-dialog ul li{margin-bottom: 10px;}
-	.col-sm-2.agent .modal-dialog .modal-footer button.btn-success{    background: #2d507c;
+    .col-sm-3.agent .modal-content a.ions:hover{background: #2d507c; color: #fff;}
+    .col-sm-3.agent .modal-dialog ul li{margin-bottom: 10px;}
+	.col-sm-3.agent .modal-dialog .modal-footer button.btn-success{    background: #2d507c;
     border: #002a76 solid 1px;
     text-transform: uppercase;}
-    .col-sm-2.agent .modal-dialog .modal-footer button.btn-success:hover{}
+    .col-sm-3.agent .modal-dialog .modal-footer button.btn-success:hover{}
 	
 	
 
@@ -425,16 +425,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
 	transition: all 0.3s ease-in 0s;
 	font-size: 15px;
 }
-.col-sm-2.agent {
+.col-sm-3.agent {
 	text-align: center;
 	    padding-top: 8px;    padding-right: 0;
     padding-left: 0;
 }
-.col-sm-2.agent .modal {margin-top: 80px;}
+.col-sm-3.agent .modal {margin-top: 80px;}
 .account .container-fluid .col-sm-8 .paddingnot .col-sm-3 img.img-responsive{    width: 100%;}
 
 
-.col-sm-2.agent a {
+.col-sm-3.agent a {
 	color: #fff;
 	font-size: 20px;
 	display: inline-block;
@@ -606,7 +606,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
 
 
 
-.col-sm-2.agent a:hover {
+.col-sm-3.agent a:hover {
 	color: #ffd31d;
 }
 .bs-docs-footer .col-sm-3 ul li a:hover {
