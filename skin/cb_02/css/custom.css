@@ -431,6 +431,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
     padding-left: 0;
 }
 .col-sm-3.agent .modal {margin-top: 80px;}
+#myModal .modal-dialog .modal-content .modal-header .close{display:none}
+
 .account .container-fluid .col-sm-8 .paddingnot .col-sm-3 img.img-responsive{    width: 100%;}
 
 
