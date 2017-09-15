@@ -128,27 +128,21 @@
   
 
 <ul class="nav navbar-nav">
-                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">All Provinces <b class="caret"></b></a>
+                    <li class="dropdown" id="province_drop_id"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><span id='province_txt'>All Provinces</span> <b class="caret"></b></a>
 
 
                            <div class="col-sm-2 form-group dropdown-menu">
              
-                <select class="form-control selectdvi" style="height:auto;" size="10" id="sel1" >
+                <select class="form-control selectdvi" name="property_province" style="height:auto;" size="10" id="property_province" >
                   <option value="0">All Provinces</option>
-                  <option value="1">All Provinces</option>
-                  <option value="2">All Provinces</option>
-                  <option value="3">All Provinces</option>
-          <option value="3">All Provinces</option>
-          <option value="3">All Provinces</option>
-          <option value="3">All Provinces</option>
-          <option value="3">All Provinces</option>
-          <option value="3">All Provinces</option>
-          <option value="3">All Provinces</option>
-          <option value="3">All Provinces</option>
-          <option value="3">All Provinces</option>
-          <option value="3">All Provinces</option>
-          <option value="3">All Provinces</option>
-          <option value="3">All Provinces</option>
+                  <option value="1">Alajuela</option>
+                  <option value="2">Cartago</option>
+                  <option value="3">Guanacaste</option>
+                  <option value="4">Heredia</option>
+                  <option value="5">Limón</option>
+                  <option value="6">Puntarenas</option>
+                  <option value="7">San Jose</option>
+                  
                 </select>
                 
                             
@@ -158,26 +152,26 @@
 
 
                     </li>
-                    <li><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">Type <b class="caret"></b></a>
+                    <li id="property_type_drop_id"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><span id='property_type_txt'>Type</span> <b class="caret"></b></a>
 
 
                            <div class="col-sm-2 form-group dropdown-menu">
              
-                <select class="form-control selectdvi" style="height:auto;" size="10" id="sel1" multiple="multiple">
-                  <option value="0">Type</option>
-                  <option value="1">Type</option>
-                  <option value="2">Type</option>
-                  <option value="3">Type</option>
-          <option value="3">Type</option>
-          <option value="3">Type</option>
-          <option value="3">Type</option>
-          <option value="3">Type</option>
-          <option value="3">Type</option>
-          <option value="3">Type</option>
-          <option value="3">Type</option>
-          <option value="3">Type</option>
-          <option value="3">Type</option>
-          <option value="3">Type</option>
+                <select class="form-control selectdvi" style="height:auto;" size="10" name="property_type[]"  id="property_type" multiple="multiple" >
+                <option value="">All Type</option>
+                  <option value="Single Family Homes">Single Family Homes</option>
+                  <option value="Condo">Condo</option>
+                  <option value="Land">Land</option>
+                  <option value="Community Overview">Community Overview</option>
+                  <option value="Hotel / Leisure">Hotel / Leisure</option>
+                  <option value="Business">Business</option>
+                  <option value="Fractional">Fractional</option>
+                  <option value="Commercial">Commercial</option>
+                  <option value="Office / Retail">Office / Retail</option>
+                  <option value="Penthouse">Penthouse</option>
+                  <option value="Warehouse">Warehouse</option>
+                  <option value="Apartment">Apartment</option>
+           
                 </select>
                  
 
@@ -2033,7 +2027,28 @@ $(document).on('click',function(){
  
  
   
-  $(document).ready(function() {
+$(document).ready(function() {
+
+    $("#property_province option").on("click",function(){
+        var mystring = $(this).text();
+        mystring = mystring.substring(0,10);
+
+       
+        $('#province_drop_id').removeClass('open');
+        $('#province_txt').html(mystring);
+
+    });
+
+    $("#property_type option").on("click",function(){
+
+      var mystringtype = $(this).text();
+      mystringtype = mystringtype.substring(0,10);
+      $('#property_type_drop_id').removeClass('open');
+      $('#property_type_txt').html(mystringtype);
+     
+    });
+
+
     $(".sliderValue").keydown(function (e) {
   
     if(this.id=="MinPrice" || this.id=="Maxprice"){
@@ -2076,6 +2091,8 @@ $(document).on('click',function(){
     });
 
    	var activePrice="100";
+
+
     $(".el-sp-price").on("click",function(){
         $(".el-sp-price").removeClass('is-active');
         $(this).addClass('is-active');
