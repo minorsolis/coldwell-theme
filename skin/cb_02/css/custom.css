@@ -3944,3 +3944,15 @@ span.col-sm-12.advanceddiv{    margin-bottom: 0;
 	width: auto;
 }
 }
+
+
+.navbar-material-blue ul.navbar-nav li.sitemap-li-main .dropdown-menu {
+  min-width: auto;
+  white-space: nowrap; padding: 15px 30px;
+}
+
+.navbar-material-blue ul.navbar-nav li.sitemap-li-main .dropdown-menu li > a:hover {
+  padding-left: 20px;
+}
+
+.navbar-material-blue ul.navbar-nav li.sitemap-li-main .dropdown-menu > li.open > a { background-color: transparent; }
