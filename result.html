@@ -1097,7 +1097,7 @@ $(document).ready(function() {
 
     var urlCall  = 'https://www.coldwellbankercostarica.com/api/';
     addParams    += '&format=json&token=1';
- //alert(addParams);
+ alert(addParams);
     $.ajax( {
         type: "POST",
         url: urlCall,
@@ -1120,14 +1120,14 @@ $(document).ready(function() {
               //var propimage = propimage.trim();
               //if(propimage!="null"){
                   propertyhtml +='<div class="item active"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'" alt="https://s3.amazonaws.com/cbcr/image/propertyFile/a0C0V00000u7XvSUAU/small/a0B0V0000224ZykUAE.jpeg"></div>';
-                  propertyhtml +='<div class="item"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'"></div>';
+                 // propertyhtml +='<div class="item"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'"></div>';
              // }else{
                //   propertyhtml +='<div class="item"> <img class="img-responsive" src="https://s3.amazonaws.com/cbcr/image/propertyFile/a0C0V00000u7XvSUAU/small/a0B0V0000224ZykUAE.jpeg"></div>';
              // }
                 
               propertyhtml +='</div>';
-              propertyhtml +='<a class="left carousel-control" href="#main-slider" data-slide="prev"> <span class="icon-prev"></span> </a>';
-              propertyhtml +='<a class="right carousel-control" href="#main-slider" data-slide="next"> <span class="icon-next"></span> </a>';
+             // propertyhtml +='<a class="left carousel-control" href="#main-slider" data-slide="prev"> <span class="icon-prev"></span> </a>';
+             // propertyhtml +='<a class="right carousel-control" href="#main-slider" data-slide="next"> <span class="icon-next"></span> </a>';
                
             propertyhtml +='</div>';
             propertyhtml +='<i class="fa fa-heart" aria-hidden="true"></i>';
