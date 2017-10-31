@@ -1064,8 +1064,11 @@ $(document).ready(function() {
     var maxPrice = $("#Maxprice").val();
     var propertyCity = $("#property_province").val();
     var addParams = '';
-    
-    addParams = 'generalSearch='+generalSearch+'&minPrice='+minPrice+'&maxPrice='+maxPrice;
+
+    minPrice = minPrice.substr(1);
+    maxPrice = maxPrice.substr(1);
+
+    addParams = 'generalSearch='+generalSearch+'&minPrice='+minPrice+'&maxPrice='+maxPrice+'&propertyCategory=Sale&minBed=&minBath=&&propertyAgentOffice=';
     
 
     if( (addParams != '') || (minPrice != '') || (maxPrice != '') ){
@@ -1083,6 +1086,7 @@ $(document).ready(function() {
       if( $("#quick_search_advanced_link").length == 1 ){
         $("#quick_search_advanced_link").attr("href", searchUrl)
       }*/
+      
 
       addParams = 'function=website/property/generalSearch&'+addParams;
 
@@ -1093,7 +1097,7 @@ $(document).ready(function() {
 
     var urlCall  = 'https://www.coldwellbankercostarica.com/api/';
     addParams    += '&format=json&token=1';
-
+ alert(addParams);
     $.ajax( {
         type: "POST",
         url: urlCall,
@@ -1106,7 +1110,7 @@ $(document).ready(function() {
           
           for(var pp=0;pp<propertyData.length;pp++){
 
-            
+              //alert(propertyData[pp].propertyTitle);
           propertyhtml +='<div class="col-sm-2 listingdiv">';
 
           propertyhtml +='<div class="imgdiv">';
@@ -1129,7 +1133,7 @@ $(document).ready(function() {
             propertyhtml +='<i class="fa fa-heart" aria-hidden="true"></i>';
             propertyhtml +='<span class="sale">'+propertyData[pp].propertyCategory+'</span>';
           propertyhtml +='</div>';
-         
+       
           propertyhtml +='<div class="col-sm-12 blue">';
             propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice+'</div>';
             propertyhtml +='<div class="col-sm-6 rightcount">';
