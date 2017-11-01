@@ -1067,7 +1067,7 @@ $(document).ready(function() {
     $("#container-fluid-listing").addClass('checkloading');
 
     $("#container-fluid-listing").html('<img class="" src="skin/cb_02/images/blue-loading-icon.gif" />');
-    return false;
+    
 
     var generalSearch = $("#Keyword").val();
     var minPrice = $("#MinPrice").val();
@@ -1187,7 +1187,7 @@ $(document).ready(function() {
         $("#container-fluid-listing").addClass('checkloading');
         $("#container-fluid-listing-more").hide();
         $("#container-fluid-listing-more-fetching").hide();
-        
+        return false;
 
         startfrom +=20;
 
