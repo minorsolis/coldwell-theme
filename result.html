@@ -184,7 +184,7 @@
                     </li>
                     <li class="dropdown" id="el-li-price">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">
-                        	<span id="currPrice">Price</span> <b class="caret"></b>
+                          <span id="currPrice">Price</span> <b class="caret"></b>
                         </a>
                         
  <div class="col-sm-2 form-group dropdown-menu" id="el-search-price">
@@ -516,7 +516,7 @@ Cancel
 
 
 <div class="search home">
-	<div class="col-sm-12 text-center">
+  <div class="col-sm-12 text-center">
       <ul class="nav nav-tabs ">
         <li class="active"><a data-toggle="tab" href="#tab_default_1">FOR SALE</a></li>
         <li class=""><a data-toggle="tab" href="#tab_default_2">FOR RENT</a></li>
@@ -525,7 +525,7 @@ Cancel
     </div>
 </div>
 <div class="col-md-12 imagupload">
-			<div class="col-sm-3 form-group">
+      <div class="col-sm-3 form-group">
                 <select class="form-control" id="sel1" name="locationid">
                   <option>Unite..</option>
                   <option>Unite..</option>
@@ -533,11 +533,11 @@ Cancel
                   <option>Unite..</option>
                 </select>
                 <i class="fa fa-chevron-down" aria-hidden="true"></i> 
-			</div>
+      </div>
 
-			<div class="col-sm-8 form-group">
+      <div class="col-sm-8 form-group">
               <input type="text" name="location_input[]" id="location_input" class="sliderValue" placeholder="Enter location" required style="padding: 0;">
-			</div>
+      </div>
               
             <div class="col-md-2 button">
               
@@ -1020,7 +1020,7 @@ $(document).on('click',function(){
       }
     });
   
-	
+  
 
 
 
@@ -1032,28 +1032,31 @@ $(document).on('click',function(){
           $(this).addClass('active');
       });
 
-	  var selectorss = 'span.adv_beds';
+    var selectorss = 'span.adv_beds';
 
       $(selectorss).on('click', function(){  
           $(selectorss).removeClass('active');
           $(this).addClass('active');
       });
-	  
-	  
-	  var selectorn = 'span.adv_bath';
+    
+    
+    var selectorn = 'span.adv_bath';
 
       $(selectorn).on('click', function(){  
           $(selectorn).removeClass('active');
           $(this).addClass('active');
       });
-	  
-	  
+    
+    
   } );
   
  
  
   
 $(document).ready(function() {
+
+
+
     $("#container-fluid-listing").addClass('checkloading');
 
     $("#container-fluid-listing").html('<i class="fa fa-spinner" aria-hidden="true"></i>');
@@ -1064,11 +1067,12 @@ $(document).ready(function() {
     var maxPrice = $("#Maxprice").val();
     var propertyCity = $("#property_province").val();
     var addParams = '';
-
+    var startfrom = 1;
+    var limitrecord = 20;
     minPrice = minPrice.substr(1);
     maxPrice = maxPrice.substr(1);
 
-    addParams = 'generalSearch='+generalSearch+'&minPrice='+minPrice+'&maxPrice='+maxPrice+'&propertyCategory=Sale&minBed=1&minBath=1&propertyAgentOffice=';
+    addParams = 'generalSearch='+generalSearch+'&minPrice='+minPrice+'&maxPrice='+maxPrice+'&propertyCategory=Sale&minBed=1&minBath=1&limit='+startfrom+','+limitrecord+'&propertyAgentOffice=';
     
 
     if( (addParams != '') || (minPrice != '') || (maxPrice != '') ){
@@ -1090,15 +1094,16 @@ $(document).ready(function() {
 
       addParams = 'function=website/property/generalSearch&'+addParams;
 
-     // apiCall(params,'searchLive');
+     //apiCall(params,'searchLive');
        
     } 
 
 
     var urlCall  = 'https://www.coldwellbankercostarica.com/api/';
     addParams    += '&format=json&token=1';
- //alert(addParams);
-    $.ajax( {
+
+    $.ajax({
+
         type: "POST",
         url: urlCall,
         data: addParams,
@@ -1154,14 +1159,119 @@ $(document).ready(function() {
          propertyhtml +='</div>';
 
        }
+
         $("#container-fluid-listing").removeClass('checkloading');
+
+          propertyhtml +='<div>';
+              propertyhtml +='<div class="col-sm-12 blue"><a id="loadmoreprop" class="loadmoreprop">Load More</a></div>';
+          propertyhtml +='</div>';
+
         $("#container-fluid-listing").html(propertyhtml); 
           
         }
-    } );
+    });
 
 
+    jQuery(document).on('click', '.loadmoreprop', function(event){
 
+        startfrom +=20;
+
+        addParams = 'generalSearch='+generalSearch+'&minPrice='+minPrice+'&maxPrice='+maxPrice+'&propertyCategory=Sale&minBed=1&minBath=1&limit='+startfrom+','+limitrecord+'&propertyAgentOffice=';
+      
+        if( (addParams != '') || (minPrice != '') || (maxPrice != '') ){
+
+          /*$(".property").show('fast');
+          if( $(window).scrollTop() < 5 ){
+            $('html, body').animate({
+                  scrollTop: $("#pageTitle1").offset().top
+              }, 500);
+          }*/
+          /*var searchUrl = "/real-estate/search?"+addParams;
+          window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
+
+          if( $("#quick_search_advanced_link").length == 1 ){
+            $("#quick_search_advanced_link").attr("href", searchUrl)
+          }*/
+        
+          addParams = 'function=website/property/generalSearch&'+addParams;
+        
+          //apiCall(params,'searchLive');
+        } 
+
+        var urlCall  = 'https://www.coldwellbankercostarica.com/api/';
+        addParams    += '&format=json&token=1';
+
+        $.ajax({
+
+        type: "POST",
+        url: urlCall,
+        data: addParams,
+
+        success: function( response ) {
+
+          propertyData = response.propertyData;
+          var propertyhtml = "";
+          
+          for(var pp=0;pp<propertyData.length;pp++){
+
+              //alert(propertyData[pp].propertyTitle);
+          propertyhtml +='<div class="col-sm-2 listingdiv">';
+
+          propertyhtml +='<div class="imgdiv">';
+            propertyhtml +='<div id="main-slider" class="carousel slide" data-ride="carousel">';
+              propertyhtml +='<div class="carousel-inner">';
+              //var propimage = propertyData[pp].propertyUrlSmall;
+              //var propimage = propimage.trim();
+              //if(propimage!="null"){
+                  propertyhtml +='<div class="item active"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'" alt="https://s3.amazonaws.com/cbcr/image/propertyFile/a0C0V00000u7XvSUAU/small/a0B0V0000224ZykUAE.jpeg"></div>';
+                 // propertyhtml +='<div class="item"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'"></div>';
+             // }else{
+               //   propertyhtml +='<div class="item"> <img class="img-responsive" src="https://s3.amazonaws.com/cbcr/image/propertyFile/a0C0V00000u7XvSUAU/small/a0B0V0000224ZykUAE.jpeg"></div>';
+             // }
+                
+              propertyhtml +='</div>';
+             // propertyhtml +='<a class="left carousel-control" href="#main-slider" data-slide="prev"> <span class="icon-prev"></span> </a>';
+             // propertyhtml +='<a class="right carousel-control" href="#main-slider" data-slide="next"> <span class="icon-next"></span> </a>';
+               
+            propertyhtml +='</div>';
+            propertyhtml +='<i class="fa fa-heart" aria-hidden="true"></i>';
+            propertyhtml +='<span class="sale">'+propertyData[pp].propertyCategory+'</span>';
+          propertyhtml +='</div>';
+       
+          propertyhtml +='<div class="col-sm-12 blue">';
+            propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice+'</div>';
+            propertyhtml +='<div class="col-sm-6 rightcount">';
+              propertyhtml +='<span>'+propertyData[pp].propertyBed+' bed</span>   <span> '+propertyData[pp].propertyBath+' bath</span>';
+            propertyhtml +='</div>';
+          propertyhtml +='</div>';
+         
+          propertyhtml +='<div class="col-sm-12 location">';
+            propertyhtml +='<span><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; '+propertyData[pp].propertyCityLabel+'</span>';
+            propertyhtml +='<span><i class="fa fa-home" aria-hidden="true"></i>&nbsp;'+propertyData[pp].propertyType+'</span>';
+          propertyhtml +='</div>';
+          propertyhtml +='<div class="col-sm-12 bottom">';
+            propertyhtml +='<div class="col-sm-5">BUILT :<b> '+propertyData[pp].propertyBuilt+'</b></div>';
+            propertyhtml +='<div class="col-sm-2"><i class="fa fa-camera" aria-hidden="true"></i><b> '+propertyData[pp].propertyPictureCount+'</b></div>';
+            propertyhtml +='<div class="col-sm-5">ID: <b>#'+propertyData[pp].propertyId+'</b></div>';
+          propertyhtml +='</div>';
+         
+         propertyhtml +='</div>';
+
+       }
+
+        $("#container-fluid-listing").removeClass('checkloading');
+
+          propertyhtml +='<div>';
+              propertyhtml +='<div class="col-sm-12 blue"><a id="loadmoreprop" class="loadmoreprop">Load More</a></div>';
+          propertyhtml +='</div>';
+
+        $("#container-fluid-listing").html(propertyhtml); 
+          
+        }
+
+      });
+
+    });
 
     $("#property_province option").on("click",function(){
         var mystring = $(this).text();
@@ -1224,7 +1334,7 @@ $(document).ready(function() {
         $(".el-advancesearch").toggle()
     });
 
-   	var activePrice="100";
+    var activePrice="100";
 
 
     $(".el-sp-price").on("click",function(){
@@ -1297,8 +1407,8 @@ $(document).ready(function() {
 
     
     $('.imgdiv').each(function(index){
-	   $(this).find('#main-slider').attr('id',"main-slider"+index);
-	   $(this).find('.carousel-control').attr('href',"#main-slider"+index);
+     $(this).find('#main-slider').attr('id',"main-slider"+index);
+     $(this).find('.carousel-control').attr('href',"#main-slider"+index);
     });
 });
   
