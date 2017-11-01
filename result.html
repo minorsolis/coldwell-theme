@@ -1186,7 +1186,7 @@ $(document).ready(function() {
 
         $("#container-fluid-listing").addClass('checkloading');
         $("#container-fluid-listing-more").hide();
-        $("#container-fluid-listing-more-fetching").hide();
+        $("#container-fluid-listing-more-fetching").show();
         return false;
 
         startfrom +=20;
@@ -1278,7 +1278,7 @@ $(document).ready(function() {
 
         if(propertyData.length==0){
           $("#container-fluid-listing-more").hide();
-          $("#container-fluid-listing-more-fetching").show();
+          $("#container-fluid-listing-more-fetching").hide();
         }else{
           $("#container-fluid-listing-more").show();
           $("#container-fluid-listing-more-fetching").hide();
