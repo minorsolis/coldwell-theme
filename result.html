@@ -779,7 +779,9 @@ View Results
 
 </div>
 
-
+<div id="container-fluid-listing-more" style="display: none;text-align: center;font-size: 31px;border: 1px solid blue;clear: both;float: right;">
+      <div class="col-sm-12 blue"><a style="text-decoration: none;cursor: pointer;" id="loadmoreprop" class="loadmoreprop">Load More</a></div>
+</div>
 
 </section>
 
@@ -1162,10 +1164,12 @@ $(document).ready(function() {
 
         $("#container-fluid-listing").removeClass('checkloading');
 
-          propertyhtml +='<div>';
-              propertyhtml +='<div class="col-sm-12 blue"><a id="loadmoreprop" class="loadmoreprop">Load More</a></div>';
-          propertyhtml +='</div>';
+        /*propertyhtml +='<div>';
+            propertyhtml +='<div class="col-sm-12 blue"><a id="loadmoreprop" class="loadmoreprop">Load More</a></div>';
+        propertyhtml +='</div>';*/
 
+        
+        $("#container-fluid-listing-more").show('slow');
         $("#container-fluid-listing").html(propertyhtml); 
           
         }
@@ -1173,6 +1177,9 @@ $(document).ready(function() {
 
 
     jQuery(document).on('click', '.loadmoreprop', function(event){
+
+        $("#container-fluid-listing").addClass('checkloading');
+        $("#container-fluid-listing-more").hide('slow');
 
         startfrom +=20;
 
@@ -1261,11 +1268,9 @@ $(document).ready(function() {
 
         $("#container-fluid-listing").removeClass('checkloading');
 
-          propertyhtml +='<div>';
-              propertyhtml +='<div class="col-sm-12 blue"><a id="loadmoreprop" class="loadmoreprop">Load More</a></div>';
-          propertyhtml +='</div>';
+        $("#container-fluid-listing-more").show('slow');
 
-        $("#container-fluid-listing").html(propertyhtml); 
+        $("#container-fluid-listing").append(propertyhtml); 
           
         }
 
