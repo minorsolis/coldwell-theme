@@ -780,7 +780,7 @@ View Results
 </div>
 
 <div id="container-fluid-listing-more" style="display: none;text-align: center;font-size: 50px;margin-top: -50px;">
-      <i class="fa fa-refresh loadmoreprop" aria-hidden="true"></i>
+      <i style="cursor: pointer;" class="fa fa-refresh loadmoreprop" aria-hidden="true"></i>
 </div>
 
 </section>
@@ -1169,7 +1169,7 @@ $(document).ready(function() {
         propertyhtml +='</div>';*/
 
         
-        $("#container-fluid-listing-more").show('slow');
+        $("#container-fluid-listing-more").show();
         $("#container-fluid-listing").html(propertyhtml); 
           
         }
@@ -1179,7 +1179,7 @@ $(document).ready(function() {
     jQuery(document).on('click', '.loadmoreprop', function(event){
 
         $("#container-fluid-listing").addClass('checkloading');
-        $("#container-fluid-listing-more").hide('slow');
+        $("#container-fluid-listing-more").hide();
 
         startfrom +=20;
 
@@ -1269,9 +1269,9 @@ $(document).ready(function() {
         $("#container-fluid-listing").removeClass('checkloading');
 
         if(propertyData.length==0)
-          $("#container-fluid-listing-more").hide('slow');
+          $("#container-fluid-listing-more").hide();
         else
-          $("#container-fluid-listing-more").show('slow');
+          $("#container-fluid-listing-more").show();
 
         $("#container-fluid-listing").append(propertyhtml); 
           
