@@ -3957,3 +3957,7 @@ span.col-sm-12.advanceddiv{    margin-bottom: 0;
 
 .navbar-material-blue ul.navbar-nav li.sitemap-li-main .dropdown-menu > li.open > a { background-color: transparent; }
 .navbar-material-blue ul.navbar-nav li.sitemap-li-main .dropdown-menu > li.open > a { background-color: #385983; }
+
+.checkloading::after { background-color: rgba(0, 0, 0, 0.4); content: ""; display: block; height: 100%; left: 0; position: absolute;
+  top: 0; width: 100%; z-index: 999; }
+.checkloading { float: left; height: 100%; position: relative; width: 100%; z-index: 0; }
