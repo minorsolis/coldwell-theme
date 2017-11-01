@@ -779,8 +779,8 @@ View Results
 
 </div>
 
-<div id="container-fluid-listing-more" style="display: none;text-align: center;font-size: 31px;border: 1px solid blue;clear: both;float: right;">
-      <div class="col-sm-12 blue"><a style="text-decoration: none;cursor: pointer;" id="loadmoreprop" class="loadmoreprop">Load More</a></div>
+<div id="container-fluid-listing-more" style="display: none;text-align: center;font-size: 30px;">
+      <i class="fa fa-refresh loadmoreprop" aria-hidden="true"></i>
 </div>
 
 </section>
@@ -1268,7 +1268,10 @@ $(document).ready(function() {
 
         $("#container-fluid-listing").removeClass('checkloading');
 
-        $("#container-fluid-listing-more").show('slow');
+        if(propertyData.length==0)
+          $("#container-fluid-listing-more").hide('slow');
+        else
+          $("#container-fluid-listing-more").show('slow');
 
         $("#container-fluid-listing").append(propertyhtml); 
           
