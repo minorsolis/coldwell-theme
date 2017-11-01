@@ -45,7 +45,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a href="index.html" class="navbar-brand"><img src="skin/cb_02/images/logomain.png" width="111" height="62" alt=""></a>
+            <a href="#" class="navbar-brand"><img src="skin/cb_02/images/logomain.png" width="111" height="62" alt=""></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -783,6 +783,11 @@ View Results
       <i style="cursor: pointer;" class="fa fa-refresh loadmoreprop" aria-hidden="true"></i>
 </div>
 
+<div id="container-fluid-listing-more-fetching" style="display: none;text-align: center;font-size: 50px;margin-top: -50px;">
+     <img src="skin/cb_02/images/blue-loading-icon.gif" />
+</div>
+
+
 </section>
 
 
@@ -1061,7 +1066,7 @@ $(document).ready(function() {
 
     $("#container-fluid-listing").addClass('checkloading');
 
-    $("#container-fluid-listing").html('<i class="fa fa-spinner" aria-hidden="true"></i>');
+    $("#container-fluid-listing").html('<img src="skin/cb_02/images/blue-loading-icon.gif" />');
     //return false;
 
     var generalSearch = $("#Keyword").val();
@@ -1170,6 +1175,7 @@ $(document).ready(function() {
 
         
         $("#container-fluid-listing-more").show();
+
         $("#container-fluid-listing").html(propertyhtml); 
           
         }
@@ -1180,6 +1186,8 @@ $(document).ready(function() {
 
         $("#container-fluid-listing").addClass('checkloading');
         $("#container-fluid-listing-more").hide();
+        $("#container-fluid-listing-more-fetching").hide();
+        
 
         startfrom +=20;
 
@@ -1268,10 +1276,13 @@ $(document).ready(function() {
 
         $("#container-fluid-listing").removeClass('checkloading');
 
-        if(propertyData.length==0)
+        if(propertyData.length==0){
           $("#container-fluid-listing-more").hide();
-        else
+          $("#container-fluid-listing-more-fetching").show();
+        }else{
           $("#container-fluid-listing-more").show();
+          $("#container-fluid-listing-more-fetching").hide();
+        }
 
         $("#container-fluid-listing").append(propertyhtml); 
           
