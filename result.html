@@ -28,7 +28,7 @@
 
 </script>
 </head>
-<body id="myPage">
+<body id="myPage" class="myPageBdy">
 
 
 <nav class="navbar navbar-material-blue navbar-fixed-top" role="navigation">
@@ -1067,7 +1067,7 @@ $(document).ready(function() {
     $("#container-fluid-listing").addClass('checkloading');
 
     $("#container-fluid-listing").html('<img src="skin/cb_02/images/blue-loading-icon.gif" />');
-    //return false;
+    return false;
 
     var generalSearch = $("#Keyword").val();
     var minPrice = $("#MinPrice").val();
