@@ -19,8 +19,16 @@
   .checkloading{
     text-align: center;
   }
-  .checkloading .fa{
+  /*.checkloading .fa{
     font-size: 40px;
+  }*/
+
+  #searchLiveForm .nav > li > a{
+    padding: 10px 10px !important;
+  }
+  
+  #searchLiveForm .navbar-nav > li + li {
+      margin-left: 0;
   }
 </style>
 
@@ -132,79 +140,91 @@
 
 <div class="container">
   
+<form id="searchLiveForm">
+ 
+    <ul class="nav navbar-nav">
+      <input type="hidden" name="token" value="1">
+      <input type="hidden" name="format" value="json">
+      <input type="hidden" name="startfrom" id="startfrom" value="1">
+      <input type="hidden" name="limitrecord" id="limitrecord" value="40">
+      <input type="hidden" name="limit" id="limit" value="1,40">
+          <li class="dropdown" id="propertyCategory_drop_id"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><span id='propertyCategory_txt'>Category</span> <b class="caret"></b></a>
 
-<ul class="nav navbar-nav">
-                    <li class="dropdown" id="province_drop_id"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><span id='province_txt'>All Provinces</span> <b class="caret"></b></a>
-
-
-                           <div class="col-sm-2 form-group dropdown-menu">
+            <div class="col-sm-2 form-group dropdown-menu">
              
-                <select class="form-control selectdvi" name="property_province" style="height:auto;" size="10" id="property_province" >
-                  <option value="0">All Provinces</option>
-                  <option value="1">Alajuela</option>
-                  <option value="2">Cartago</option>
-                  <option value="3">Guanacaste</option>
-                  <option value="4">Heredia</option>
-                  <option value="5">Limón</option>
-                  <option value="6">Puntarenas</option>
-                  <option value="7">San Jose</option>
-                  
-                </select>
-                
-                            
-                      
+              <select class="form-control selectdvi" name="propertyCategory" style="height:auto;" size="3" id="propertyCategory" >
+                  <option value="">Any</option>
+                  <option value="Rent">For Rent</option>
+                  <option value="Sale">For Sale</option>
+              </select>
+            </div>
+          </li>
 
+          <li class="dropdown" id="province_drop_id">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><span id='province_txt'>All Provinces</span> <b class="caret"></b></a>
 
-
-
-                    </li>
-                    <li id="property_type_drop_id"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><span id='property_type_txt'>Type</span> <b class="caret"></b></a>
-
-
-                           <div class="col-sm-2 form-group dropdown-menu">
+            <div class="col-sm-2 form-group dropdown-menu">
              
-                <select class="form-control selectdvi" style="height:auto;" size="10" name="property_type[]"  id="property_type" multiple="multiple" >
-                <option value="">All Type</option>
-                  <option value="Single Family Homes">Single Family Homes</option>
-                  <option value="Condo">Condo</option>
-                  <option value="Land">Land</option>
-                  <option value="Community Overview">Community Overview</option>
-                  <option value="Hotel / Leisure">Hotel / Leisure</option>
-                  <option value="Business">Business</option>
-                  <option value="Fractional">Fractional</option>
-                  <option value="Commercial">Commercial</option>
-                  <option value="Office / Retail">Office / Retail</option>
-                  <option value="Penthouse">Penthouse</option>
-                  <option value="Warehouse">Warehouse</option>
-                  <option value="Apartment">Apartment</option>
-           
-                </select>
+              <select class="form-control selectdvi" name="propertyState[]" style="height:auto;" size="10" id="property_province" >
+                  <option value="">All Provinces</option>
+                  <option value="Alajuela">Alajuela</option>
+                  <option value="Cartago">Cartago</option>
+                  <option value="Guanacaste">Guanacaste</option>
+                  <option value="Heredia">Heredia</option>
+                  <option value="Limón">Limón</option>
+                  <option value="Puntarenas">Puntarenas</option>
+                  <option value="San Jose">San Jose</option>
+              </select>
+            </div>
+          </li>
+          <li id="property_type_drop_id"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><span id='property_type_txt'>Property Type</span> <b class="caret"></b></a>
+
+            <div class="col-sm-2 form-group dropdown-menu">
+             
+              <select class="form-control selectdvi" style="height:auto;" size="10" name="propertyType[]"  id="property_type" multiple="multiple" >
+                <option value="">Property Type</option>
+                <option value="Home">Single Family Homes</option>
+                <option value="Condo">Condo</option>
+                <option value="Land">Land</option>
+                <option value="Community">Community Overview</option>
+                <option value="Hotel">Hotel / Leisure</option>
+                <option value="Business">Business</option>
+                <option value="Fractional">Fractional</option>
+                <option value="Commercial">Commercial</option>
+                <option value="Office / Retail">Office / Retail</option>
+                <option value="Penthouse">Penthouse</option>
+                <option value="Warehouse">Warehouse</option>
+                <option value="Apartment">Apartment</option>
+              </select>
                  
-
-                    </li>
-                    <li class="dropdown" id="el-li-price">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">
-                          <span id="currPrice">Price</span> <b class="caret"></b>
-                        </a>
+            </div>
+        </li>
+        <li class="dropdown" id="el-li-price">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">
+            <span id="currPrice">Price</span> <b class="caret"></b>
+            </a>
                         
- <div class="col-sm-2 form-group dropdown-menu" id="el-search-price">
+        <div class="col-sm-2 form-group dropdown-menu" id="el-search-price">
              
- <div data-role="rangeslider" class="ui-rangeslider">
-        <div id="slider-range-inner"></div>
-      <!-- <input style="padding: 0;" type="number" name="Min. Price" id="Min. Price" value="200" min="0" max="1000" class="form-control" required="">
-      <input style="padding: 0;" type="number" name="Min. Price" id="Min. Price" value="200" min="0" max="1000" class="form-control" required=""> -->
-    <div class="col-sm-5 form-group">
-    <label> Min Price</label>
-      <input type="text" name="MinPrice" id="MinPrice" class="sliderValue" data-index="0" value="$0" class="form-control" required="" style="padding: 0;" />
-    </div>
-    <div class="col-sm-5 form-group">
-    <label>  Max Price</label>
-      <input type="text" name="Maxprice" id="Maxprice" class="sliderValue" data-index="1" value="$70000000" class="form-control" required="" style="padding: 0;" />
+          <div data-role="rangeslider" class="ui-rangeslider">
 
-    </div>
-    
-      </div>
-     <ul class="named_prices newclassprice">
+            <div id="slider-range-inner"></div>
+
+          <!-- <input style="padding: 0;" type="number" name="Min. Price" id="Min. Price" value="200" min="0" max="1000" class="form-control" required="">
+          <input style="padding: 0;" type="number" name="Min. Price" id="Min. Price" value="200" min="0" max="1000" class="form-control" required=""> -->
+            <div class="col-sm-5 form-group">
+              <label> Min Price</label>
+              <input type="text" name="minPrice" id="MinPrice" class="sliderValue" data-index="0" value="1" class="form-control" required="" style="padding: 0;" />
+            </div>
+
+            <div class="col-sm-5 form-group">
+              <label>  Max Price</label>
+              <input type="text" name="maxprice" id="Maxprice" class="sliderValue" data-index="1" value="70000000" class="form-control" required="" style="padding: 0;" />
+            </div>
+        
+          </div>
+
+          <ul class="named_prices newclassprice">
               <li>
                 <span class="el-sp-price" data="100" id="100">$100</span>
               </li>
@@ -285,21 +305,29 @@
               </li>
           </ul>
 
-              
-        
-                </div>
+        </div>
 
+        </li>
 
+        <li>
+          <input class="form-control" id="Keyword" name="generalSearch" value="" placeholder="Keyword i.e. “Pool”" required type="text">
+        </li>
 
+</ul>
 
-                    </li>
+</form>
 
-                    <li>
-          
-            <input class="form-control" id="Keyword" name="Keyword" placeholder="Keyword i.e. “Pool”" required type="text">
+<form id="searchLiveFormOpt">
 
-                    </li>
-                    <li><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">Options <b class="caret"></b></a>
+<ul class="nav navbar-nav">
+
+<input type="hidden" name="token" value="1">
+<input type="hidden" name="format" value="json">
+<input type="hidden" name="startfrom" id="startfrom" value="1">
+<input type="hidden" name="limitrecord" id="limitrecord" value="40">
+<input type="hidden" name="limit" id="limit" value="1,40">
+
+<li id="searchLiveFormOptLi"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">Options <b class="caret"></b></a>
 
 <div class="col-sm-2 form-group dropdown-menu">
 
@@ -318,110 +346,123 @@
 
 
 </div>
+
 <div class="col-md-4">
-
-
 
 <div data-role="main" class="ui-content">
    
-      <label for="price-min" id="price-min-label">Price:</label>
+  <label for="price-min" id="price-min-label">Price:</label>
    
-      
-      
-      
-      <div data-role="rangeslider" class="ui-rangeslider">
-        <div id="slider-range"></div>
-    
+    <div data-role="rangeslider" class="ui-rangeslider">
+    <div id="slider-range"></div>
+  
+    <input type="text" name="minPrice" id="MinPriceOpt" class="sliderValue" data-index="0" value="$75" class="form-control" required="" style="padding: 0;" />
+    <input type="text" name="maxprice" id="MaxpriceOpt" class="sliderValue" data-index="1" value="$300" class="form-control" required="" style="padding: 0;" />
 
-      <input type="text" name="MinPrice" id="MinPrice" class="sliderValue" data-index="0" value="$75" class="form-control" required="" style="padding: 0;" />
-      <input type="text" name="Maxprice" id="Maxprice" class="sliderValue" data-index="1" value="$300" class="form-control" required="" style="padding: 0;" />
-
-      </div>
-       
-       
-     
+    </div> 
  
-  </div>
-
-
-
-
-
-
+</div>
 
 </div>
  
 <div class="col-md-4">
 
 <label class="filters__title">Type</label>
-<div class="form__group">
-<div class="form-button-group">
-<div class="form__checkbox form-checkbox--alt">
-<input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_condo" type="checkbox" value="condo" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_condo"><span>Condo</span></label>
-</div>
-<div class="form__checkbox form-checkbox--alt">
-<input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_house" type="checkbox" value="house" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_house"><span>House</span></label>
-</div>
-<div class="form__checkbox form-checkbox--alt">
-<input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_land" type="checkbox" value="land" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_land"><span>Land</span></label>
-</div>
-</div>
-</div>
 
-
-<div data-role="main" class="ui-content divngin" style="clear:both">
-     
-        <label for="price-min" id="price-min-label">Living</label>
-        <div data-role="rangeslider" class="ui-rangeslider">
-          
-         
-        <div data-role="" class="ui-rangeslider lidi">
-          
-       
-        <div id="slider-range2"></div>
-        <input type="text" name="LivingPrice" id="LivingPrice" class="sliderValue" value="200+" class="form-control" required="" style="padding: 0;" />
-        </div>
-        </div>
-        
-        
-        
+  <div class="form__group">
+    <div class="form-button-group">
+      <div class="form__checkbox form-checkbox--alt">
+        <input name="propertyType[]" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="property_typeOptCondo" type="checkbox" value="condo" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+        <label class="form-button-group__label" for="property_typeOptCondo"><span>Condo</span></label>
+      </div>
+      <div class="form__checkbox form-checkbox--alt">
+        <input name="propertyType[]" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="property_typeOptHouse" type="checkbox" value="house" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+        <label class="form-button-group__label" for="property_typeOptHouse"><span>House</span></label>
+      </div>
+      <div class="form__checkbox form-checkbox--alt">
+        <input name="propertyType[]" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="property_typeOptLand" type="checkbox" value="land" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+        <label class="form-button-group__label" for="property_typeOptLand"><span>Land</span></label>
+      </div>
     </div>
 
+  </div>
+
+
+  <div data-role="main" class="ui-content divngin" style="clear:both">
+       
+    <label for="price-min" id="price-min-label">Living</label>
+    <div data-role="rangeslider" class="ui-rangeslider">
+      <div data-role="" class="ui-rangeslider lidi">
+      <div id="slider-range2"></div>
+      <input type="text" name="LivingPrice" id="LivingPrice" class="sliderValue" value="200+" class="form-control" required="" style="padding: 0;" />
+      </div>
+    </div>
+              
+  </div>
 
 </div>
-
 
 <div class="col-md-4 bedrroom">
 <label class="filters__title">Bedrooms</label>
 <div class="form__group">
 <div class="form-button-group bedrooms">
-<span class="list">
+<span class="list listmain">
 
-<input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_Any" type="checkbox" value="-1" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
 
 <label class="form-button-group__label" for="dwelling_types_Any"><strong>Any</strong></label></span>
-<span class="list listmain"><input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_Studio" type="checkbox" value="0" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<span class="list listmain"><input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="0" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
 <label class="form-button-group__label" for="dwelling_types_Studio"><strong>Studio</strong></label></span>
-<span class="list listmain"><input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_1+" type="checkbox" value="1" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<span class="list listmain"><input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="1" ng-model="" checklist-model="filtersForm.dwellingTypes">
 <label class="form-button-group__label" for="dwelling_types_1+"><strong>1+</strong></label></span>
-<span class="list listmain"><input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_2+" type="checkbox" value="2" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<span class="list listmain"><input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="2" ng-model="" checklist-model="filtersForm.dwellingTypes">
 <label class="form-button-group__label" for="dwelling_types_2+"><strong>2+</strong></label></span>
-<span class="list listmain"><input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_3+" type="checkbox" value="3" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<span class="list listmain"><input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="3" ng-model="" checklist-model="filtersForm.dwellingTypes">
 <label class="form-button-group__label" for="dwelling_types_3+"><strong>3+</strong></label></span>
-<span class="list listmain"><input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_4+" type="checkbox" value="4" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<span class="list listmain"><input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="4" ng-model="" checklist-model="filtersForm.dwellingTypes">
 <label class="form-button-group__label" for="dwelling_types_4+"><strong>4+</strong></label>
-</span><span class="list listmain"><input checklist-change="preSearch()" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="dwelling_types_5+" type="checkbox" value="5" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+</span><span class="list listmain"><input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="5" ng-model="" checklist-model="filtersForm.dwellingTypes">
 <label class="form-button-group__label" for="dwelling_types_5+"><strong>5+</strong></label></span>
 </div>
+
+<input type="hidden" id="minBedOpt" name="minBed" value="" />
 </div>
+
+
+
+
+<label class="filters__title">Bathrooms</label>
+<div class="form__group">
+<div class="form-button-group bedrooms">
+
+<span class="list listmainbath">
+<input class="minBathOptCls minBathOptInput" id="minBathOptInput" name="minBath" type="checkbox" value="" ng-model="checked" >
+<label class="form-button-group__label_bath" for="dwelling_bath_types_Any"><strong>Any</strong></label></span>
+
+<span class="list listmainbath"><input class="minBathOptCls minBathOptInput" name="minBath" id="minBathOptInput" type="checkbox" value="0" ng-model="" >
+<label class="form-button-group__label_bath" for="dwelling_bath_types_Studio"><strong>Studio</strong></label></span>
+<span class="list listmainbath"><input class="minBathOptCls minBathOptInput" name="minBath" id="minBathOptInput" type="checkbox" value="1" ng-model="" >
+<label class="form-button-group__label_bath" for="dwelling_bath_types_1+"><strong>1+</strong></label></span>
+<span class="list listmainbath"><input class="minBathOptCls minBathOptInput" name="minBath" id="minBathOptInput" type="checkbox" value="2" ng-model="" >
+<label class="form-button-group__label_bath" for="dwelling_bath_types_2+"><strong>2+</strong></label></span>
+<span class="list listmainbath"><input class="minBathOptCls minBathOptInput" name="minBath" id="minBathOptInput" type="checkbox" value="3" ng-model="" >
+<label class="form-button-group__label_bath" for="dwelling_bath_types_3+"><strong>3+</strong></label></span>
+<span class="list listmainbath"><input class="minBathOptCls minBathOptInput" name="minBath" id="minBathOptInput" type="checkbox" value="4" ng-model="" >
+<label class="form-button-group__label_bath" for="dwelling_bath_types_4+"><strong>4+</strong></label>
+</span><span class="list listmainbath"><input class="minBathOptCls minBathOptInput" name="minBath" id="minBathOptInput" type="checkbox" value="5" ng-model="" >
+<label class="form-button-group__label_bath" for="dwelling_bath_types_5+"><strong>5+</strong></label></span>
+</div>
+
+<input type="hidden" id="minBathOpt" name="minBath" value="" />
+</div>
+
+
+
 
 <div class="col-md-4">
 <label class="filters__title">Keywords</label>
 <div class="form__group filters__keywords">
-<input id="query" ng-change="preSearch()" ng-model="filtersForm.query" placeholder="Eg. sustainable, pool, etc..." type="text" class="ng-pristine ng-valid ng-empty ng-touched" style="">
+<input id="KeywordOpt" name="generalSearch" placeholder="Eg. sustainable, pool, etc..." type="text" class="ng-pristine ng-valid ng-empty ng-touched" style="">
 </div>
 </div>
 
@@ -470,46 +511,47 @@
       <label class="">Property Features</label>
       <ul class="el-p-feacher">
 
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertyFeature[]"  value="Air Conditioning"><label for="checkbox8">Air Conditioning</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertyFeature[]"  value="Acreage"><label for="checkbox8">Acreage</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertyFeature[]"  value="Beach Front"><label for="checkbox8">Beach Front</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertyFeature[]"  value="Beach Properties"><label for="checkbox8">Beach Properties</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertyFeature[]"  value="Gated Community"><label for="checkbox8">Gated Community</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertyFeature[]"  value="Income Producing"><label for="checkbox8">Income Producing</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertyFeature[]"  value="Luxury Estate"><label for="checkbox8">Luxury Estate</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertyFeature[]"  value="Ocean View"><label for="checkbox8">Ocean View</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertyFeature[]"  value="Pool"><label for="checkbox8">Pool</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertyFeature[]"  value="Owner Financing"><label for="checkbox8">Owner Financing</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Air Conditioning"><label for="checkbox8">Air Conditioning</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Acreage"><label for="checkbox8">Acreage</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Beach Front"><label for="checkbox8">Beach Front</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Beach Properties"><label for="checkbox8">Beach Properties</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Gated Community"><label for="checkbox8">Gated Community</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Income Producing"><label for="checkbox8">Income Producing</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Luxury Estate"><label for="checkbox8">Luxury Estate</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Ocean View"><label for="checkbox8">Ocean View</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Pool"><label for="checkbox8">Pool</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Owner Financing"><label for="checkbox8">Owner Financing</label></div></li>
       </ul>
     </div>
     <div class="el-p-spmark-main col-md-6">
       <label class="">Special Markets</label>
       <ul class="el-p-sp-marker">
 
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertySpMarker[]"  value="Featured Properties"><label for="checkbox8">Featured Properties</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertySpMarker[]"  value="Developments"><label for="checkbox8">Developments</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertySpMarker[]"  value="Luxury Properties"><label for="checkbox8">Luxury Properties</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertySpMarker[]"  value="Beach Properties"><label for="checkbox8">Hotels</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertySpMarker[]"  value="Gated Community"><label for="checkbox8">Large Farms</label></div></li>
-          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" name="propertySpMarker[]"  value="Income Producing"><label for="checkbox8">Vacation Rentals</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Featured Properties"><label for="checkbox8">Featured Properties</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Developments"><label for="checkbox8">Developments</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Luxury Properties"><label for="checkbox8">Luxury Properties</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Beach Properties"><label for="checkbox8">Hotels</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Gated Community"><label for="checkbox8">Large Farms</label></div></li>
+          <li><div class="checkbox checkbox-info checkbox-circle"><input type="checkbox" id="like_propertyFeatureOpt" name="like_propertyFeature[]"  value="Income Producing"><label for="checkbox8">Vacation Rentals</label></div></li>
 
     </div>
 </div>
 
 
 <div class="filters__unit--full">
-<button class="button button--full filters__submit" ng-click="saveFilters()" type="button">
-Update
-</button>
-<div class="u-centered">
-<button class="filters__reset utility-links utility-links--reset" ng-click="resetFilters()" type="button"><i class="fa fa-repeat" aria-hidden="true"></i>&nbsp;
-Reset Filters
-</button>
-<button class="filters__close utility-links utility-links--close" ng-click="$hide()" type="button"><i class="fa fa-times-circle-o" aria-hidden="true"></i>&nbsp;
-Cancel
-</button>
+  <button class="button button--full filters__submit" id="updateSearchResult" type="button">Update</button>
+
+  <div class="u-centered">
+    <button class="filters__reset utility-links utility-links--reset" ng-click="resetFilters()" type="button"><i class="fa fa-repeat" aria-hidden="true"></i>&nbsp;Reset Filters
+  </button>
+
+  <button class="filters__close utility-links utility-links--close" id="utility_links_close" type="button"><i class="fa fa-times-circle-o" aria-hidden="true"></i>&nbsp;
+  Cancel
+  </button>
+  </div>
 </div>
-</div></div>
+
+</div>
 
 <div class="advancedpart el-disable">
 <div class="col-md-4">
@@ -524,58 +566,47 @@ Cancel
       </ul>
     </div>
 </div>
+
 <div class="col-md-12 imagupload">
       <div class="col-sm-3 form-group">
-                <select class="form-control" id="sel1" name="locationid">
-                  <option>Unite..</option>
-                  <option>Unite..</option>
-                  <option>Unite..</option>
-                  <option>Unite..</option>
-                </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> 
+        <select class="form-control" id="sel1" name="locationid">
+          <option>Unite..</option>
+          <option>Unite..</option>
+          <option>Unite..</option>
+          <option>Unite..</option>
+        </select>
+        <i class="fa fa-chevron-down" aria-hidden="true"></i> 
       </div>
 
       <div class="col-sm-8 form-group">
-              <input type="text" name="location_input[]" id="location_input" class="sliderValue" placeholder="Enter location" required style="padding: 0;">
+        <input type="text" name="location_input[]" id="location_input" class="sliderValue" placeholder="Enter location" required style="padding: 0;">
       </div>
               
-            <div class="col-md-2 button">
-              
-              <input type="button" name="fileToUpload" id="fileToUpload">add<i class="fa fa-plus-circle" aria-hidden="true"></i>
-
-            </div>
-
-
-
-
+      <div class="col-md-2 button">
+        <input type="button" name="fileToUpload" id="fileToUpload">add<i class="fa fa-plus-circle" aria-hidden="true"></i>
+      </div>
+</div>
 
 </div>
 
-
-
-</div>
 <div class="col-md-4 cost">
-
-
 
 <div data-role="main" class="ui-content">
    
-      <label for="price-min" id="price-min-label">Cost</label>
-      
-      
-     <div class="col-md-12"> <div class="col-sm-4 form-group">
-                <select class="form-control" id="sel1">
-                  <option>Min.</option>
-                  <option>Min.</option>
-                  <option>Min.</option>
-                  <option>Min.</option>
-                </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
+    <label for="price-min" id="price-min-label">Cost</label>
+    <div class="col-md-12"> <div class="col-sm-4 form-group">
+        <select class="form-control" id="sel1">
+          <option>Min.</option>
+          <option>Min.</option>
+          <option>Min.</option>
+          <option>Min.</option>
+        </select>
+        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </div>
                 
-               <div class="col-sm-1"> TO</div>
+    <div class="col-sm-1"> TO</div>
                 
-   
-      <div class="col-sm-4 form-group">
+    <div class="col-sm-4 form-group">
                 <select class="form-control" id="sel1">
                   <option>Max.</option>
                   <option>Max.</option>
@@ -716,7 +747,7 @@ View Results
 
 
                 </ul>
-
+</form>
 
 <ul class="pull-right rightfilter nav navbar-nav">
 <li><a href="#"><i class="fa fa-bell" aria-hidden="true"></i>&nbsp;Alerts</a></li>
@@ -770,7 +801,7 @@ View Results
 </section>
 
 
-<section class="listing" style="min-height: 300px;">
+<section class="listing" style="min-height: 450px;">
 
 <div id="container-fluid-listing" class="container-fluid">
 
@@ -890,549 +921,9 @@ View Results
 
 <!-- <script src="skin/cb_02/js/jquery-1.js"></script> -->
 <script src="skin/cb_02/js/jquery-ui.js"></script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
 
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-  
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-    });
-  });
-  
-  
-  $("#fileToUpload").on("click",function(){ 
-         $(".imagupload").append('<div class="col-sm-3 form-group"><select class="form-control" id="sel1" name="locationid[]"><option>Unite..</option><option>Unite..</option><option>Unite..</option><option>Unite..</option></select><i class="fa fa-chevron-down" aria-hidden="true"></i> </div><div class="col-sm-8 form-group"><input type="text" name="location_input[]" id="location_input" class="sliderValue" placeholder="Enter location" required style="padding: 0;"></div>');
-  });
-  
-})
-$(document).on('click',function(){
-  $('.collapse').collapse('hide');
-})
-
-
-
-
-</script>
-
-  <script>
-  $( function() {
-    $( "#slider-range" ).slider({
-      range: true,
-      min: 0,
-      max: 500,
-      values: [ 75, 300 ],
-      slide: function( event, ui ) {
-        //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-        for (var i = 0; i < ui.values.length; ++i) {
-                $("input.sliderValue[data-index=" + i + "]").val('$'+ui.values[i]);
-            }
-      }
-    });
-  
-  
-  
-  
-  $( "#slider-range-inner" ).slider({
-      range: true,
-      min: 0,
-      max: 70000000,
-      values: [ 0, 70000000],
-      slide: function( event, ui ) {
-        //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-        for (var i = 0; i < ui.values.length; ++i) {
-            $("input.sliderValue[data-index=" + i + "]").val('$'+ui.values[i]);
-        }
-      }
-    });
-  
-  
-  
-    /*$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - $" + $( "#slider-range" ).slider( "values", 1 ) );*/
-
-
-      $( "#slider-range2" ).slider({
-      range: "max",
-      min: 0,
-      max: 500,
-      value: 200,
-      slide: function( event, ui ) {
-        $( "#LivingPrice" ).val(ui.value+'+');
-      }
-    });
-
-      $( "#slider-range3" ).slider({
-      range: "max",
-      min: 0,
-      max: 500,
-      value: 200,
-      slide: function( event, ui ) {
-        $( "#Acres" ).val(ui.value+'+');
-      }
-    });
-
-      $( "#slider-range4" ).slider({
-      range: "max",
-      min: 0,
-      max: 500,
-      value: 200,
-      slide: function( event, ui ) {
-        $( "#SquareMeters" ).val(ui.value+'+');
-      }
-    });
-  
- $( "#slider-range99" ).slider({
-      range: "max",
-      min: 0,
-      max: 500,
-      value: 200,
-      slide: function( event, ui ) {
-        $( "#Acres99" ).val(ui.value+'+');
-      }
-    });
-
-      $( "#slider-range98" ).slider({
-      range: "max",
-      min: 0,
-      max: 500,
-      value: 200,
-      slide: function( event, ui ) {
-        $( "#SquareMeters98" ).val(ui.value+'+');
-      }
-    });
-  
-  
-
-
-
-
-      var selectort = 'span.listmain';
-
-      $(selectort).on('click', function(){
-          $(selectort).removeClass('active');
-          $(this).addClass('active');
-      });
-
-    var selectorss = 'span.adv_beds';
-
-      $(selectorss).on('click', function(){  
-          $(selectorss).removeClass('active');
-          $(this).addClass('active');
-      });
-    
-    
-    var selectorn = 'span.adv_bath';
-
-      $(selectorn).on('click', function(){  
-          $(selectorn).removeClass('active');
-          $(this).addClass('active');
-      });
-    
-    
-  } );
-  
+<script src="skin/cb_02/js/resultpage.js"></script> 
  
- 
-  
-$(document).ready(function() {
-
-
-
-    $("#container-fluid-listing").addClass('checkloading');
-
-    $("#container-fluid-listing").html('<img src="skin/cb_02/images/blue-loading-icon.gif" />');
-    //return false;
-
-    var generalSearch = $("#Keyword").val();
-    var minPrice = $("#MinPrice").val();
-    var maxPrice = $("#Maxprice").val();
-    var propertyCity = $("#property_province").val();
-    var addParams = '';
-    var startfrom = 1;
-    var limitrecord = 20;
-    minPrice = minPrice.substr(1);
-    maxPrice = maxPrice.substr(1);
-
-    addParams = 'generalSearch='+generalSearch+'&minPrice='+minPrice+'&maxPrice='+maxPrice+'&propertyCategory=Sale&minBed=1&minBath=1&limit='+startfrom+','+limitrecord+'&propertyAgentOffice=';
-    
-
-    if( (addParams != '') || (minPrice != '') || (maxPrice != '') ){
-
-      /*$(".property").show('fast');
-      if( $(window).scrollTop() < 5 ){
-        $('html, body').animate({
-              scrollTop: $("#pageTitle1").offset().top
-          }, 500);
-      }*/
-
-      /*var searchUrl = "/real-estate/search?"+addParams;
-      window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
-
-      if( $("#quick_search_advanced_link").length == 1 ){
-        $("#quick_search_advanced_link").attr("href", searchUrl)
-      }*/
-      
-
-      addParams = 'function=website/property/generalSearch&'+addParams;
-
-     //apiCall(params,'searchLive');
-       
-    } 
-
-
-    var urlCall  = 'https://www.coldwellbankercostarica.com/api/';
-    addParams    += '&format=json&token=1';
-
-    $.ajax({
-
-        type: "POST",
-        url: urlCall,
-        data: addParams,
-        success: function( response ) {
-
-           
-          propertyData = response.propertyData;
-          var propertyhtml = "";
-          
-          for(var pp=0;pp<propertyData.length;pp++){
-
-              //alert(propertyData[pp].propertyTitle);
-          propertyhtml +='<div class="col-sm-2 listingdiv">';
-
-          propertyhtml +='<div class="imgdiv">';
-            propertyhtml +='<div id="main-slider" class="carousel slide" data-ride="carousel">';
-              propertyhtml +='<div class="carousel-inner">';
-              //var propimage = propertyData[pp].propertyUrlSmall;
-              //var propimage = propimage.trim();
-              //if(propimage!="null"){
-                  propertyhtml +='<div class="item active"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'" alt="https://s3.amazonaws.com/cbcr/image/propertyFile/a0C0V00000u7XvSUAU/small/a0B0V0000224ZykUAE.jpeg"></div>';
-                 // propertyhtml +='<div class="item"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'"></div>';
-             // }else{
-               //   propertyhtml +='<div class="item"> <img class="img-responsive" src="https://s3.amazonaws.com/cbcr/image/propertyFile/a0C0V00000u7XvSUAU/small/a0B0V0000224ZykUAE.jpeg"></div>';
-             // }
-                
-              propertyhtml +='</div>';
-             // propertyhtml +='<a class="left carousel-control" href="#main-slider" data-slide="prev"> <span class="icon-prev"></span> </a>';
-             // propertyhtml +='<a class="right carousel-control" href="#main-slider" data-slide="next"> <span class="icon-next"></span> </a>';
-               
-            propertyhtml +='</div>';
-            propertyhtml +='<i class="fa fa-heart" aria-hidden="true"></i>';
-            propertyhtml +='<span class="sale">'+propertyData[pp].propertyCategory+'</span>';
-          propertyhtml +='</div>';
-       
-          propertyhtml +='<div class="col-sm-12 blue">';
-            propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice+'</div>';
-            propertyhtml +='<div class="col-sm-6 rightcount">';
-              propertyhtml +='<span>'+propertyData[pp].propertyBed+' bed</span>   <span> '+propertyData[pp].propertyBath+' bath</span>';
-            propertyhtml +='</div>';
-          propertyhtml +='</div>';
-         
-          propertyhtml +='<div class="col-sm-12 location">';
-            propertyhtml +='<span><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; '+propertyData[pp].propertyCityLabel+'</span>';
-            propertyhtml +='<span><i class="fa fa-home" aria-hidden="true"></i>&nbsp;'+propertyData[pp].propertyType+'</span>';
-          propertyhtml +='</div>';
-          propertyhtml +='<div class="col-sm-12 bottom">';
-            propertyhtml +='<div class="col-sm-5">BUILT :<b> '+propertyData[pp].propertyBuilt+'</b></div>';
-            propertyhtml +='<div class="col-sm-2"><i class="fa fa-camera" aria-hidden="true"></i><b> '+propertyData[pp].propertyPictureCount+'</b></div>';
-            propertyhtml +='<div class="col-sm-5">ID: <b>#'+propertyData[pp].propertyId+'</b></div>';
-          propertyhtml +='</div>';
-         
-         propertyhtml +='</div>';
-
-       }
-
-        $("#container-fluid-listing").removeClass('checkloading');
-
-        /*propertyhtml +='<div>';
-            propertyhtml +='<div class="col-sm-12 blue"><a id="loadmoreprop" class="loadmoreprop">Load More</a></div>';
-        propertyhtml +='</div>';*/
-
-        
-        $("#container-fluid-listing-more").show();
-
-        $("#container-fluid-listing").html(propertyhtml); 
-          
-        }
-    });
-
-
-    jQuery(document).on('click', '.loadmoreprop', function(event){
-
-        $("#container-fluid-listing").addClass('checkloading');
-        $("#container-fluid-listing-more").hide();
-        $("#container-fluid-listing-more-fetching").show();
-         
-
-        startfrom +=20;
-
-        addParams = 'generalSearch='+generalSearch+'&minPrice='+minPrice+'&maxPrice='+maxPrice+'&propertyCategory=Sale&minBed=1&minBath=1&limit='+startfrom+','+limitrecord+'&propertyAgentOffice=';
-      
-        if( (addParams != '') || (minPrice != '') || (maxPrice != '') ){
-
-          /*$(".property").show('fast');
-          if( $(window).scrollTop() < 5 ){
-            $('html, body').animate({
-                  scrollTop: $("#pageTitle1").offset().top
-              }, 500);
-          }*/
-          /*var searchUrl = "/real-estate/search?"+addParams;
-          window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
-
-          if( $("#quick_search_advanced_link").length == 1 ){
-            $("#quick_search_advanced_link").attr("href", searchUrl)
-          }*/
-        
-          addParams = 'function=website/property/generalSearch&'+addParams;
-        
-          //apiCall(params,'searchLive');
-        } 
-
-        var urlCall  = 'https://www.coldwellbankercostarica.com/api/';
-        addParams    += '&format=json&token=1';
-
-        $.ajax({
-
-        type: "POST",
-        url: urlCall,
-        data: addParams,
-
-        success: function( response ) {
-
-          propertyData = response.propertyData;
-          var propertyhtml = "";
-          
-          for(var pp=0;pp<propertyData.length;pp++){
-
-              //alert(propertyData[pp].propertyTitle);
-          propertyhtml +='<div class="col-sm-2 listingdiv">';
-
-          propertyhtml +='<div class="imgdiv">';
-            propertyhtml +='<div id="main-slider" class="carousel slide" data-ride="carousel">';
-              propertyhtml +='<div class="carousel-inner">';
-              //var propimage = propertyData[pp].propertyUrlSmall;
-              //var propimage = propimage.trim();
-              //if(propimage!="null"){
-                  propertyhtml +='<div class="item active"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'" alt="https://s3.amazonaws.com/cbcr/image/propertyFile/a0C0V00000u7XvSUAU/small/a0B0V0000224ZykUAE.jpeg"></div>';
-                 // propertyhtml +='<div class="item"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'"></div>';
-             // }else{
-               //   propertyhtml +='<div class="item"> <img class="img-responsive" src="https://s3.amazonaws.com/cbcr/image/propertyFile/a0C0V00000u7XvSUAU/small/a0B0V0000224ZykUAE.jpeg"></div>';
-             // }
-                
-              propertyhtml +='</div>';
-             // propertyhtml +='<a class="left carousel-control" href="#main-slider" data-slide="prev"> <span class="icon-prev"></span> </a>';
-             // propertyhtml +='<a class="right carousel-control" href="#main-slider" data-slide="next"> <span class="icon-next"></span> </a>';
-               
-            propertyhtml +='</div>';
-            propertyhtml +='<i class="fa fa-heart" aria-hidden="true"></i>';
-            propertyhtml +='<span class="sale">'+propertyData[pp].propertyCategory+'</span>';
-          propertyhtml +='</div>';
-       
-          propertyhtml +='<div class="col-sm-12 blue">';
-            propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice+'</div>';
-            propertyhtml +='<div class="col-sm-6 rightcount">';
-              propertyhtml +='<span>'+propertyData[pp].propertyBed+' bed</span>   <span> '+propertyData[pp].propertyBath+' bath</span>';
-            propertyhtml +='</div>';
-          propertyhtml +='</div>';
-         
-          propertyhtml +='<div class="col-sm-12 location">';
-            propertyhtml +='<span><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; '+propertyData[pp].propertyCityLabel+'</span>';
-            propertyhtml +='<span><i class="fa fa-home" aria-hidden="true"></i>&nbsp;'+propertyData[pp].propertyType+'</span>';
-          propertyhtml +='</div>';
-          propertyhtml +='<div class="col-sm-12 bottom">';
-            propertyhtml +='<div class="col-sm-5">BUILT :<b> '+propertyData[pp].propertyBuilt+'</b></div>';
-            propertyhtml +='<div class="col-sm-2"><i class="fa fa-camera" aria-hidden="true"></i><b> '+propertyData[pp].propertyPictureCount+'</b></div>';
-            propertyhtml +='<div class="col-sm-5">ID: <b>#'+propertyData[pp].propertyId+'</b></div>';
-          propertyhtml +='</div>';
-         
-         propertyhtml +='</div>';
-
-       }
-
-        $("#container-fluid-listing").removeClass('checkloading');
-
-        if(propertyData.length==0){
-          $("#container-fluid-listing-more").hide();
-          $("#container-fluid-listing-more-fetching").hide();
-        }else{
-          $("#container-fluid-listing-more").show();
-          $("#container-fluid-listing-more-fetching").hide();
-        }
-
-        $("#container-fluid-listing").append(propertyhtml); 
-          
-        }
-
-      });
-
-    });
-
-    $("#property_province option").on("click",function(){
-        var mystring = $(this).text();
-        mystring = mystring.substring(0,10);
-
-       
-        $('#province_drop_id').removeClass('open');
-        $('#province_txt').html(mystring);
-
-    });
-
-    $("#property_type option").on("click",function(){
-
-      var mystringtype = $(this).text();
-      mystringtype = mystringtype.substring(0,10);
-      $('#property_type_drop_id').removeClass('open');
-      $('#property_type_txt').html(mystringtype);
-     
-    });
-
-
-    $(".sliderValue").keydown(function (e) {
-  
-    if(this.id=="MinPrice" || this.id=="Maxprice"){
-      var inputval = $(this).val();
-      if (inputval.indexOf('$') > -1)
-      {
-       
-      }else{
-        $(this).val("$"+$(this).val());
-      }
-    }
-  
-        // Allow: backspace, delete, tab, escape, enter and .
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-             // Allow: Ctrl+A, Command+A
-            (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
-             // Allow: home, end, left, right, down, up
-            (e.keyCode >= 35 && e.keyCode <= 40)) {
-                 // let it happen, don't do anything
-                 return;
-        }
-        // Ensure that it is a number and stop the keypress
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-    });
-
-
-    $(".el-advancesearch").on("click",function(){
-        $('.toppart').toggle(1000);
-        $('.advancedpart').toggle(1000);
-        $(this).toggle();
-        $(".el-back").toggle()
-    });
-    $(".el-back").on("click",function(){
-        $('.toppart').toggle(1000);
-        $('.advancedpart').toggle(1000);
-        $(this).toggle();
-        $(".el-advancesearch").toggle()
-    });
-
-    var activePrice="100";
-
-
-    $(".el-sp-price").on("click",function(){
-        $(".el-sp-price").removeClass('is-active');
-        $(this).addClass('is-active');
-        var selPrice=$(this).attr('data');
-        activePrice=selPrice;
-        selPrice=parseInt(selPrice);
-        
-        var minPrice=0;
-        var maxPrice=150;
-        if(selPrice==100)
-        {
-          minPrice=0;
-          maxPrice=150;
-        }
-        else if(selPrice>100 && selPrice<1000)
-        {
-          minPrice=selPrice-50;
-          maxPrice=selPrice+50;
-        }
-        else if(selPrice==1000)
-        {
-          minPrice=selPrice-50;
-          maxPrice=selPrice+250;
-        }
-        else if(selPrice>1000 && selPrice<2000)
-        {
-          minPrice=selPrice-250;
-          maxPrice=selPrice+250;
-        }
-        else if(selPrice==2000)
-        {
-          minPrice=selPrice-250;
-          maxPrice=selPrice+500;
-        }
-        else if(selPrice>2000 && selPrice<=5000)
-        {
-          minPrice=selPrice-500;
-          maxPrice=selPrice+500;
-        }
-        else if(selPrice>5000 && selPrice<50000)
-        {
-          minPrice=selPrice-2500;
-          maxPrice=selPrice+2500;
-        }
-        else if(selPrice==50000)
-        {
-          minPrice=selPrice-2500;
-          maxPrice=selPrice+5000;
-        }
-        else if(selPrice>50000)
-        {
-          minPrice=selPrice-5000;
-          maxPrice=selPrice;
-         
-        }
-        if(minPrice!=0)
-        {
-          minPrice=minPrice*1000;
-          maxPrice=maxPrice*1000;
-        }
-        $("#MinPrice").val("$"+minPrice);
-        $("#Maxprice").val("$"+maxPrice);
-        var selPriceHtml=$(this).html();
-        $("#currPrice").html(selPriceHtml);
-        $('#el-li-price').removeClass('open');
-
-    });
-
-    
-    $('.imgdiv').each(function(index){
-     $(this).find('#main-slider').attr('id',"main-slider"+index);
-     $(this).find('.carousel-control').attr('href',"#main-slider"+index);
-    });
-});
-  
-  
-  </script>
 
   
 </body>
