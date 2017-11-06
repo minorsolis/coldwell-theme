@@ -200,7 +200,7 @@ $(document).ready(function() {
 
     $("#limit").val(startfrom+','+limitrecord);
     var formParams = $("#searchLiveForm").serialize();
-    alert(formParams);
+    //alert(formParams);
     if(formParams != undefined){
       addParams = formParams;
     }else{
@@ -220,7 +220,7 @@ $(document).ready(function() {
 
    // var urlCall  = 'https://www.coldwellbankercostarica.com/api/';
     //addParams    += '&format=json&token=1';
-    alert(addParams);
+    //alert(addParams);
     //return false;
     apiCall(addParams,0);
     /*$.ajax({
