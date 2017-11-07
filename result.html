@@ -226,31 +226,31 @@
 
           <ul class="named_prices newclassprice">
               <li>
-                <span class="el-sp-price" data="100" id="100">$100</span>
+                <span class="el-sp-price" data="100" id="100">$100k</span>
               </li>
               <li>
-                <span class="el-sp-price" data="200" id="200">$200</span>
+                <span class="el-sp-price" data="200" id="200">$200k</span>
               </li>
               <li>
-                <span class="el-sp-price" data="300" id="300">$300</span>
+                <span class="el-sp-price" data="300" id="300">$300k</span>
               </li>
               <li>
-                <span class="el-sp-price" data="400" id="400">$400</span>
+                <span class="el-sp-price" data="400" id="400">$400k</span>
               </li>
               <li>
-                <span class="el-sp-price" data="500" id="500">$500</span>
+                <span class="el-sp-price" data="500" id="500">$500k</span>
               </li>
               <li>
-                <span class="el-sp-price" data="600" id="600">$600</span>
+                <span class="el-sp-price" data="600" id="600">$600k</span>
               </li>
               <li>
-                <span class="el-sp-price" data="700" id="700">$700</span>
+                <span class="el-sp-price" data="700" id="700">$700k</span>
               </li>
               <li>
-                <span class="el-sp-price" data="800" id="800">$800</span>
+                <span class="el-sp-price" data="800" id="800">$800k</span>
               </li>
               <li>
-                <span class="el-sp-price" data="900" id="900">$900</span>
+                <span class="el-sp-price" data="900" id="900">$900k</span>
               </li>
               <li>
                 <span class="el-sp-price" data="1000" id="1000">$1M</span>
@@ -372,15 +372,15 @@
   <div class="form__group">
     <div class="form-button-group">
       <div class="form__checkbox form-checkbox--alt">
-        <input name="propertyType[]" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="property_typeOptCondo" type="checkbox" value="condo" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+        <input name="propertyType[]" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="property_typeOptCondo" type="checkbox" value="Condo" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
         <label class="form-button-group__label" for="property_typeOptCondo"><span>Condo</span></label>
       </div>
       <div class="form__checkbox form-checkbox--alt">
-        <input name="propertyType[]" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="property_typeOptHouse" type="checkbox" value="house" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+        <input name="propertyType[]" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="property_typeOptHouse" type="checkbox" value="Home" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
         <label class="form-button-group__label" for="property_typeOptHouse"><span>House</span></label>
       </div>
       <div class="form__checkbox form-checkbox--alt">
-        <input name="propertyType[]" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="property_typeOptLand" type="checkbox" value="land" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+        <input name="propertyType[]" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="property_typeOptLand" type="checkbox" value="Land" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
         <label class="form-button-group__label" for="property_typeOptLand"><span>Land</span></label>
       </div>
     </div>
@@ -434,28 +434,27 @@
 <label class="filters__title">Bathrooms</label>
 <div class="form__group">
 <div class="form-button-group bedrooms">
+<span class="list listmain">
 
-<span class="list listmainbath">
-<input class="minBathOptCls minBathOptInput" id="minBathOptInput" name="minBath" type="checkbox" value="" ng-model="checked" >
-<label class="form-button-group__label_bath" for="dwelling_bath_types_Any"><strong>Any</strong></label></span>
+<input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;"  name="minBath" type="radio" value="" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
 
-<span class="list listmainbath"><input class="minBathOptCls minBathOptInput" name="minBath" id="minBathOptInput" type="checkbox" value="0" ng-model="" >
-<label class="form-button-group__label_bath" for="dwelling_bath_types_Studio"><strong>Studio</strong></label></span>
-<span class="list listmainbath"><input class="minBathOptCls minBathOptInput" name="minBath" id="minBathOptInput" type="checkbox" value="1" ng-model="" >
-<label class="form-button-group__label_bath" for="dwelling_bath_types_1+"><strong>1+</strong></label></span>
-<span class="list listmainbath"><input class="minBathOptCls minBathOptInput" name="minBath" id="minBathOptInput" type="checkbox" value="2" ng-model="" >
-<label class="form-button-group__label_bath" for="dwelling_bath_types_2+"><strong>2+</strong></label></span>
-<span class="list listmainbath"><input class="minBathOptCls minBathOptInput" name="minBath" id="minBathOptInput" type="checkbox" value="3" ng-model="" >
-<label class="form-button-group__label_bath" for="dwelling_bath_types_3+"><strong>3+</strong></label></span>
-<span class="list listmainbath"><input class="minBathOptCls minBathOptInput" name="minBath" id="minBathOptInput" type="checkbox" value="4" ng-model="" >
-<label class="form-button-group__label_bath" for="dwelling_bath_types_4+"><strong>4+</strong></label>
-</span><span class="list listmainbath"><input class="minBathOptCls minBathOptInput" name="minBath" id="minBathOptInput" type="checkbox" value="5" ng-model="" >
-<label class="form-button-group__label_bath" for="dwelling_bath_types_5+"><strong>5+</strong></label></span>
+<label class="form-button-group__label" for="dwelling_types_Any"><strong>Any</strong></label></span>
+<span class="list listmain"><input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;" name="minBath"  type="radio" value="0" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_Studio"><strong>Studio</strong></label></span>
+<span class="list listmain"><input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;" name="minBath" type="radio" value="1" ng-model="" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_1+"><strong>1+</strong></label></span>
+<span class="list listmain"><input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;" name="minBath" type="radio" value="2" ng-model="" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_2+"><strong>2+</strong></label></span>
+<span class="list listmain"><input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;" name="minBath" type="radio" value="3" ng-model="" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_3+"><strong>3+</strong></label></span>
+<span class="list listmain"><input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;" name="minBath" type="radio" value="4" ng-model="" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_4+"><strong>4+</strong></label>
+</span><span class="list listmain"><input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;" name="minBath" type="radio" value="5" ng-model="" checklist-model="filtersForm.dwellingTypes">
+<label class="form-button-group__label" for="dwelling_types_5+"><strong>5+</strong></label></span>
 </div>
 
-<input type="hidden" id="minBathOpt" name="minBath" value="" />
+<input type="hidden" id="minBathOpt" name="minBed" value="" />
 </div>
-
 
 
 
@@ -772,30 +771,30 @@ View Results
 
 <section class="resultsearch">
 
-<div class="container-fluid">
+  <div class="container-fluid">
 
-<div class="col-sm-10">
+  <div class="col-sm-10">
+    <span class="col-sm-2"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;<span id="totalResultsFound"></span></span>
+    <span class="col-sm-10"><a id="resetResults" class="resetResults" style="cursor:pointer;" ><i class="fa fa-times-circle" aria-hidden="true"></i>&nbsp;Reset Search</a></span>
+  </div>
 
-<span class="col-sm-2"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;314 Results</span>
+  <div class="col-sm-2 right">
+      <div class="col-sm-3">  Sort by: </div>
+          <div class="col-sm-9">
 
-<span class="col-sm-10"><a href="#"><i class="fa fa-times-circle" aria-hidden="true"></i>&nbsp;Reset Search</a></span>
+            <select class="form-control" id="sel1">
+                <option>Any</option>
+                <option>Any</option>
+                <option>Any</option>
+                <option>Any</option>
+            </select>
+                  
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          </div>
+                  
+  </div>
 
-</div>
-
-<div class="col-sm-2 right">
-          <div class="col-sm-3">  Sort by: </div>
-              <div class="col-sm-9">  <select class="form-control" id="sel1">
-                  <option>Any</option>
-                  <option>Any</option>
-                  <option>Any</option>
-                  <option>Any</option>
-                </select>
-                
-                <i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-                
-              </div>
-
-</div>
+  </div>
 
 
 </section>
