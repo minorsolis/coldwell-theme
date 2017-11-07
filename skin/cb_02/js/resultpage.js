@@ -322,7 +322,68 @@ $(document).ready(function() {
       apiCall(addParams,0);
 
      });
+    
+    $(document).on('click', '#resetResults', function(event){
 
+ 
+      event.preventDefault();
+      $("#container-fluid-listing").addClass('checkloading');
+      $("#container-fluid-listing").css("text-align", "center");
+      $("#container-fluid-listing-more").hide();
+      //$("#container-fluid-listing-more-fetching").show();
+
+      $("#Keyword").val('');
+      $("#MinPrice").val(1);
+      $("#Maxprice").val(7000000);
+      $("#property_province").val('');
+      $("#minBathOpt").val('');
+      $("#minBedOpt").val('');
+
+      $('#province_txt').html('All Provinces');
+      $('#propertyCategory_txt').html('Category');
+      $('#property_type_txt').html('Property Type');
+      $("#currPrice").html('Price');
+
+      $( ".listmain" ).each(function( index ) {
+        $(this).removeClass('active');
+      });
+
+      $( ".listmainbath" ).each(function( index ) {
+        $(this).removeClass('active');
+      });
+
+      $( "#propertyCategory option" ).each(function( index ) {
+        $(this).prop("selected", false)
+        $(this).removeAttr("selected");
+      });
+
+      $( "#property_province option" ).each(function( index ) {
+        $(this).prop("selected", false)
+        $(this).removeAttr("selected");
+      });
+
+      $( "#property_type option" ).each(function( index ) {
+        $(this).prop("selected", false)
+        $(this).removeAttr("selected");
+      });
+
+      var addParams = '';
+      var startfrom = 1;
+      var limitrecord = 40;
+
+      $("#startfrom").val(startfrom);
+      $("#limitrecord").val(limitrecord);
+
+      $("#limit").val(startfrom+','+limitrecord);
+      
+      addParams = 'generalSearch=&minPrice=&maxPrice=&propertyCategory=&minBed=1&minBath=1&limit='+startfrom+','+limitrecord+'&propertyAgentOffice=';
+      addParams = 'function=website/property/generalSearch&'+addParams;
+      addParams += '&format=json&token=1';
+      
+      apiCall(addParams,0);
+
+     
+    });
 
     $(document).on('click', '#updateSearchResult', function(event){
  
@@ -369,11 +430,26 @@ $(document).ready(function() {
 
     
     $(document).on('click', '.minBathOptInput', function(event){
+      
       $("#minBathOpt").val($(this).val());
+
+      $( ".listmain" ).each(function( index ) {
+        $(this).removeClass('active');
+      });
+
+      $( this ).parent().addClass( "active" );
+
     });
 
     $(document).on('click', '.minBedOptInput', function(event){
       $("#minBedOpt").val($(this).val());
+ 
+      $( ".listmainbath" ).each(function( index ) {
+        $(this).removeClass('active');
+      });
+
+      $( this ).parent().addClass( "active" );
+
     });
     
 
@@ -654,23 +730,26 @@ $(document).ready(function() {
           maxPrice=selPrice;
          
         }
-        if(minPrice!=0)
-        {
-          minPrice=minPrice*1000;
-          maxPrice=maxPrice*1000;
-        }
+        
+          minPriceLast=minPrice*1000;
+          maxPriceLast=maxPrice*1000;
+          
         //$("#MinPrice").val("$"+minPrice);
         //$("#Maxprice").val("$"+maxPrice);
 
         $('#MinPrice').each(function(){
-            $(this).val(minPrice);
+            $(this).val(minPriceLast);
         });
         $('#Maxprice').each(function(){
-            $(this).val(maxPrice);
+            $(this).val(maxPriceLast);
         });
 
         var selPriceHtml=$(this).html();
-        $("#currPrice").html(selPriceHtml);
+
+        if(minPrice==0)
+          $("#currPrice").html(minPrice+'-'+maxPrice+'k');
+        else
+        $("#currPrice").html(minPrice+'k-'+maxPrice+'k');
         $('#el-li-price').removeClass('open');
 
     });
@@ -706,14 +785,15 @@ $(document).ready(function() {
           propertyhtml +='<div class="imgdiv">';
             propertyhtml +='<div id="main-slider" class="carousel slide" data-ride="carousel">';
               propertyhtml +='<div class="carousel-inner">';
-              //var propimage = propertyData[pp].propertyUrlSmall;
-              //var propimage = propimage.trim();
-              //if(propimage!="null"){
+              var propimage = propertyData[pp].propertyUrlSmall;
+              
+              if(propimage!=null){
+
                   propertyhtml +='<div class="item active"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'" alt="https://s3.amazonaws.com/cbcr/image/propertyFile/a0C0V00000u7XvSUAU/small/a0B0V0000224ZykUAE.jpeg"></div>';
-                 // propertyhtml +='<div class="item"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'"></div>';
-             // }else{
-               //   propertyhtml +='<div class="item"> <img class="img-responsive" src="https://s3.amazonaws.com/cbcr/image/propertyFile/a0C0V00000u7XvSUAU/small/a0B0V0000224ZykUAE.jpeg"></div>';
-             // }
+                  //propertyhtml +='<div class="item"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'"></div>';
+              }else{
+                  propertyhtml +='<div class="item active"> <img class="img-responsive" src="https://www.coldwellbankercostarica.com/skin/cb_02/img/property/no-picture.jpg"></div>';
+              }
                 
               propertyhtml +='</div>';
              // propertyhtml +='<a class="left carousel-control" href="#main-slider" data-slide="prev"> <span class="icon-prev"></span> </a>';
@@ -779,6 +859,28 @@ $(document).ready(function() {
           $("#container-fluid-listing").css("text-align", "center");
           $("#container-fluid-listing").html('<img src="skin/cb_02/images/no-results-found.gif" />');
         }
+          
+        }
+
+      });
+
+
+
+      addParams = addParams.replace('limit=', 'limitnew=');
+      
+      $.ajax({
+
+        type: "POST",
+        url: urlCall,
+        data: addParams,
+
+        success: function( response ) {
+
+          propertyData = response.propertyData;
+          var propertyhtml = "";
+          
+          $("#totalResultsFound").text(propertyData.length+' Results');
+          
           
         }
 
