@@ -95,34 +95,26 @@
   
 
 <ul class="nav navbar-nav">
-                    <li class="dropdown" id="province_drop_id"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><span id='province_txt'>All Provinces</span> <b class="caret"></b></a>
+        <li class="dropdown" id="province_drop_id"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><span id='province_txt'>All Provinces</span> <b class="caret"></b></a>
 
-
-                           <div class="col-sm-2 form-group dropdown-menu">
+          <div class="col-sm-2 form-group dropdown-menu">
              
-                <select class="form-control selectdvi" name="property_province" style="height:auto;" size="10" id="property_province" >
-                  <option value="0">All Provinces</option>
-                  <option value="1">Alajuela</option>
-                  <option value="2">Cartago</option>
-                  <option value="3">Guanacaste</option>
-                  <option value="4">Heredia</option>
-                  <option value="5">Limón</option>
-                  <option value="6">Puntarenas</option>
-                  <option value="7">San Jose</option>
-                  
-                </select>
+          <select class="form-control selectdvi" name="property_province" style="height:auto;" size="10" id="property_province" >
+            <option value="0">All Provinces</option>
+            <option value="1">Alajuela</option>
+            <option value="2">Cartago</option>
+            <option value="3">Guanacaste</option>
+            <option value="4">Heredia</option>
+            <option value="5">Limón</option>
+            <option value="6">Puntarenas</option>
+            <option value="7">San Jose</option>
+            
+          </select>
                 
-                            
-                      
-
-
-
-
-                    </li>
-                    <li id="property_type_drop_id"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><span id='property_type_txt'>Type</span> <b class="caret"></b></a>
-
-
-                           <div class="col-sm-2 form-group dropdown-menu">
+          
+        </li>
+        <li id="property_type_drop_id"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><span id='property_type_txt'>Type</span> <b class="caret"></b></a>
+            <div class="col-sm-2 form-group dropdown-menu">
              
                 <select class="form-control selectdvi" style="height:auto;" size="10" name="property_type[]"  id="property_type" multiple="multiple" >
                 <option value="">All Type</option>
@@ -710,11 +702,10 @@ View Results
 <section class="abouttitle"  style="margin:0px;">
   <div class="container-fluid detaild">
     <div class="col-sm-9"> 
-<span class="col-sm-1 lefticon"><a href="#"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></span>
+<span class="col-sm-1 lefticon"><a href="result.html"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></span>
 
-    <a href="index.html">Home &gt;</a> <a href="#">For Sale &gt;</a> <a href="details_page.html">By Area: Alajuela</a>
-      <h2>3B, 2.5B Gorgeous House For Sale in Orotina
-</h2>
+    <a href="index.html">Home &gt;</a> <a href="#" id="cbPropertyCategoryTop"></a> <a href="details_page.html" id="cbPropertyAreaBy"></a>
+      <h2 id="cbPropertyTitle"></h2>
     </div>
     
   <div class="col-sm-3 agent"><a data-toggle="modal" data-target="#myModal" href="#"><i class="fa fa-share-square-o" aria-hidden="true"></i>
@@ -809,41 +800,37 @@ View Results
         
       
         
-         <div class="row topborder"> <div class="col-sm-4">
-         <div class="col-sm-8"> <span class="sale">Sale</span>
-         <strong> $995,000</strong></div>
-         
-        <div class="col-sm-3 fire"> <i class="fa fa-fire" aria-hidden="true"></i><strong> Fire<br>
+         <div class="row topborder"> 
 
-Sale</strong></div>
-          
-          
+         <div class="col-sm-4">
+          <div class="col-sm-8"> 
+            <span class="sale" id="cbPropertyCategory"></span>
+            <strong id="cbPropertyPrice"></strong>
           </div>
-          
-           <div class="col-sm-8"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Orotina, Alajuela, Costa Rica</div></div>
-          
-          
-          
          
+          <div class="col-sm-3 fire"> <i class="fa fa-fire" aria-hidden="true"></i><strong> Fire<br>Sale</strong></div>
           
-     <div class="row botbra">     
-         <div class="col-sm-9">
-         <span><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Condominium</span>
-         <span>4 bed</span>
-         <span>3.5 bath</span>
-         <span>3,185 sqft</span>
-         <span>Built: 2013</span>
-         <span>Active</span>
+        </div>
+          
+        <div class="col-sm-8" id="cbPropertyLocation"></div>
+
+        </div>
+
+          
+        <div class="row botbra">     
+             <div class="col-sm-9">
+             <span id="cbPropertyType"></span>
+             <span id="cbPropertyBeds"></span>
+             <span id="cbPropertyBaths"></span>
+             <span id="cbPropertySqft"></span>
+             <span id="cbPropertyBuilt"></span>
+             <span id="cbPropertyStatus"></span>
+        </div> 
+         
+        <div class="col-sm-3">ID: <b id="cbPropertyId"></b></div>
         
-         
-         
-         
-         </div> 
-         
-        <div class="col-sm-3">ID: <b>1739</b></div>
-          </div>
-          
-          
+        </div>
+           
      
       </div>
       
@@ -947,71 +934,34 @@ Sale</strong></div>
                 </div>
         </div>
       
-      
-  
-        
-
-      
-      
-      
-      
-      
- <div class="agentb">
-<h2>Property Videos</h2>
-<p>
-
-
-
-
-
-<div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" width="640" height="480" src="http://www.youtube.com/embed/6NbAAmDuv_8?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-</div>
- 
-
-
-
-
-
-</p>
+<!-- http://www.youtube.com/embed/6NbAAmDuv_8?feature=player_detailpage -->
+<div class="agentb" id="cbPropertyVideoMain">
+  <h2>Property Videos</h2>
+  <p>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" id="cbPropertyVideo" width="640" height="480" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </p>
 </div>     
       
-      
-      
-      
+         
 <div class="agentb">
-<h2>Property Description</h2>
-<p>Las Ventanas del Mar is now offering two luxury garden and lake view villas, each with great sunset views as well. Only a 7 minute drive from Carrillo Beach yet you feel like you are worlds apart in the secluded privacy this community offers. <br>
-<br>
-
-
-Prices start at $515,000 USD for these 2 villas and feature 3 bedroom 2.5 bathrooms with in a floor plan of approximately 3,100 square feet. The construction features granite counter tops, Hansgrohe shower fixtures, Kohler sinks and toilets, GE Profile stainless steel appliances, Trane central air conditioning, Anderson exterior doors and windows, custom closets, kitchen and bath cabinetry, Italian porcelain tiling throughout & a large laundry room.<br>
-<br>
-
-
-Being part of this community you will enjoy the 9,000 square foot infinity pool overlooking the ocean, a two-acre fresh water lake for kayaking, fishing and swimming, and three large lake ranchos with outdoor gas BBQs and ample seating for outside entertaining. This gated community also offers two lighted tennis courts, concierge, and property management services at your finger tips. This is a million dollar investment at the half the price.<br>
-<br>
-
-
-The Garden side unit is listed at $515,000 and the Lake side unit is listed at $545,000.</p>
+  <h2>Property Description</h2>
+  <div id="cbPropertyDescription"></div>
 </div>
-
-
 
 
 <div class="agentb Additional">
 <h2>Additional Details</h2>
 <span class="col-sm-3">
-<small>Land</small><br>
-
-<b>350</b> <sub>/m2</sub>
+  <small >Land</small><br><b id="cbPropertyLand"></b> <sub>/m2</sub>
 </span>
 
 
 <span class="col-sm-3">
 <small>Land</small><br>
 
-<b>0.09</b> <sub>/acres</sub>
+<b id="cbPropertyLandAcr"></b> <sub>/acres</sub>
 </span>
 
 
@@ -1028,33 +978,8 @@ The Garden side unit is listed at $515,000 and the Lake side unit is listed at $
 </span>
 
 
+<ul id="cbPropertyFeatures"></ul>
 
-
-
-
-<ul>
-<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Air Conditioning</li>
-<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Investment Opportunities</li>
-
-<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Beach Properties</li>
-<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Cable Satellite TV</li>
-<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Close To Golf</li>
-<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Close To Schools</li>
-<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Close To Shops</li>
-<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Close To Transport</li>
-<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Elevator</li>
-<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Fully Landscaped</li>
-<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Furnished Partially</li>
-<li><i class="fa fa-check" aria-hidden="true"></i>&nbsp; Income Producing</li>
-
-
-
-
-
-
-
-
-</ul>
 </div>
 
 
@@ -1075,16 +1000,21 @@ The Garden side unit is listed at $515,000 and the Lake side unit is listed at $
     <div class="col-sm-12 detai">
         
         
-          <h2><div class="col-sm-3"><img class="img-responsive img-circle img-thumbnail" src="skin/cb_02/images/details_rightimg.jpg" alt=""></div><small>Real Estate Agent</small> <br><strong>Sandra Sellsworth</strong> <br>Coldwell Banker Surfing Nosara</h2>
+      <h2>
+
+      <div class="col-sm-3"><img class="img-responsive img-circle img-thumbnail" id="cbPropertyAgentImg" src="" style="width: 85px;height: 85px;" alt=""></div>
+      <small>Real Estate Agent</small> <br><strong id="cbPropertyAgentName"></strong> <br><span id="cbPropertyAgentOffice"></span>
+
+      </h2>
+
           <div class="row contact">
 <div class="contactInfo">
-          <i class="fa fa-volume-control-phone"></i>&nbsp;<a href="tel://50687078006"><span itemprop="telephone">+506 87078006</span></a>
+          <i class="fa fa-volume-control-phone"></i>&nbsp;<a id="cbPropertyAgentTellHr" ><span id="cbPropertyAgentTell" itemprop="telephone"></span></a>
         </div>
        
         
         <div class="contactInfo">
-          <i class="fa fa-envelope-o"></i>&nbsp;<a href="mailto:team@coldwellbankercostarica.com"><span itemprop="email">sandra@surfingnosara.com
-</span></a>
+          <i class="fa fa-envelope-o"></i>&nbsp;<a id="cbPropertyAgentEmailHr"><span id="cbPropertyAgentEmail" itemprop="email"></span></a>
        
 
  </div>
@@ -1196,19 +1126,13 @@ The Garden side unit is listed at $515,000 and the Lake side unit is listed at $
 
 <div class="officediv">
   <h2>Location </h2>
+  <div id="cbPropertyMapDv">
+    <span id="cbPropertyMapLocation" style="font-weight:700;">Orotina, Alajuela, Costa Rica</span><br>
 
-<span style="font-weight:700;">Orotina, Alajuela, Costa Rica
-</span>
+      <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" 
+        marginwidth="0" src="" id="cbPropertyEmbedMap"></iframe>
 
-<br>
-<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12350.098597113725!2d72.55767648318698!3d23.034554323846073!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1492151924001" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-
-
-
-
-
-
+ </div>
 </div>
 
 
@@ -1342,353 +1266,8 @@ The Garden side unit is listed at $515,000 and the Lake side unit is listed at $
 <script src="skin/cb_02/js/main.js"></script> 
 <script src="skin/cb_02/js/mask.min.js"></script> 
 <script src="skin/cb_02/js/bootstrap-dropdownhover.min.js"></script>
+<script src="skin/cb_02/js/propertypage.js"></script> 
  
-<script>
-
-function getElementsByClassName(className) {
-if (document.getElementsByClassName) { 
-  return document.getElementsByClassName(className); }
-else { return document.querySelectorAll('.' + className); } 
- }
-jQuery(document).ready(function($){
-  $(".fa-heart-o").on("click", function() {
-      
-      $(this).addClass("active");
-    alert("Saved to Favorites!");
-    });
-
-
- $(document).on('click', '.close', function(event){
-  //$(".close").on("click", function() {
-    
-   var deckdata = getElementsByClassName("modal-backdrop") ;
-    for(var ij=0; ij<deckdata.length; ij++) { 
-       deckdata[ij].remove();
-    } 
-     
-  });
-
-        $('#myCarousel').carousel({
-                interval: 5000
-        });
- 
-        $('#carousel-text').html($('#slide-content-0').html());
- 
-        //Handles the carousel thumbnails
-       $('[id^=carousel-selector-]').click( function(){
-            var id = this.id.substr(this.id.lastIndexOf("-") + 1);
-            var id = parseInt(id);
-            $('#myCarousel').carousel(id);
-        });
- 
- 
-        // When the carousel slides, auto update the text
-        $('#myCarousel').on('slid.bs.carousel', function (e) {
-                 var id = $('.item.active').data('slide-number');
-                $('#carousel-text').html($('#slide-content-'+id).html());
-        });
-
-        $("#fileToUpload").on("click",function(){ 
-         $(".imagupload").append('<div class="col-sm-3 form-group"><select class="form-control" id="sel1" name="locationid[]"><option>Unite..</option><option>Unite..</option><option>Unite..</option><option>Unite..</option></select><i class="fa fa-chevron-down" aria-hidden="true"></i> </div><div class="col-sm-8 form-group"><input type="text" name="location_input[]" id="location_input" class="sliderValue" placeholder="Enter location" required style="padding: 0;"></div>');
-  });
-});
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-  
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-    });
-  });
-
-</script> 
- <script>
-  $( function() {
-    $( "#slider-range" ).slider({
-      range: true,
-      min: 0,
-      max: 500,
-      values: [ 75, 300 ],
-      slide: function( event, ui ) {
-        //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-        for (var i = 0; i < ui.values.length; ++i) {
-                $("input.sliderValue[data-index=" + i + "]").val('$'+ui.values[i]);
-            }
-      }
-    });
-  
-  
-  
-  
-  $( "#slider-range-inner" ).slider({
-      range: true,
-      min: 0,
-      max: 70000000,
-      values: [ 0, 70000000],
-      slide: function( event, ui ) {
-        //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-        for (var i = 0; i < ui.values.length; ++i) {
-            $("input.sliderValue[data-index=" + i + "]").val('$'+ui.values[i]);
-        }
-      }
-    });
-  
-  
-  
-    /*$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - $" + $( "#slider-range" ).slider( "values", 1 ) );*/
-
-
-      $( "#slider-range2" ).slider({
-      range: "max",
-      min: 0,
-      max: 500,
-      value: 200,
-      slide: function( event, ui ) {
-        $( "#LivingPrice" ).val(ui.value+'+');
-      }
-    });
-
-      $( "#slider-range3" ).slider({
-      range: "max",
-      min: 0,
-      max: 500,
-      value: 200,
-      slide: function( event, ui ) {
-        $( "#Acres" ).val(ui.value+'+');
-      }
-    });
-
-      $( "#slider-range4" ).slider({
-      range: "max",
-      min: 0,
-      max: 500,
-      value: 200,
-      slide: function( event, ui ) {
-        $( "#SquareMeters" ).val(ui.value+'+');
-      }
-    });
-  
- $( "#slider-range99" ).slider({
-      range: "max",
-      min: 0,
-      max: 500,
-      value: 200,
-      slide: function( event, ui ) {
-        $( "#Acres99" ).val(ui.value+'+');
-      }
-    });
-
-      $( "#slider-range98" ).slider({
-      range: "max",
-      min: 0,
-      max: 500,
-      value: 200,
-      slide: function( event, ui ) {
-        $( "#SquareMeters98" ).val(ui.value+'+');
-      }
-    });
-  
-  
-
-
-
-
-      var selectort = 'span.listmain';
-
-      $(selectort).on('click', function(){
-          $(selectort).removeClass('active');
-          $(this).addClass('active');
-      });
-
-    var selectorss = 'span.adv_beds';
-
-      $(selectorss).on('click', function(){  
-          $(selectorss).removeClass('active');
-          $(this).addClass('active');
-      });
-    
-    
-    var selectorn = 'span.adv_bath';
-
-      $(selectorn).on('click', function(){  
-          $(selectorn).removeClass('active');
-          $(this).addClass('active');
-      });
-    
-    
-  } );
-  
- 
- 
-  
-  $(document).ready(function() {
-
-
-
-    $("#property_province option").on("click",function(){
-        var mystring = $(this).text();
-        mystring = mystring.substring(0,10);
-
-       
-        $('#province_drop_id').removeClass('open');
-        $('#province_txt').html(mystring);
-
-    });
-
-    $("#property_type option").on("click",function(){
-
-      var mystringtype = $(this).text();
-      mystringtype = mystringtype.substring(0,10);
-      $('#property_type_drop_id').removeClass('open');
-      $('#property_type_txt').html(mystringtype);
-     
-    });
-
-    
-    $(".sliderValue").keydown(function (e) {
-  
-    if(this.id=="MinPrice" || this.id=="Maxprice"){
-      var inputval = $(this).val();
-      if (inputval.indexOf('$') > -1)
-      {
-       
-      }else{
-        $(this).val("$"+$(this).val());
-      }
-    }
-  
-        // Allow: backspace, delete, tab, escape, enter and .
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-             // Allow: Ctrl+A, Command+A
-            (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
-             // Allow: home, end, left, right, down, up
-            (e.keyCode >= 35 && e.keyCode <= 40)) {
-                 // let it happen, don't do anything
-                 return;
-        }
-        // Ensure that it is a number and stop the keypress
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
-    });
-
-
-    $(".el-advancesearch").on("click",function(){
-        $('.toppart').toggle(1000);
-        $('.advancedpart').toggle(1000);
-        $(this).toggle();
-        $(".el-back").toggle()
-    });
-    $(".el-back").on("click",function(){
-        $('.toppart').toggle(1000);
-        $('.advancedpart').toggle(1000);
-        $(this).toggle();
-        $(".el-advancesearch").toggle()
-    });
-
-    var activePrice="100";
-    $(".el-sp-price").on("click",function(){
-        $(".el-sp-price").removeClass('is-active');
-        $(this).addClass('is-active');
-        var selPrice=$(this).attr('data');
-        activePrice=selPrice;
-        selPrice=parseInt(selPrice);
-        
-        var minPrice=0;
-        var maxPrice=150;
-        if(selPrice==100)
-        {
-          minPrice=0;
-          maxPrice=150;
-        }
-        else if(selPrice>100 && selPrice<1000)
-        {
-          minPrice=selPrice-50;
-          maxPrice=selPrice+50;
-        }
-        else if(selPrice==1000)
-        {
-          minPrice=selPrice-50;
-          maxPrice=selPrice+250;
-        }
-        else if(selPrice>1000 && selPrice<2000)
-        {
-          minPrice=selPrice-250;
-          maxPrice=selPrice+250;
-        }
-        else if(selPrice==2000)
-        {
-          minPrice=selPrice-250;
-          maxPrice=selPrice+500;
-        }
-        else if(selPrice>2000 && selPrice<=5000)
-        {
-          minPrice=selPrice-500;
-          maxPrice=selPrice+500;
-        }
-        else if(selPrice>5000 && selPrice<50000)
-        {
-          minPrice=selPrice-2500;
-          maxPrice=selPrice+2500;
-        }
-        else if(selPrice==50000)
-        {
-          minPrice=selPrice-2500;
-          maxPrice=selPrice+5000;
-        }
-        else if(selPrice>50000)
-        {
-          minPrice=selPrice-5000;
-          maxPrice=selPrice;
-         
-        }
-        if(minPrice!=0)
-        {
-          minPrice=minPrice*1000;
-          maxPrice=maxPrice*1000;
-        }
-        $("#MinPrice").val("$"+minPrice);
-        $("#Maxprice").val("$"+maxPrice);
-        var selPriceHtml=$(this).html();
-        $("#currPrice").html(selPriceHtml);
-        $('#el-li-price').removeClass('open');
-
-    });
-
-    
-    $('.imgdiv').each(function(index){
-     $(this).find('#main-slider').attr('id',"main-slider"+index);
-     $(this).find('.carousel-control').attr('href',"#main-slider"+index);
-    });
-});
-  
-  
-  </script>
 
 </body>
 </html>
