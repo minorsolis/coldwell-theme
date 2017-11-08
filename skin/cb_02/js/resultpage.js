@@ -789,10 +789,10 @@ $(document).ready(function() {
               
               if(propimage!=null){
 
-                  propertyhtml +='<div class="item active"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'" alt="https://s3.amazonaws.com/cbcr/image/propertyFile/a0C0V00000u7XvSUAU/small/a0B0V0000224ZykUAE.jpeg"></div>';
+                  propertyhtml +='<div class="item active"> <a href="details_page.html?propertyId='+propertyData[pp].propertyId+'"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'" alt="https://s3.amazonaws.com/cbcr/image/propertyFile/a0C0V00000u7XvSUAU/small/a0B0V0000224ZykUAE.jpeg"></a></div>';
                   //propertyhtml +='<div class="item"> <img class="img-responsive" src="'+propertyData[pp].propertyUrlSmall+'"></div>';
               }else{
-                  propertyhtml +='<div class="item active"> <img class="img-responsive" src="https://www.coldwellbankercostarica.com/skin/cb_02/img/property/no-picture.jpg"></div>';
+                  propertyhtml +='<div class="item active"> <a href="details_page.html?propertyId='+propertyData[pp].propertyId+'"> <img class="img-responsive" src="https://www.coldwellbankercostarica.com/skin/cb_02/img/property/no-picture.jpg"> </a></div>';
               }
                 
               propertyhtml +='</div>';
