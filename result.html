@@ -23,9 +23,13 @@
     font-size: 40px;
   }*/
 
-  #searchLiveForm .nav > li > a{
-    padding: 10px 10px !important;
+  #searchLiveForm .nav > li > a, #searchLiveFormOpt .nav > li > a{
+    padding: 10px 5px !important;
   }
+  .pull-right.rightfilter li a{
+    padding: 10px 10px !important; 
+  }
+
   
   #searchLiveForm .navbar-nav > li + li {
       margin-left: 0;
@@ -315,14 +319,13 @@
 
 </ul>
 
-</form>
+ 
 
-<form id="searchLiveFormOpt">
+<div id="searchLiveFormOpt">
 
 <ul class="nav navbar-nav">
 
-<input type="hidden" name="token" value="1">
-<input type="hidden" name="format" value="json">
+ 
 <input type="hidden" name="startfrom" id="startfrom" value="1">
 <input type="hidden" name="limitrecord" id="limitrecord" value="40">
 <input type="hidden" name="limit" id="limit" value="1,40">
@@ -356,8 +359,8 @@
     <div data-role="rangeslider" class="ui-rangeslider">
     <div id="slider-range"></div>
   
-    <input type="text" name="minPrice" id="MinPriceOpt" class="sliderValue" data-index="0" value="$75" class="form-control" required="" style="padding: 0;" />
-    <input type="text" name="maxprice" id="MaxpriceOpt" class="sliderValue" data-index="1" value="$300" class="form-control" required="" style="padding: 0;" />
+    <input type="text" name="minPrice" id="MinPriceOpt" class="sliderValue" data-index="0" value="1" class="form-control" required="" style="padding: 0;" />
+    <input type="text" name="maxprice" id="MaxPriceOpt" class="sliderValue" data-index="1" value="70000000" class="form-control" required="" style="padding: 0;" />
 
     </div> 
  
@@ -372,15 +375,15 @@
   <div class="form__group">
     <div class="form-button-group">
       <div class="form__checkbox form-checkbox--alt">
-        <input name="propertyType[]" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="property_typeOptCondo" type="checkbox" value="Condo" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+        <input name="propertyType[]" class="" id="property_typeOptCondo" type="checkbox" value="Condo" checklist-model="filtersForm.dwellingTypes">
         <label class="form-button-group__label" for="property_typeOptCondo"><span>Condo</span></label>
       </div>
       <div class="form__checkbox form-checkbox--alt">
-        <input name="propertyType[]" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="property_typeOptHouse" type="checkbox" value="Home" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
-        <label class="form-button-group__label" for="property_typeOptHouse"><span>House</span></label>
+        <input name="propertyType[]" class="" id="property_typeOptHome" type="checkbox" value="Home" checklist-model="filtersForm.dwellingTypes">
+        <label class="form-button-group__label" for="property_typeOptHome"><span>House</span></label>
       </div>
       <div class="form__checkbox form-checkbox--alt">
-        <input name="propertyType[]" class="form-button-group__input ng-scope ng-pristine ng-untouched ng-valid ng-empty" id="property_typeOptLand" type="checkbox" value="Land" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+        <input name="propertyType[]" class="" id="property_typeOptLand" type="checkbox" value="Land" checklist-model="filtersForm.dwellingTypes">
         <label class="form-button-group__label" for="property_typeOptLand"><span>Land</span></label>
       </div>
     </div>
@@ -406,23 +409,35 @@
 <label class="filters__title">Bedrooms</label>
 <div class="form__group">
 <div class="form-button-group bedrooms">
-<span class="list listmain">
 
-<input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<span class="list listmain dwelling_types_Any active"><input class="minBedOptCls minBedOptInput" id="dwelling_types_Any" type="radio" value="">
+<label><strong>Any</strong></label>
+</span>
 
-<label class="form-button-group__label" for="dwelling_types_Any"><strong>Any</strong></label></span>
-<span class="list listmain"><input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="0" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_Studio"><strong>Studio</strong></label></span>
-<span class="list listmain"><input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="1" ng-model="" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_1+"><strong>1+</strong></label></span>
-<span class="list listmain"><input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="2" ng-model="" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_2+"><strong>2+</strong></label></span>
-<span class="list listmain"><input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="3" ng-model="" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_3+"><strong>3+</strong></label></span>
-<span class="list listmain"><input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="4" ng-model="" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_4+"><strong>4+</strong></label>
-</span><span class="list listmain"><input class="minBedOptCls minBedOptInput" id="minBedOptInput" type="checkbox" value="5" ng-model="" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_5+"><strong>5+</strong></label></span>
+<span class="list listmain dwelling_types_Studio"><input class="minBedOptCls minBedOptInput" id="dwelling_types_Studio" type="radio" value="0">
+<label><strong>Studio</strong></label>
+</span>
+
+<span class="list listmain dwelling_types_1"><input class="minBedOptCls minBedOptInput" id="dwelling_types_1" type="radio" value="1">
+<label><strong>1+</strong></label>
+</span>
+
+<span class="list listmain dwelling_types_2"><input class="minBedOptCls minBedOptInput" id="dwelling_types_2" type="radio" value="2">
+<label><strong>2+</strong></label>
+</span>
+
+<span class="list listmain dwelling_types_3"><input class="minBedOptCls minBedOptInput" id="dwelling_types_3" type="radio" value="3">
+<label><strong>3+</strong></label>
+</span>
+
+<span class="list listmain dwelling_types_4"><input class="minBedOptCls minBedOptInput" id="dwelling_types_4" type="radio" value="4">
+<label><strong>4+</strong></label>
+</span>
+
+<span class="list listmain dwelling_types_5"><input class="minBedOptCls minBedOptInput" id="dwelling_types_5" type="radio" value="5">
+<label><strong>5+</strong></label>
+</span>
+
 </div>
 
 <input type="hidden" id="minBedOpt" name="minBed" value="" />
@@ -434,26 +449,39 @@
 <label class="filters__title">Bathrooms</label>
 <div class="form__group">
 <div class="form-button-group bedrooms">
-<span class="list listmain">
 
-<input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;"  name="minBath" type="radio" value="" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
+<span class="list listmainbath dwelling_types_bath_Any active">
+<input class="minBathOptCls minBathOptInput dwelling_types_bath_Any" id="dwelling_types_bath_Any" style="position: absolute;"  name="minBath" type="radio" value="">
+<label><strong>Any</strong></label>
+</span>
 
-<label class="form-button-group__label" for="dwelling_types_Any"><strong>Any</strong></label></span>
-<span class="list listmain"><input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;" name="minBath"  type="radio" value="0" ng-model="checked" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_Studio"><strong>Studio</strong></label></span>
-<span class="list listmain"><input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;" name="minBath" type="radio" value="1" ng-model="" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_1+"><strong>1+</strong></label></span>
-<span class="list listmain"><input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;" name="minBath" type="radio" value="2" ng-model="" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_2+"><strong>2+</strong></label></span>
-<span class="list listmain"><input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;" name="minBath" type="radio" value="3" ng-model="" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_3+"><strong>3+</strong></label></span>
-<span class="list listmain"><input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;" name="minBath" type="radio" value="4" ng-model="" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_4+"><strong>4+</strong></label>
-</span><span class="list listmain"><input class="minBathOptCls minBathOptInput" id="minBathOptInput" style="position: absolute;" name="minBath" type="radio" value="5" ng-model="" checklist-model="filtersForm.dwellingTypes">
-<label class="form-button-group__label" for="dwelling_types_5+"><strong>5+</strong></label></span>
+<span class="list listmainbath dwelling_types_bath_Studio"><input class="minBathOptCls minBathOptInput" id="dwelling_types_bath_Studio" style="position: absolute;" name="minBath"  type="radio" value="0">
+<label><strong>Studio</strong></label>
+</span>
+
+<span class="list listmainbath dwelling_types_bath_1"><input class="minBathOptCls minBathOptInput" id="dwelling_types_bath_1" style="position: absolute;" name="minBath" type="radio" value="1">
+<label><strong>1+</strong></label>
+</span>
+
+<span class="list listmainbath dwelling_types_bath_2"><input class="minBathOptCls minBathOptInput" id="dwelling_types_bath_2" style="position: absolute;" name="minBath" type="radio" value="2">
+<label><strong>2+</strong></label>
+</span>
+
+<span class="list listmainbath dwelling_types_bath_3"><input class="minBathOptCls minBathOptInput" id="dwelling_types_bath_3" style="position: absolute;" name="minBath" type="radio" value="3">
+<label><strong>3+</strong></label>
+</span>
+
+<span class="list listmainbath dwelling_types_bath_4"><input class="minBathOptCls minBathOptInput" id="dwelling_types_bath_4" style="position: absolute;" name="minBath" type="radio" value="4">
+<label><strong>4+</strong></label>
+</span>
+
+<span class="list listmainbath dwelling_types_bath_5"><input class="minBathOptCls minBathOptInput" id="dwelling_types_bath_5" style="position: absolute;" name="minBath" type="radio" value="5">
+<label><strong>5+</strong></label>
+</span>
+
 </div>
 
-<input type="hidden" id="minBathOpt" name="minBed" value="" />
+<input type="hidden" id="minBathOpt" name="minBath" value="" />
 </div>
 
 
@@ -541,7 +569,7 @@
   <button class="button button--full filters__submit" id="updateSearchResult" type="button">Update</button>
 
   <div class="u-centered">
-    <button class="filters__reset utility-links utility-links--reset" ng-click="resetFilters()" type="button"><i class="fa fa-repeat" aria-hidden="true"></i>&nbsp;Reset Filters
+    <button class="filters__reset utility-links utility-links--reset" id="resetResultsOpt" type="button"><i class="fa fa-repeat" aria-hidden="true"></i>&nbsp;Reset Filters
   </button>
 
   <button class="filters__close utility-links utility-links--close" id="utility_links_close" type="button"><i class="fa fa-times-circle-o" aria-hidden="true"></i>&nbsp;
@@ -556,88 +584,84 @@
 <div class="col-md-4">
 
 
-<div class="search home">
-  <div class="col-sm-12 text-center">
-      <ul class="nav nav-tabs ">
-        <li class="active"><a data-toggle="tab" href="#tab_default_1">FOR SALE</a></li>
-        <li class=""><a data-toggle="tab" href="#tab_default_2">FOR RENT</a></li>
-        <li class=""><a data-toggle="tab" href="#tab_default_3">Agents</a></li>
-      </ul>
-    </div>
-</div>
+  <div class="search home">
+    <div class="col-sm-12 text-center">
+        <ul class="nav nav-tabs ">
+          <li class="active"><a data-toggle="tab" href="#tab_default_1">FOR SALE</a></li>
+          <li class=""><a data-toggle="tab" href="#tab_default_2">FOR RENT</a></li>
+          <li class=""><a data-toggle="tab" href="#tab_default_3">Agents</a></li>
+        </ul>
+      </div>
+  </div>
 
-<div class="col-md-12 imagupload">
-      <div class="col-sm-3 form-group">
-        <select class="form-control" id="sel1" name="locationid">
-          <option>Unite..</option>
-          <option>Unite..</option>
-          <option>Unite..</option>
-          <option>Unite..</option>
-        </select>
-        <i class="fa fa-chevron-down" aria-hidden="true"></i> 
-      </div>
+  <div class="col-md-12 imagupload">
+        <div class="col-sm-3 form-group">
+          <select class="form-control" id="sel1" name="locationid">
+            <option>Unite..</option>
+            <option>Unite..</option>
+            <option>Unite..</option>
+            <option>Unite..</option>
+          </select>
+          <i class="fa fa-chevron-down" aria-hidden="true"></i> 
+        </div>
 
-      <div class="col-sm-8 form-group">
-        <input type="text" name="location_input[]" id="location_input" class="sliderValue" placeholder="Enter location" required style="padding: 0;">
-      </div>
-              
-      <div class="col-md-2 button">
-        <input type="button" name="fileToUpload" id="fileToUpload">add<i class="fa fa-plus-circle" aria-hidden="true"></i>
-      </div>
-</div>
+        <div class="col-sm-8 form-group">
+          <input type="text" name="location_input[]" id="location_input" class="sliderValue" placeholder="Enter location" required style="padding: 0;">
+        </div>
+                
+        <div class="col-md-2 button">
+          <input type="button" name="fileToUpload" id="fileToUpload">add<i class="fa fa-plus-circle" aria-hidden="true"></i>
+        </div>
+  </div>
 
 </div>
 
 <div class="col-md-4 cost">
 
-<div data-role="main" class="ui-content">
-   
-    <label for="price-min" id="price-min-label">Cost</label>
-    <div class="col-md-12"> <div class="col-sm-4 form-group">
-        <select class="form-control" id="sel1">
-          <option>Min.</option>
-          <option>Min.</option>
-          <option>Min.</option>
-          <option>Min.</option>
-        </select>
-        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-    </div>
-                
-    <div class="col-sm-1"> TO</div>
-                
-    <div class="col-sm-4 form-group">
-                <select class="form-control" id="sel1">
-                  <option>Max.</option>
-                  <option>Max.</option>
-                  <option>Max.</option>
-                  <option>Max.</option>
-                </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
-      
-      
-      <div class="col-sm-2 form-group">
-                <select class="form-control" id="sel1">
-                  <option>USD</option>
-                  <option>USD</option>
-                  <option>USD</option>
-                  <option>USD</option>
-                </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
-       </div>
-       
+  <div data-role="main" class="ui-content">
      
- 
+      <label for="price-min" id="price-min-label">Cost</label>
+
+      <div class="col-md-12"> 
+
+        <div class="col-sm-4 form-group">
+            <select class="form-control" id="sel1">
+              <option>Min.</option>
+              <option>Min.</option>
+              <option>Min.</option>
+              <option>Min.</option>
+            </select>
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </div>
+                  
+        <div class="col-sm-1"> TO</div>
+                  
+        <div class="col-sm-4 form-group">
+            <select class="form-control" id="sel1">
+              <option>Max.</option>
+              <option>Max.</option>
+              <option>Max.</option>
+              <option>Max.</option>
+            </select>
+            <i class="fa fa-chevron-down" aria-hidden="true"></i> 
+        </div>
+        
+        
+        <div class="col-sm-2 form-group">
+            <select class="form-control" id="sel1">
+              <option>USD</option>
+              <option>USD</option>
+              <option>USD</option>
+              <option>USD</option>
+            </select>
+            <i class="fa fa-chevron-down" aria-hidden="true"></i> 
+        </div>
+
+      </div>
+         
   </div>
 
-
-
-
-
-
-
 </div>
-
-
 
 
 <div class="col-md-4 beds">
@@ -735,10 +759,12 @@ View Results
 </div></div>
 
 
-
+<!--
 <span class="col-sm-12 advanceddiv bottom">
   <a href="javascript:void(1);" class="el-advancesearch">ADVANCED SEARCH <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-  <a href="javascript:void(1);" class="el-back el-disable">BACK <i class="fa fa-chevron-right" aria-hidden="true"></i></a></span>
+  <a href="javascript:void(1);" class="el-back el-disable">BACK <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+</span>
+-->
 
 </div>
 
@@ -746,6 +772,7 @@ View Results
 
 
                 </ul>
+                </div>
 </form>
 
 <ul class="pull-right rightfilter nav navbar-nav">
@@ -913,15 +940,12 @@ View Results
  
 <script src="skin/cb_02/js/jquery.min.js"></script>
 <script src="skin/cb_02/js/bootstrap.min.js"></script>
-
 <script src="skin/cb_02/js/main.js"></script> 
 <script src="skin/cb_02/js/mask.min.js"></script> 
 <script src="skin/cb_02/js/bootstrap-dropdownhover.min.js"></script>
-
-<!-- <script src="skin/cb_02/js/jquery-1.js"></script> -->
 <script src="skin/cb_02/js/jquery-ui.js"></script>
-
 <script src="skin/cb_02/js/resultpage.js"></script> 
+<script src="skin/cb_02/js/resultpage-search.js"></script>
  
 
   
