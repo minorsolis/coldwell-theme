@@ -532,6 +532,8 @@ $(document).ready(function() {
           var propertyhtml = "";
           
           $("#totalResultsFound").text(propertyData.length+' Results');
+          $("#cbCountOpt").text(propertyData.length);
+          
           
           
         }
