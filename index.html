@@ -149,98 +149,115 @@
           <div class="search home">
             <h2 class="text-center">Find a Home in Costa Rica</h2>
             <div class="col-sm-12 text-center">
-              <ul class="nav nav-tabs ">
-                <li class="active"><a data-toggle="tab" href="#tab_default_1">FOR SALE</a></li>
-                <li class=""><a data-toggle="tab" href="#tab_default_2">FOR RENT</a></li>
-                <li class=""><a data-toggle="tab" href="#tab_default_3">Province</a></li>
-                <li class=""><a data-toggle="tab" href="#tab_default_4">Office</a></li>
+              <ul class="nav nav-tabs">
+                <li id="Sale" class="maintabs active"><a data-toggle="tab" href="#tab_default_1">FOR SALE</a></li>
+                <li id="Rent" class="maintabs"><a data-toggle="tab" href="#tab_default_2">FOR RENT</a></li>
+                <li id="Province" class="maintabs"><a data-toggle="tab" href="#tab_default_3">Province</a></li>
+                <li id="Office" class="maintabs"><a data-toggle="tab" href="#tab_default_4">Office</a></li>
+                <input type="hidden" name="propertyCategory" id="propertyCategory" value="Sale">
               </ul>
             </div>
             <div class="tab-content">
             
-            <div class="col-sm-12 slideanim tab-pane active" id="tab_default_1">
-              <div class="col-sm-2 form-group">
-                <select class="form-control" id="sel1">
-                  <option>All Provinces</option>
-                  <option>All Provinces</option>
-                  <option>All Provinces</option>
-                  <option>All Provinces</option>
-                </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
-              <div class="col-sm-3 form-group">
-                <input class="form-control" id="Keyword" name="Keyword" placeholder="Keyword i.e. “Pool”" type="text" required>
-              </div>
-              <div class="col-sm-3 form-group">
-                <input class="form-control" id="Min. Price" name="Min. Price" placeholder="Min. Price “50,000”" type="text" required>
-              </div>
-              <div class="col-sm-3 form-group">
-                <input class="form-control" id="Max Price" name="Max Price" placeholder="Max Price “500,000”" type="text" required>
-              </div>
-              <div class="col-sm-2 form-group">
-                <button class="btn btn-default pull-right" type="submit"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
-              </div>
+                <div class="col-sm-12 slideanim tab-pane active" id="tab_default_1">
+                  <div class="col-sm-2 form-group">
+                    <select class="form-control input-lg" id="propertyStateSale" name="propertyState[]">
+                      <option value="">Province</option>
+                      <option value="Alajuela">Alajuela</option>
+                      <option value="Cartago">Cartago</option>
+                      <option value="Guanacaste">Guanacaste</option>
+                      <option value="Heredia">Heredia</option>
+                      <option value="Limón">Limón</option>
+                      <option value="Puntarenas">Puntarenas</option>
+                      <option value="San Jose">San Jose</option>
+                    </select>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
+                  <div class="col-sm-3 form-group">
+                    <input class="form-control" id="KeywordSale" name="generalSearch" placeholder="Keyword i.e. “Pool”" type="text">
+                  </div>
+                  <div class="col-sm-3 form-group">
+                    <input class="form-control" id="minPriceSale" name="minPrice" placeholder="Min. Price “50,000”" type="text">
+                  </div>
+                  <div class="col-sm-3 form-group">
+                    <input class="form-control" id="maxPriceSale" name="maxPrice" placeholder="Max Price “500,000”" type="text">
+                  </div>
+                  <div class="col-sm-2 form-group">
+                    <button class="btn btn-default pull-right tab_default_Sale" data-id="Sale" ><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 slideanim tab-pane"  id="tab_default_2">
+                  
+                  <div class="col-sm-3 form-group">
+                    <input class="form-control" id="KeywordRent" name="generalSearch" placeholder="Keyword i.e. “Pool”" type="text">
+                  </div>
+                  <div class="col-sm-3 form-group">
+                    <input class="form-control" id="minPriceRent" name="minPrice" placeholder="Min. Price “50,000”" type="text">
+                  </div>
+                  <div class="col-sm-3 form-group">
+                    <input class="form-control" id="maxPriceRent" name="maxPrice" placeholder="Max Price “500,000”" type="text">
+                  </div>
+                  <div class="col-sm-2 form-group">
+                    <button class="btn btn-default pull-right tab_default_Rent" data-id="Rent"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
+                  </div>
+                </div>
+                
+                
+                            
+                <div class="col-sm-12 slideanim tab-pane" id="tab_default_3">
+                  <div class="col-sm-2 form-group">
+                    <select class="form-control input-lg" id="propertyStateProvince" name="propertyState[]">
+                      <option value="">Province</option>
+                      <option value="Alajuela">Alajuela</option>
+                      <option value="Cartago">Cartago</option>
+                      <option value="Guanacaste">Guanacaste</option>
+                      <option value="Heredia">Heredia</option>
+                      <option value="Limón">Limón</option>
+                      <option value="Puntarenas">Puntarenas</option>
+                      <option value="San Jose">San Jose</option>
+                    </select>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
+                  <div class="col-sm-3 form-group">
+                    <input class="form-control" id="KeywordProvince" name="generalSearch" placeholder="Keyword i.e. “Pool”" type="text">
+                  </div>
+                 
+                  <div class="col-sm-2 form-group">
+                    <button class="btn btn-default pull-right tab_default_Province" data-id="Province"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
+                  </div>
+                </div>
+
+                <div class="col-sm-12 slideanim tab-pane"  id="tab_default_4">
+                  <div class="col-sm-2 form-group">
+                    <select class="form-control input-lg" id="propertyAgentOffice" name="propertyAgentOffice">
+                      <option value="">Office</option> 
+                      <option value="Brasilito">Brasilito</option>
+                      <option value="Coco">Coco</option>
+                      <option value="Dominical">Dominical</option>
+                      <option value="Jaco">Jaco</option>
+                      <option value="Manuel Antonio">Manuel Antonio</option>
+                      <option value="Master">Master</option>
+                      <option value="Nosara">Nosara</option>
+                      <option value="Samara">Samara</option>
+                      <option value="Santa Ana">Santa Ana</option>
+                      <option value="Tamarindo">Tamarindo</option>
+                    </select>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i> 
+                  </div>
+
+                  <div class="col-sm-3 form-group">
+                    <input class="form-control" id="KeywordOffice" name="generalSearch" placeholder="Keyword i.e. “Pool”" type="text">
+                  </div>
+                 
+                  <div class="col-sm-2 form-group">
+                    <button class="btn btn-default pull-right tab_default_Office" data-id="Office" ><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
+                  </div>
+                </div>
+            
             </div>
-         <div class="col-sm-12 slideanim tab-pane" id="tab_default_2">
-              
-              <div class="col-sm-3 form-group">
-                <input class="form-control" id="Keyword" name="Keyword" placeholder="Keyword i.e. “Pool”" type="text" required>
-              </div>
-              <div class="col-sm-3 form-group">
-                <input class="form-control" id="Min. Price" name="Min. Price" placeholder="Min. Price “50,000”" type="text" required>
-              </div>
-              <div class="col-sm-3 form-group">
-                <input class="form-control" id="Max Price" name="Max Price" placeholder="Max Price “500,000”" type="text" required>
-              </div>
-              <div class="col-sm-2 form-group">
-                <button class="btn btn-default pull-right" type="submit"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
-              </div>
-            </div>
             
+            <span class="col-sm-12 advanceddiv"><a href="#">ADVANCED SEARCH <i class="fa fa-chevron-right" aria-hidden="true"></i></a></span>
             
-                        
-                         <div class="col-sm-12 slideanim tab-pane" id="tab_default_3">
-              <div class="col-sm-2 form-group">
-                <select class="form-control" id="sel1">
-                  <option>All Provinces</option>
-                  <option>All Provinces</option>
-                  <option>All Provinces</option>
-                  <option>All Provinces</option>
-                </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
-              <div class="col-sm-3 form-group">
-                <input class="form-control" id="Keyword" name="Keyword" placeholder="Keyword i.e. “Pool”" type="text" required>
-              </div>
-             
-              <div class="col-sm-2 form-group">
-                <button class="btn btn-default pull-right" type="submit"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
-              </div>
-            </div>
-            <div class="col-sm-12 slideanim tab-pane" id="tab_default_4">
-              <div class="col-sm-2 form-group">
-                <select class="form-control" id="sel1">
-                  <option>Office</option>
-                  <option>Office</option>
-                  <option>Office</option>
-                  <option>Office</option>
-                </select>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
-              <div class="col-sm-3 form-group">
-                <input class="form-control" id="Keyword" name="Keyword" placeholder="Keyword i.e. “Pool”" type="text" required>
-              </div>
-             
-              <div class="col-sm-2 form-group">
-                <button class="btn btn-default pull-right" type="submit"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Search</button>
-              </div>
-            </div>
-            
-            
-            </div>
-            
-            
-            
-             <span class="col-sm-12 advanceddiv"><a href="#">ADVANCED SEARCH <i class="fa fa-chevron-right" aria-hidden="true"></i></a></span>
-            
-            </div>
+        </div>
             
             
            
@@ -486,46 +503,8 @@ Coldwell Banker Costa Rica
 <script src="skin/cb_02/js/main.js"></script> 
 <script src="skin/cb_02/js/mask.min.js"></script> 
 <script src="skin/cb_02/js/bootstrap-dropdownhover.min.js"></script>
+<script src="skin/cb_02/js/home.js"></script>
 
-<script>
-$(document).ready(function(){
-
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-  
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-    });
-  });
-  
-});
-
-</script>
 
  
 </body>
