@@ -637,22 +637,19 @@ $(document).ready(function() {
             if(propertyData[pp].propertyCategory=="Rent"){
 
               if(propertyData[pp].propertyPriceDay!=null){
-                var propertyData[pp].propertyPriceDay = propertyData[pp].propertyPriceDay.split(".");
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceDay[0]+'/ Day</div>';
+                
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPriceDay)+'/ Day</div>';
               }else if(propertyData[pp].propertyPriceWeek!=null){
-                var propertyData[pp].propertyPriceWeek = propertyData[pp].propertyPriceWeek.split(".");
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceWeek[0]+'/ Week</div>';
+               
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPriceWeek)+'/ Week</div>';
               }else if(propertyData[pp].propertyPriceMonth!=null){
-                var propertyData[pp].propertyPriceMonth=propertyData[pp].propertyPriceMonth.split(".");
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceMonth[0]+'/ Month</div>';
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPriceMonth)+'/ Month</div>';
               }else{
-               var propertyData[pp].propertyPrice = propertyData[pp].propertyPrice.split(".");
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice[0]+'</div>';
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPrice)+'</div>';
               }
 
             }else{
-              var propertyData[pp].propertyPrice= propertyData[pp].propertyPrice.split(".");
-              propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice[0]+'</div>';
+              propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPrice)+'</div>';
             }
 
             propertyhtml +='<div class="col-sm-6 rightcount">';
