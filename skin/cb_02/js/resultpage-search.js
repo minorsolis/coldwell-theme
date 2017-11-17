@@ -637,18 +637,22 @@ $(document).ready(function() {
             if(propertyData[pp].propertyCategory=="Rent"){
 
               if(propertyData[pp].propertyPriceDay!=null){
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceDay.toFixed()+'/ Day</div>';
+                var propertyData[pp].propertyPriceDay = propertyData[pp].propertyPriceDay.split(".");
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceDay[0]+'/ Day</div>';
               }else if(propertyData[pp].propertyPriceWeek!=null){
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceWeek.toFixed()+'/ Week</div>';
+                var propertyData[pp].propertyPriceWeek = propertyData[pp].propertyPriceWeek.split(".");
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceWeek[0]+'/ Week</div>';
               }else if(propertyData[pp].propertyPriceMonth!=null){
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceMonth.toFixed()+'/ Month</div>';
+                var propertyData[pp].propertyPriceMonth=propertyData[pp].propertyPriceMonth.split(".");
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceMonth[0]+'/ Month</div>';
               }else{
-               
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice.toFixed()+'</div>';
+               var propertyData[pp].propertyPrice = propertyData[pp].propertyPrice.split(".");
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice[0]+'</div>';
               }
 
             }else{
-              propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice.toFixed()+'</div>';
+              var propertyData[pp].propertyPrice= propertyData[pp].propertyPrice.split(".");
+              propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice[0]+'</div>';
             }
 
             propertyhtml +='<div class="col-sm-6 rightcount">';
