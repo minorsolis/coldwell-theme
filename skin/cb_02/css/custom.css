@@ -1697,6 +1697,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', end
     text-align: right;
     font-weight: 700;
     width: 60%;
+    padding-left: 0;
 }
 .listingdiv .blue .col-sm-6.rightcount span:first-child {
     border-right: #7ba6e0 solid 1px;
