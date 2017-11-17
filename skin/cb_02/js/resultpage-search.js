@@ -1,7 +1,7 @@
  
 $(document).ready(function() {
 
-    $("#container-fluid-listing").addClass('checkloading');
+   // $("#container-fluid-listing").addClass('checkloading');
 
     $("#container-fluid-listing").css("text-align", "");
     $("#container-fluid-listing").css("min-height", "300px");
@@ -102,7 +102,7 @@ $(document).ready(function() {
     $(document).on('keyup', '#Keyword', function(event){
  
       event.preventDefault();
-      $("#container-fluid-listing").addClass('checkloading');
+      //$("#container-fluid-listing").addClass('checkloading');
       $("#container-fluid-listing").css("text-align", "center");
       $("#container-fluid-listing-more").hide();
       //$("#container-fluid-listing-more-fetching").show();
@@ -160,7 +160,7 @@ $(document).ready(function() {
 
  
       event.preventDefault();
-      $("#container-fluid-listing").addClass('checkloading');
+      //$("#container-fluid-listing").addClass('checkloading');
       $("#container-fluid-listing").css("text-align", "center");
       $("#container-fluid-listing-more").hide();
       //$("#container-fluid-listing-more-fetching").show();
@@ -249,7 +249,7 @@ $(document).ready(function() {
     $(document).on('click', '#updateSearchResult', function(event){
  
       event.preventDefault();
-      $("#container-fluid-listing").addClass('checkloading');
+      //$("#container-fluid-listing").addClass('checkloading');
       $("#container-fluid-listing").css("text-align", "center");
       $("#container-fluid-listing-more").hide();
       //$("#container-fluid-listing-more-fetching").show();
@@ -361,7 +361,7 @@ $(document).ready(function() {
     $(document).on('click', '.el-sp-price', function(event){
  
       event.preventDefault();
-      $("#container-fluid-listing").addClass('checkloading');
+     // $("#container-fluid-listing").addClass('checkloading');
       $("#container-fluid-listing").css("text-align", "center");
       $("#container-fluid-listing-more").hide();
       //$("#container-fluid-listing-more-fetching").show();
@@ -416,7 +416,7 @@ $(document).ready(function() {
     $(document).on('change', '#property_province,#property_type,#propertyCategory', function(event){
  
       event.preventDefault();
-      $("#container-fluid-listing").addClass('checkloading');
+     // $("#container-fluid-listing").addClass('checkloading');
       $("#container-fluid-listing").css("text-align", "center");
       $("#container-fluid-listing-more").hide();
       //$("#container-fluid-listing-more-fetching").show();
@@ -474,7 +474,7 @@ $(document).ready(function() {
 
     jQuery(document).on('click', '.loadmoreprop', function(event){
 
-        $("#container-fluid-listing").addClass('checkloading');
+        //$("#container-fluid-listing").addClass('checkloading');
         $("#container-fluid-listing").css("text-align", "center");
         $("#container-fluid-listing-more").hide();
         //$("#container-fluid-listing-more-fetching").show();
@@ -637,17 +637,18 @@ $(document).ready(function() {
             if(propertyData[pp].propertyCategory=="Rent"){
 
               if(propertyData[pp].propertyPriceDay!=null){
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceDay+'/ Day</div>';
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPriceDay)+'/ Day</div>';
               }else if(propertyData[pp].propertyPriceWeek!=null){
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceWeek+'/ Week</div>';
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPriceWeek)+'/ Week</div>';
               }else if(propertyData[pp].propertyPriceMonth!=null){
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceMonth+'/ Month</div>';
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPriceMonth)+'/ Month</div>';
               }else{
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice+'</div>';
+               
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPrice)+'</div>';
               }
 
             }else{
-              propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice+'</div>';
+              propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPrice)+'</div>';
             }
 
             propertyhtml +='<div class="col-sm-6 rightcount">';
@@ -669,7 +670,7 @@ $(document).ready(function() {
 
        }
 
-        $("#container-fluid-listing").removeClass('checkloading');
+        //$("#container-fluid-listing").removeClass('checkloading');
 
         if(propertyData.length==0){
           $("#container-fluid-listing-more").hide();
