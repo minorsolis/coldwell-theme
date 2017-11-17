@@ -637,18 +637,18 @@ $(document).ready(function() {
             if(propertyData[pp].propertyCategory=="Rent"){
 
               if(propertyData[pp].propertyPriceDay!=null){
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPriceDay)+'/ Day</div>';
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceDay.toFixed()+'/ Day</div>';
               }else if(propertyData[pp].propertyPriceWeek!=null){
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPriceWeek)+'/ Week</div>';
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceWeek.toFixed()+'/ Week</div>';
               }else if(propertyData[pp].propertyPriceMonth!=null){
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPriceMonth)+'/ Month</div>';
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPriceMonth.toFixed()+'/ Month</div>';
               }else{
                
-                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPrice)+'</div>';
+                propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice.toFixed()+'</div>';
               }
 
             }else{
-              propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+parseInt(propertyData[pp].propertyPrice)+'</div>';
+              propertyhtml +='<div class="col-sm-6 price"> <sup>$</sup>&nbsp;'+propertyData[pp].propertyPrice.toFixed()+'</div>';
             }
 
             propertyhtml +='<div class="col-sm-6 rightcount">';
