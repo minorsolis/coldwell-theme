@@ -279,7 +279,7 @@ $(document).ready(function(){
       max: 500,
       value: 200,
       slide: function( event, ui ) {
-        $( "#maxPropertyFloor" ).val(ui.value+'+');
+        $( "#minPropertyFloor" ).val(ui.value+'+');
       }
     });
 
@@ -310,7 +310,7 @@ $(document).ready(function(){
       value: 200,
       slide: function( event, ui ) {
         var my = (ui.value)*4046;
-        $( "#propertyLand" ).val(ui.value+'+');
+        $( "#minPropertyLand" ).val(ui.value+'+');
         $( "#SquareMeters98" ).val(my+'+');
 
          $( "#slider-range98" ).slider({
