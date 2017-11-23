@@ -756,7 +756,7 @@ $(document).ready(function() {
         if(propertyData.length==0){
           $("#container-fluid-listing-more").hide();
           //$("#container-fluid-listing-more-fetching").hide();
-        }else if(propertyData.length<=80){
+        }else if(propertyData.length<80){
           $("#container-fluid-listing-more").hide();
         }else{
           $("#container-fluid-listing-more").show();
