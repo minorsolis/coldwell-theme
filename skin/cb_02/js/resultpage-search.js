@@ -75,7 +75,7 @@ $(document).ready(function() {
     if(window.location.href.indexOf('?') + 1){
       var formParams = window.location.href.slice(window.location.href.indexOf('?') + 1);
   
-    }else{
+      }else{
       var formParams = "";
     }
     //alert(formParams);
@@ -124,7 +124,7 @@ $(document).ready(function() {
       var propertyCity = $("#property_province").val();
       var addParams = '';
       var startfrom = 1;
-      var limitrecord = 40;
+      var limitrecord = 80;
 
       $("#startfrom").val(startfrom);
       $("#limitrecord").val(limitrecord);
@@ -268,7 +268,7 @@ $(document).ready(function() {
 
       var addParams = '';
       var startfrom = 1;
-      var limitrecord = 40;
+      var limitrecord = 80;
 
       $("#startfrom").val(startfrom);
       $("#limitrecord").val(limitrecord);
@@ -328,7 +328,7 @@ $(document).ready(function() {
        //var propertyCity = $("#property_province").val();
       var addParams = '';
       var startfrom = 1;
-      var limitrecord = 40;
+      var limitrecord = 80;
 
       //$("#searchLiveFormOpt > #startfrom").val(startfrom);
       //$("#searchLiveFormOpt > #limitrecord").val(limitrecord);
@@ -449,7 +449,7 @@ $(document).ready(function() {
       var propertyCity = $("#property_province").val();
       var addParams = '';
       var startfrom = 1;
-      var limitrecord = 40;
+      var limitrecord = 80;
 
       $("#startfrom").val(startfrom);
       $("#limitrecord").val(limitrecord);
@@ -504,7 +504,7 @@ $(document).ready(function() {
       var propertyCity = $("#property_province").val();
       var addParams = '';
       var startfrom = 1;
-      var limitrecord = 40;
+      var limitrecord = 80;
 
       $("#startfrom").val(startfrom);
       $("#limitrecord").val(limitrecord);
@@ -558,7 +558,7 @@ $(document).ready(function() {
          
         var startfrom = parseInt($("#startfrom").val());
         //alert(startfrom);
-        startfrom +=parseInt(40);
+        startfrom +=parseInt(80);
         //alert(startfrom);
         $("#startfrom").val(startfrom);
         var limitrecord = $("#limitrecord").val();
@@ -762,7 +762,8 @@ $(document).ready(function() {
         }
         if(parseInt(propertyData.length)){
           if(fromwhere==1)
-            $("#container-fluid-listing").append(propertyhtml); 
+            //$("#container-fluid-listing").append(propertyhtml); 
+              $("#container-fluid-listing").html(propertyhtml); 
           else
             $("#container-fluid-listing").html(propertyhtml); 
         }else{
