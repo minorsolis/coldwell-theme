@@ -1,7 +1,7 @@
  
 $(document).ready(function() {
 
-   // $("#container-fluid-listing").addClass('checkloading');
+    // $("#container-fluid-listing").addClass('checkloading');
 
     $("#container-fluid-listing").css("text-align", "");
     $("#container-fluid-listing").css("min-height", "300px");
@@ -15,15 +15,23 @@ $(document).ready(function() {
         $("#Keyword").val(getQueryStringValue("generalSearch"));
         $("#MinPrice").val(getQueryStringValue("minPrice"));
         $("#Maxprice").val(getQueryStringValue("maxPrice"));
-        $("#property_province").val(getQueryStringValue("propertyState[]"));
-        $("#province_txt").html(getQueryStringValue("propertyState[]"));
-        //alert(getQueryStringValue("propertyState[]"));
+      
+        if(getQueryStringValue("propertyState[]")!=null)
+        {
+           $("#property_province").val(getQueryStringValue("propertyState[]"));
+           $("#province_txt").html(getQueryStringValue("propertyState[]"));
+        }
+        
+       // alert($("#province_txt").html(getQueryStringValue("propertyState[]")));
+
         $("#propertyCategory").val(getQueryStringValue("propertyCategory"));
         $("#propertyCategory_txt").html(getQueryStringValue("propertyCategory"));
         
-        $("#property_type").val(getQueryStringValue("propertyType[]"));
-        $("#property_type_txt").html(getQueryStringValue("propertyType[]"));
-        
+        if(getQueryStringValue("propertyType[]")!=null)
+        {
+          $("#property_type").val(getQueryStringValue("propertyType[]"));
+          $("#property_type_txt").html(getQueryStringValue("propertyType[]"));
+        }
         //$('.selDiv option[value="SEL1"]')
     }
 
@@ -155,6 +163,14 @@ $(document).ready(function() {
       apiCall(addParams,0);
 
      });
+
+       $(document).on('change','#order1', function(event){
+            var my1= $("#order1").val();
+            $("#orderBy").val(my1);
+            $('#updateSearchResult').click();
+       });    
+
+
     
     $(document).on('click', '#resetResults,#resetResultsOpt', function(event){
 
@@ -169,7 +185,44 @@ $(document).ready(function() {
       $("#KeywordOpt").val('');
       $("#MinPrice").val(1);
       $("#Maxprice").val(7000000);
+
+      $("#minpropertyFloor").val(0);
+      $("#maxPropertyFloor").val(200+'+');
+      $("#propertyLand").val(200+'+');
+      $("#SquareMeters98").val(809200+'+');
       
+      $( "#slider-range98" ).slider({
+      range: "max",
+      min: 0,
+      max: 5000000,
+      value: 809200,
+      slide: function( event, ui ) {
+        $( "#SquareMeters98" ).val(ui.value+'+');
+      }
+    });
+
+      $( "#slider-range2" ).slider({
+
+      range: "max",
+      min: 0,
+      max: 500,
+      value: 200,
+      slide: function( event, ui ) {
+        $( "#maxPropertyFloor" ).val(ui.value+'+');
+      }
+    });
+
+       $( "#slider-range99" ).slider({
+      range: "max",
+      min: 0,
+      max: 500,
+      value: 200,
+      slide: function( event, ui ) {
+        var my = (ui.value)*4046;
+        $( "#propertyLand" ).val(ui.value+'+');
+            
+      }
+    });
       
       $("#MinPriceOpt").val(1);
       $("#MaxPriceOpt").val(7000000);
@@ -237,9 +290,10 @@ $(document).ready(function() {
       $('#LivingPrice').prop("disabled", 'disabled');
       
       addParams = 'generalSearch=&minPrice=&maxPrice=&propertyCategory=&minBed=1&minBath=1&limit='+startfrom+','+limitrecord+'&propertyAgentOffice=';
+      addParamsUrl = addParams;
       addParams = 'function=website/property/generalSearch&'+addParams;
       addParams += '&format=json&token=1';
-      var searchUrl = "result.html?"+addParams;
+      var searchUrl = "result.html?"+addParamsUrl;
       window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
       apiCall(addParams,0);
 
@@ -247,7 +301,7 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '#updateSearchResult', function(event){
- 
+     
       event.preventDefault();
       //$("#container-fluid-listing").addClass('checkloading');
       $("#container-fluid-listing").css("text-align", "center");
@@ -257,7 +311,21 @@ $(document).ready(function() {
       var generalSearch = $("#KeywordOpt").val();
       var minPrice = $("#MinPriceOpt").val();
       var maxPrice = $("#MaxPriceOpt").val();
-      //var propertyCity = $("#property_province").val();
+      var minpropertyFloor = $("#minpropertyFloor").val();
+      var maxPropertyFloor = $("#maxPropertyFloor").val();
+      var propertyLand = $("#propertyLand").val();
+     
+      var avoid = "+"
+      var minpropertyFloor=minpropertyFloor.replace(avoid,'');
+      var maxPropertyFloor=maxPropertyFloor.replace(avoid,'');
+      var propertyLand=propertyLand.replace(avoid,'');
+    
+      $( "#minpropertyFloor" ).val(minpropertyFloor);
+      $( "#maxPropertyFloor" ).val(maxPropertyFloor);
+      $( "#propertyLand" ).val(propertyLand);
+      
+
+       //var propertyCity = $("#property_province").val();
       var addParams = '';
       var startfrom = 1;
       var limitrecord = 40;
@@ -293,14 +361,23 @@ $(document).ready(function() {
 
 
       if( (addParams != '') || (minPrice != '') || (maxPrice != '') ){
-
+        addParamsUrl = addParams;
         addParams   = 'function=website/property/generalSearch&'+addParams;
         //addParams  += '&format=json&token=1';
         //alert('test');
       } 
-      var searchUrl = "result.html?"+addParams;
+      var searchUrl = "result.html?"+addParamsUrl;
           window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
       apiCall(addParams,0);
+      
+       var minpropertyFloor = $("#minpropertyFloor").val();
+          var maxPropertyFloor = $("#maxPropertyFloor").val();
+          var propertyLand = $("#propertyLand").val();
+          $( "#minpropertyFloor" ).val(minpropertyFloor+'+');
+          $( "#maxPropertyFloor" ).val(maxPropertyFloor+'+');
+          $( "#propertyLand" ).val(propertyLand+'+');
+          $("#searchLiveFormOptLi").removeClass('open');
+         
 
      });
 
@@ -401,12 +478,12 @@ $(document).ready(function() {
 
 
       if( (addParams != '') || (minPrice != '') || (maxPrice != '') ){
-
+        addParamsUrl = addParams;
         addParams = 'function=website/property/generalSearch&'+addParams;
         //addParams    += '&format=json&token=1';
         //apiCall(params,'searchLive');
       } 
-      var searchUrl = "result.html?"+addParams;
+      var searchUrl = "result.html?"+addParamsUrl;
       window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
       apiCall(addParams,0);
 
@@ -533,14 +610,15 @@ $(document).ready(function() {
           if( $("#quick_search_advanced_link").length == 1 ){
             $("#quick_search_advanced_link").attr("href", searchUrl)
           }*/
-        
+           addParamsUrl = addParams;
           addParams = 'function=website/property/generalSearch&'+addParams;
+
           //addParams    += '&format=json&token=1';
 
           
           //apiCall(params,'searchLive');
         } 
-        var searchUrl = "result.html?"+addParams;
+        var searchUrl = "result.html?"+addParamsUrl;
         window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
         apiCall(addParams,1);
 
@@ -587,7 +665,9 @@ $(document).ready(function() {
         data: addParams,
 
         success: function( response ) {
+
           //return false;
+         
           $("#startfrom").prop("disabled", false);
           $("#limitrecord").prop("disabled", false);
           $('#MinPriceOpt').prop("disabled", false);
