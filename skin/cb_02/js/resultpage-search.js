@@ -186,9 +186,9 @@ $(document).ready(function() {
       $("#MinPrice").val(1);
       $("#Maxprice").val(7000000);
 
-      $("#minpropertyFloor").val(0);
-      $("#maxPropertyFloor").val(200+'+');
-      $("#propertyLand").val(200+'+');
+      $("#minPropertyFloor").val(200+'+');
+      $("#maxPropertyFloor").val(0);
+      $("#minPropertyLand").val(200+'+');
       $("#SquareMeters98").val(809200+'+');
       
       $( "#slider-range98" ).slider({
@@ -208,7 +208,7 @@ $(document).ready(function() {
       max: 500,
       value: 200,
       slide: function( event, ui ) {
-        $( "#maxPropertyFloor" ).val(ui.value+'+');
+        $( "#minPropertyFloor" ).val(ui.value+'+');
       }
     });
 
@@ -219,7 +219,7 @@ $(document).ready(function() {
       value: 200,
       slide: function( event, ui ) {
         var my = (ui.value)*4046;
-        $( "#propertyLand" ).val(ui.value+'+');
+        $( "#minPropertyLand" ).val(ui.value+'+');
             
       }
     });
@@ -311,18 +311,18 @@ $(document).ready(function() {
       var generalSearch = $("#KeywordOpt").val();
       var minPrice = $("#MinPriceOpt").val();
       var maxPrice = $("#MaxPriceOpt").val();
-      var minpropertyFloor = $("#minpropertyFloor").val();
+      var minPropertyFloor = $("#minPropertyFloor").val();
       var maxPropertyFloor = $("#maxPropertyFloor").val();
-      var propertyLand = $("#propertyLand").val();
+      var propertyLand = $("#minPropertyLand").val();
      
       var avoid = "+"
-      var minpropertyFloor=minpropertyFloor.replace(avoid,'');
+      var minPropertyFloor=minPropertyFloor.replace(avoid,'');
       var maxPropertyFloor=maxPropertyFloor.replace(avoid,'');
       var propertyLand=propertyLand.replace(avoid,'');
     
-      $( "#minpropertyFloor" ).val(minpropertyFloor);
+      $( "#minPropertyFloor" ).val(minPropertyFloor);
       $( "#maxPropertyFloor" ).val(maxPropertyFloor);
-      $( "#propertyLand" ).val(propertyLand);
+      $( "#minPropertyLand" ).val(propertyLand);
       
 
        //var propertyCity = $("#property_province").val();
@@ -370,12 +370,12 @@ $(document).ready(function() {
           window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
       apiCall(addParams,0);
       
-       var minpropertyFloor = $("#minpropertyFloor").val();
+       var minPropertyFloor = $("#minPropertyFloor").val();
           var maxPropertyFloor = $("#maxPropertyFloor").val();
-          var propertyLand = $("#propertyLand").val();
-          $( "#minpropertyFloor" ).val(minpropertyFloor+'+');
+          var propertyLand = $("#minPropertyLand").val();
+          $( "#minPropertyFloor" ).val(minPropertyFloor+'+');
           $( "#maxPropertyFloor" ).val(maxPropertyFloor+'+');
-          $( "#propertyLand" ).val(propertyLand+'+');
+          $( "#minPropertyLand" ).val(propertyLand+'+');
           $("#searchLiveFormOptLi").removeClass('open');
          
 
@@ -756,6 +756,8 @@ $(document).ready(function() {
         if(propertyData.length==0){
           $("#container-fluid-listing-more").hide();
           //$("#container-fluid-listing-more-fetching").hide();
+        }else if(propertyData.length<=80){
+          $("#container-fluid-listing-more").hide();
         }else{
           $("#container-fluid-listing-more").show();
           //$("#container-fluid-listing-more-fetching").hide();
