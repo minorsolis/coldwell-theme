@@ -273,12 +273,13 @@ $(document).ready(function(){
 
 
       $( "#slider-range2" ).slider({
+
       range: "max",
       min: 0,
       max: 500,
       value: 200,
       slide: function( event, ui ) {
-        $( "#LivingPrice" ).val(ui.value+'+');
+        $( "#maxPropertyFloor" ).val(ui.value+'+');
       }
     });
 
@@ -308,15 +309,29 @@ $(document).ready(function(){
       max: 500,
       value: 200,
       slide: function( event, ui ) {
-        $( "#Acres99" ).val(ui.value+'+');
+        var my = (ui.value)*4046;
+        $( "#propertyLand" ).val(ui.value+'+');
+        $( "#SquareMeters98" ).val(my+'+');
+
+         $( "#slider-range98" ).slider({
+      range: "max",
+      min: 0,
+      max: 5000000,
+      value: my,
+      slide: function( event, ui ) {
+        $( "#SquareMeters98" ).val(ui.value+'+');
+      }
+    });
+
+        
       }
     });
 
       $( "#slider-range98" ).slider({
       range: "max",
       min: 0,
-      max: 500,
-      value: 200,
+      max: 5000000,
+      value: 809200,
       slide: function( event, ui ) {
         $( "#SquareMeters98" ).val(ui.value+'+');
       }
