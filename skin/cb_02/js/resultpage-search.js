@@ -158,7 +158,7 @@ $(document).ready(function() {
         //addParams    += '&format=json&token=1';
         //apiCall(params,'searchLive');
       } 
-      var searchUrl = "result.html?"+addParams;
+      var searchUrl = addParams;
       window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
       apiCall(addParams,0);
 
@@ -293,7 +293,7 @@ $(document).ready(function() {
       addParamsUrl = addParams;
       addParams = 'function=website/property/generalSearch&'+addParams;
       addParams += '&format=json&token=1';
-      var searchUrl = "result.html?"+addParamsUrl;
+      var searchUrl = addParamsUrl;
       window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
       apiCall(addParams,0);
 
@@ -366,7 +366,7 @@ $(document).ready(function() {
         //addParams  += '&format=json&token=1';
         //alert('test');
       } 
-      var searchUrl = "result.html?"+addParamsUrl;
+      var searchUrl = addParamsUrl;
           window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
       apiCall(addParams,0);
       
@@ -483,7 +483,7 @@ $(document).ready(function() {
         //addParams    += '&format=json&token=1';
         //apiCall(params,'searchLive');
       } 
-      var searchUrl = "result.html?"+addParamsUrl;
+      var searchUrl = addParamsUrl;
       window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
       apiCall(addParams,0);
 
@@ -541,7 +541,7 @@ $(document).ready(function() {
         //apiCall(params,'searchLive');
       } 
 
-      var searchUrl = "result.html?"+addParams;
+      var searchUrl = addParams;
           window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
 
       apiCall(addParams,0);
@@ -618,7 +618,7 @@ $(document).ready(function() {
           
           //apiCall(params,'searchLive');
         } 
-        var searchUrl = "result.html?"+addParamsUrl;
+        var searchUrl = addParamsUrl;
         window.history.pushState("", "Search Real Estate Properties in Costa Rica", searchUrl);
         apiCall(addParams,1);
 
@@ -680,8 +680,7 @@ $(document).ready(function() {
           $('#SquareMetersOpt').prop("disabled", false);
           $('#AcresOpt').prop("disabled", false);
           $('#LivingPrice').prop("disabled", false);
-          
-         
+   
           propertyData = response.propertyData;
           var propertyhtml = "";
           
@@ -777,12 +776,9 @@ $(document).ready(function() {
 
       });
 
-
-
       addParams = addParams.replace('limit=', 'limitnew=');
       
       $.ajax({
-
         type: "POST",
         url: urlCall,
         data: addParams,
@@ -794,8 +790,7 @@ $(document).ready(function() {
           
           $("#totalResultsFound").text(propertyData.length+' Results');
           $("#cbCountOpt").text(propertyData.length);
-          
-          
+  
           
         }
 
