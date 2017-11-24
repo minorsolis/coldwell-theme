@@ -75,7 +75,7 @@ $(document).ready(function(){
         myparams = "&generalSearch="+keyword+"&propertyCategory="+propertyCategory+"&propertyState[]="+propertyState+"&minPrice="+minPrice+"&maxPrice="+maxPrice;
     }
  
-    myparams = "result.html?function=website/property/generalSearch"+myparams+"&format=json&token=1&searchFrm=1";
+    myparams = "function=website/property/generalSearch"+myparams+"&format=json&token=1&searchFrm=1";
     window.location.href=myparams;
 
   });
